@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="نظام تعليمي تفاعلي لدرس الدعامة في النبات - أحياء الصف الثالث الثانوي في مصر">
+  <title>الدعامة في النبات | لوحة التحكم التعليمية</title>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="progress-track" style="position: fixed; top: 0; left: 0; right: 0; height: 5px; z-index: 10000; border-radius: 0;">
+    <div id="reading-progress" class="progress-fill" style="width: 0%;"></div>
+  </div>
+
+  <!-- Sticky Mobile Navigation Header -->
+  <header class="mobile-header">
+    <div class="mobile-brand">
+      <div class="mobile-logo">
+        <span class="brand-icon" style="width: 32px; height: 32px; font-size: 14px;">🧬</span>
+        <span>أحياء 3ث</span>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="فتح القائمة">☰</button>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🧬</div>
+        <div class="brand-info">
+          <h2>أحياء مصر</h2>
+          <p>الصف الثالث الثانوي</p>
+        </div>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li class="active"><a href="#overview">🚪 نظرة عامة للدعامة</a></li>
+        <li><a href="#phys-section">💧 الدعامة الفسيولوجية</a></li>
+        <li><a href="#osmosis-section">🧪 الخاصية الأسموزية</a></li>
+        <li><a href="#vacuole-turgor">🎈 الفجوة وضغط الامتلاء</a></li>
+        <li><a href="#tension-factors">📊 توتر الجدار وعوامله</a></li>
+        <li><a href="#structural-section">🧱 الدعامة التركيبية</a></li>
+        <li><a href="#deposits-cellulose">🔬 السليلوز واللجنين</a></li>
+        <li><a href="#deposits-cutin">🧴 الكيوتين والسيوبرين</a></li>
+        <li><a href="#tissues-section">🌿 الأنسجة والفلين</a></li>
+        <li><a href="#casparian-section">🚪 شريط كاسبري</a></li>
+        <li><a href="#relations-section">🔄 العلاقات والتكامل</a></li>
+        <li><a href="#comparisons-section">⚖️ جدول المقارنات الشامل</a></li>
+        <li><a href="#what-if-section">❓ ماذا يحدث إذا؟</a></li>
+        <li><a href="#mindmap-section">🧠 الخريطة الذهنية</a></li>
+        <li><a href="#flashcards-section">🃏 بطاقات تعليمية</a></li>
+        <li><a href="#active-recall-section">📝 الاستدعاء النشط</a></li>
+        <li><a href="#quiz-section">🏆 اختبار تفاعلي</a></li>
+        <li><a href="#spaced-repetition-section">📅 خطة التكرار المتباعد</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="main-content">
+
+      <!-- Top Header Row -->
+      <header class="top-header">
+        <div class="user-welcome">
+          <h1>مرحباً بك يا بطل الأحياء 👋</h1>
+          <p>جاهز لتجربة علمية مبتكرة لتثبيت درس الدعامة في النبات؟</p>
+        </div>
+
+        <div class="header-controls">
+          <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="search" id="search-input" placeholder="ابحث عن مصطلح، مادة، نسيج...">
+          </div>
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="تغيير المظهر">☀️</button>
+        </div>
+      </header>
+
+      <!-- Course Introduction & Hero -->
+      <section id="overview" class="lesson-hero fade-in">
+        <span class="lesson-hero-tag">الصف الثالث الثانوي • أحياء مصر</span>
+        <h2>الدرس الأول: الدعامة في النبات</h2>
+        <p>نظام مذاكرة تفاعلي شامل مبني بالكامل على مخرجات التعلم الوزارية وأسئلة كتاب الامتحان المعتمدة لضمان الفهم والربط والحفظ ثم الاستدعاء والتقييم الذاتي.</p>
+
+        <div class="lesson-stats">
+          <div class="stat-chip"><i>📐</i> 23 موضوعاً فرعياً</div>
+          <div class="stat-chip"><i>💡</i> وسائل حفظ ذكية</div>
+          <div class="stat-chip"><i>🎥</i> مقاطع علمية ثلاثية الأبعاد</div>
+          <div class="stat-chip"><i>🏆</i> اختبارات فورية التصحيح</div>
+        </div>
+      </section>
+
+      <!-- 1. المفهوم العام للدعامة -->
+      <section id="general-concept" class="lesson-card accented fade-in">
+        <div class="card-title-wrap">
+          <div class="card-icon">🎯</div>
+          <h3>1. المفهوم العام للدعامة في النبات</h3>
+        </div>
+        <p>يحتاج النبات، كأي كائن حي، إلى نظام يحميه، يدعمه، ويحافظ على شكله الخارجي لمواجهة الرياح والجفاف والظروف البيئية.</p>
+
+        <div class="explanation-block">
+          <div class="explain-item simple">
+            <h4>💡 الشرح المبسط (بالبلدي كده):</h4>
+            <p>الدعامة دي هي زي الهيكل العظمي في جسم الإنسان أو عواميد البيت اللي شايل الخرسانة، بتحفظ شكل النبات وتخليه واقف صلب وقادر يستحمل الهوا والظروف الجوية من غير ما يتكسر أو يتدمر.</p>
+          </div>
+          <div class="explain-item scientific">
+            <h4>🔬 الشرح العلمي الدقيق:</h4>
+            <p>مجموعة من الأجهزة والأنسجة والآليات الفيزيائية والكيميائية المتكاملة التي تدعم النبات وتحافظ على شكله وتعمل على حمايته وتدعيمه وضمان استقراره الميكانيكي في البيئة.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 & 3. الدعامة الفسيولوجية والخاصية الأسموزية -->
+      <section id="phys-section" class="lesson-card accented">
+        <div class="card-title-wrap">
+          <div class="card-icon">💧</div>
+          <h3>2 & 3. الدعامة الفسيولوجية والخاصية الأسموزية</h3>
+        </div>
+        <p>الدعامة الفسيولوجية هي دعامة فيزيائية مؤقتة تعتمد في أساسها على حركة الماء بالتناضح والخاصية الأسموزية عبر أغشية الخلايا الحية.</p>
+
+        <div class="explanation-block">
+          <div class="explain-item simple">
+            <h4>💡 الشرح المبسط:</h4>
+            <p>الخلية بتشرب المياه زي الإسفنجة بالظبط! لما المياه تدخل، فجوتها العصارية بتتملي وتكبر وتضغط على الخلية من جوه لبرة، فتتنفخ وتبقى مشدودة وجدارها ناشف وقوي زي كورة الكاوتش المنفوخة على الآخر.</p>
+          </div>
+          <div class="explain-item scientific">
+            <h4>🔬 الشرح العلمي الدقيق:</h4>
+            <p>دعامة تناضحية مؤقتة تتناول الخلية ككل، وتعتمد كلياً على وجود الماء ودخوله بالخاصية الأسموزية إلى الفجوة العصارية نتيجة زيادة تركيز الذائبات (السكريات والأملاح) بداخلها مقارنة بالوسط الخارجي للخلية.</p>
+          </div>
+        </div>
+
+        <div class="mnemonic-callout">
+          <div class="mnemonic-header">💡 قاعدة فيزيائية ذهبية (قاعدة الشفاطة):</div>
+          <p style="font-weight: 700; font-size: 15px;">"الماء يحب الملح ويمشي وراه!"</p>
+          <p>الخاصية الأسموزية هي حركة جزيئات الماء من الوسط الأعلى تركيزاً للماء (الأقل ذائبات) إلى الوسط الأقل تركيزاً للماء (الأعلى ذائبات) عبر غشاء شبه منفذ.</p>
+        </div>
+
+        <!-- Educational Video Area -->
+        <div class="media-container">
+          <div class="media-wrapper">
+            <video class="media-element" controls preload="metadata">
+              <source src="assets/videos/osmosis-turgor.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="media-caption">فيديو 01: الأسموزية وآلية ضغط الامتلاء (3D Animation)</div>
+          </div>
+
+          <div class="media-wrapper">
+            <img class="media-element zoomable-image" src="assets/images/1786372286872.png" alt="Plant Cell Turgor Pressure Illustration">
+            <div class="media-caption">رسم توضيحي 01: مقارنة الخلية النباتية المنتفخة (Turgid) والمنكمشة (Plasmolyzed)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 & 5. الفجوة العصارية وضغط الامتلاء -->
+      <section id="vacuole-turgor" class="lesson-card accented">
+        <div class="card-title-wrap">
+          <div class="card-icon">🎈</div>
+          <h3>4 & 5. الفجوة العصارية وضغط الامتلاء (Turgor Pressure)</h3>
+        </div>
+        <p>الفجوة العصارية هي المخزن الرئيسي للمحلول السكري والأملاح داخل الخلية النباتية الحية، وهي المحرك الأساسي لتوليد ضغط الامتلاء.</p>
+
+        <div class="explanation-block">
+          <div class="explain-item simple">
+            <h4>💡 الشرح المبسط:</h4>
+            <p>الفجوة دي عاملة زي البالونة اللي جوه الكرتونة. لما بننفخ البالونة بمية، بتكبر وتزق كل الألعاب والأشياء اللي حواليها وتضغط على حيطان الكرتونة من برة فتنشف وتفرد نفسها.</p>
+          </div>
+          <div class="explain-item scientific">
+            <h4>🔬 الشرح العلمي الدقيق:</h4>
+            <p>عند دخول الماء للفجوة العصارية بالأسموزية، يزداد حجم العصير الخلوي بداخلها، فيولد ضغطاً هيدروستاتيكياً يُعرف بـ <strong>ضغط الامتلاء (Turgor Pressure)</strong>. يضغط هذا الضغط على البروتوبلازم المحيط بالفجوة ويدفعه للخارج باتجاه الجدار الخلوي.</p>
+          </div>
+        </div>
+
+        <div class="sequence-flow">
+          <div class="flow-step"><span class="flow-step-num">1</span> دخول الماء بالأسموزية</div>
+          <span class="flow-arrow">←</span>
+          <div class="flow-step"><span class="flow-step-num">2</span> زيادة العصير الخلوي</div>
+          <span class="flow-arrow">←</span>
+          <div class="flow-step"><span class="flow-step-num">3</span> نشوء ضغط الامتلاء</div>
+          <span class="flow-arrow">←</span>
+          <div class="flow-step"><span class="flow-step-num">4</span> الضغط على الجدار الخلوي للخارج</div>
+        </div>
+      </section>
+
+      <!-- 6 & 7. توتر الجدار الخلوي والعوامل المؤثرة -->
+      <section id="tension-factors" class="lesson-card accented">
+        <div class="card-title-wrap">
+          <div class="card-icon">📊</div>
+          <h3>6 & 7. توتر الجدار الخلوي والعوامل المؤثرة</h3>
+        </div>
+        <p>الجدار الخلوي هو الغلاف الخارجي المرن للخلية النباتية، والذي يتحول بفضل ضغط الامتلاء إلى حالة من الصلابة والشد.</p>
+
+        <div class="explanation-block">
+          <div class="explain-item scientific">
+            <h4>🔬 توتر الجدار الخلوي:</h4>
+            <p>هي حالة التمدد والتصلب التي يصل إليها الجدار الخلوي نتيجة دفع البروتوبلازم له من الداخل للخارج بفعل ضغط الامتلاء المرتفع. عندما يتمدد الجدار تماماً، يتوقف تمدده ويكتسب النبات دعامته ويصبح صلباً مستقيماً.</p>
+          </div>
+        </div>
+
+        <h4 style="margin-top: 15px; margin-bottom: 8px;">📊 العوامل البيئية والفسيولوجية المؤثرة:</h4>
+        <div class="table-container">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>العامل المؤثر</th>
+                <th>طبيعة العلاقة والتأثير</th>
+                <th>التوضيح البيولوجي للامتحان</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>عملية الامتصاص (عبر الجذور)</strong></td>
+                <td>طردية 📈</td>
+                <td>كلما امتص الجذر الماء من التربة، توفر ماء كافٍ لدخول الفجوات، مما يزيد ضغط الامتلاء وتوتر الجدر واكتساب الدعامة.</td>
+              </tr>
+              <tr>
+                <td><strong>عملية النتح (عبر الأوراق)</strong></td>
+                <td>عكسية مؤقتاً 📉</td>
+                <td>النتح هو تبخر الماء من الثغور. عند زيادة النتح في فترة الظهيرة (الحرارة العالية)، يفقد النبات خلاياه جزءاً من مائها فيقل ضغط الامتلاء ويحدث ذبول مؤقت للأوراق وسوق النباتات العشبية.</td>
+              </tr>
+              <tr>
+                <td><strong>عملية الري</strong></td>
+                <td>مباشرة وإيجابية 💧</td>
+                <td>ري النباتات الذابلة والجافة يعيد استقامتها وقوتها مباشرة لدخول الماء بالخاصية الأسموزية فور توفره في التربة.</td>
+              </tr>
+              <tr>
+                <td><strong>الجفاف والحرارة الشديدة</strong></td>
+                <td>سلبية مدمرة ☀️</td>
+                <td>فقدان المياه المستمر دون ري يؤدي للتخلص من الدعامة الفسيولوجية كلياً، وبالتالي تذبل النباتات وتنقرض حيويتها إن طال الجفاف.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 8. الدعامة التركيبية -->
+      <section id="structural-section" class="lesson-card success-accent">
+        <div class="card-title-wrap">
+          <div class="card-icon">🧱</div>
+          <h3>8. الدعامة التركيبية (المفهوم والأهداف)</h3>
+        </div>
+        <p>الدعامة التركيبية هي دعامة دائمة كيميائية المنشأ، تعتمد على ترسيب النبات لمواد كيميائية صلبة وقوية على جدر خلاياه لتعزيز متانتها وحمايتها.</p>
+
+        <div class="explanation-block">
+          <div class="explain-item simple">
+            <h4>💡 الشرح المبسط:</h4>
+            <p>النبات بيأسس لنفسه حيطة قوية وسد منيع من مواد صلبة، بيبنيها ويدهنها على جدران الخلايا من برة أو جوه. المواد دي بتثبت ومبتزولش أبداً حتى لو النبات عطش، علشان تحمي الأعضاء وتمنع فقد المية.</p>
+          </div>
+          <div class="explain-item scientific">
+            <h4>🔬 الشرح العلمي الدقيق:</h4>
+            <p>دعامة كيميائية بنيوية دائمة تتناول جدر الخلايا أو أجزاء منها، وتعتمد على ترسيب بعض المواد الصلبة وغير المنفذة للماء (السليلوز، اللجنين، الكيوتين، السيوبرين) لزيادة قدرة خلايا النبات الخارجية على تحمل الضغوط، وإكسابها الصلابة وحفظ مياهها الداخلية.</p>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-top: 16px;">
+          <div class="explain-item" style="border-right: 3px solid var(--success-color);">
+            <h4 style="color: var(--success-color);">🛡️ الهدف 1: الحماية</h4>
+            <p style="font-size: 13px;">حماية الأنسجة النباتية الداخلية والمحافظة عليها من هجمات الميكروبات والعوامل الميكانيكية.</p>
+          </div>
+          <div class="explain-item" style="border-right: 3px solid var(--success-color);">
+            <h4 style="color: var(--success-color);">💪 الهدف 2: الصلابة والقوة</h4>
+            <p style="font-size: 13px;">إكساب خلايا النبات الصلابة والقوة الكافية للوقوف والتدعيم ومقاومة التيارات الهوائية.</p>
+          </div>
+          <div class="explain-item" style="border-right: 3px solid var(--success-color);">
+            <h4 style="color: var(--success-color);">💧 الهدف 3: منع فقد الماء</h4>
+            <p style="font-size: 13px;">منع نفاذ وتبخر مياه الأنسجة الداخلية وحماية الدعامة الفسيولوجية للنبات.</p>
+          </div>
+        </div>
+
+        <div class="media-container" style="grid-template-columns: 1fr; margin-top: 20px;">
+          <div class="media-wrapper">
+            <img class="media-element zoomable-image" src="assets/images/1786372289844.png" alt="Plant Tissues Wall Depositions Illustration">
+            <div class="media-caption">رسم توضيحي 02: مقارنة تفصيلية لسمك الجدار وترسيب السليلوز واللجنين في الأنسجة المختلفة</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 & 10. السليلوز واللجنين -->
+      <section id="deposits-cellulose" class="lesson-card success-accent">
+        <div class="card-title-wrap">
+          <div class="card-icon">🔬</div>
+          <h3>9 & 10. المواد المترسبة: السليلوز واللجنين</h3>
+        </div>
+        <p>السليلوز واللجنين هما العمودان الأساسيان لإكساب جدر الخلايا النباتية الصلابة الميكانيكية والقوة الهيكلية.</p>
+
+        <div class="grid-2">
+          <div class="explain-item scientific" style="border-right-color: var(--accent-secondary);">
+            <h4 style="color: var(--accent-secondary);">🌿 السليلوز (مادة منفذة):</h4>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>طبيعته:</strong> مادة كربوهيدراتية ممرضة ومغشية صلبة ومرنة في آنٍ واحد.</p>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>النفاذية:</strong> منفذ تماماً للماء (الاستثناء الأهم في مواد الترسيب).</p>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>الموقع:</strong> المكون الأساسي لجدر جميع الخلايا، ويترسب بكثافة إضافية في جدر خلايا النسيج الكولانشيمي.</p>
+            <p style="font-size: 13px;"><strong>الوظيفة:</strong> إكساب جدار الخلية النباتية المرونة والقوة الكافية للشد دون انكسار.</p>
+          </div>
+
+          <div class="explain-item scientific" style="border-right-color: var(--error-color);">
+            <h4 style="color: var(--error-color);">🪵 اللجنين (مادة غير منفذة):</h4>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>طبيعته:</strong> مادة صلبة وقوية للغاية تترسب في جدر الخلايا الداخلية مسببة موتها.</p>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>النفاذية:</strong> غير منفذ تماماً للماء.</p>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>الموقع:</strong> يترسب داخل جدر الخلايا الاسكلارنشيمية (الخلايا الحجرية والألياف) وجدر أوعية وقصيبات الخشب.</p>
+            <p style="font-size: 13px;"><strong>الوظيفة:</strong> إكساب الخلايا الصلابة والقوة المطلقة لمقاومة الضغوط الميكانيكية الهائلة.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 & 12. الكيوتين والسيوبرين -->
+      <section id="deposits-cutin" class="lesson-card success-accent">
+        <div class="card-title-wrap">
+          <div class="card-icon">🧴</div>
+          <h3>11 & 12. المواد المترسبة: الكيوتين والسيوبرين</h3>
+        </div>
+        <p>الكيوتين والسيوبرين هما المواد الدهنية الشمعية التي يعتمد عليها النبات لمنع تبخر وفقد المياه الحيوية.</p>
+
+        <div class="grid-2">
+          <div class="explain-item scientific" style="border-right-color: var(--warning-color);">
+            <h4 style="color: var(--warning-color);">💧 الكيوتين:</h4>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>طبيعته:</strong> مادة دهنية شمعية غير منفذة تترسب على السطح الخارجي للبشرة.</p>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>الموقع:</strong> يغطي طبقة البشرة في أوراق وثمار وسيقان النباتات العشبية والخشبية.</p>
+            <p style="font-size: 13px;"><strong>الوظيفة:</strong> تقليل فقد الماء بالنتح وحماية الخلايا الحية وحفظ ضغط الامتلاء (الدعامة الفسيولوجية).</p>
+          </div>
+
+          <div class="explain-item scientific" style="border-right-color: #854d0e;">
+            <h4 style="color: #854d0e;">🪵 السيوبرين:</h4>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>طبيعته:</strong> مادة دهنية شمعية غير منفذة تترسب في جدر خلايا النبات الداخلية.</p>
+            <p style="font-size: 13px; margin-bottom: 8px;"><strong>الموقع:</strong> جدر خلايا النسيج الفليني (في السيقان الخشبية) وجدر خلايا الاندوديرمس (شريط كاسبري).</p>
+            <p style="font-size: 13px;"><strong>الوظيفة:</strong> عزل وحماية سيقان الأشجار، ومنع تسرب وتبخر الماء، وتوجيه حركة الماء في الجذر.</p>
+          </div>
+        </div>
+
+        <!-- Mnemonic Box -->
+        <div class="mnemonic-callout">
+          <div class="mnemonic-header">🧠 وسيلة حفظ ذكية وتريكة امتحانات (Mnemonic):</div>
+          <div class="mnemonic-word">سَلَك</div>
+          <ul class="mnemonic-list">
+            <li class="mnemonic-item"><strong>س</strong> = سيوبرين</li>
+            <li class="mnemonic-item"><strong>ل</strong> = لجنين</li>
+            <li class="mnemonic-item"><strong>ك</strong> = كيوتين</li>
+          </ul>
+          <p style="margin-top: 14px; font-weight: 700; color: var(--warning-color);">جميع مواد كلمة «سَلَك» هي مواد غَيْرُ مُنْفِذَةٍ لِلْمَاءِ إطلاقاً! الاستثناء الوحيد للجدار الخلوي هو «السليلوز» فهو ممر ومنفذ ممتاز للماء.</p>
+        </div>
+      </section>
+
+      <!-- 13 & 14. الأنسجة والفلين والبشرة -->
+      <section id="tissues-section" class="lesson-card">
+        <div class="card-title-wrap">
+          <div class="card-icon">🌿</div>
+          <h3>13 & 14. الأنسجة النباتية وتطبيقات الدعامة عليها</h3>
+        </div>
+        <p>ينقسم نسيج النبات مجهرياً وبنيوياً إلى عدة أنسجة، يمتلك كل منها نوعاً محدداً من الدعامة الكيميائية أو الفيزيائية.</p>
+
+        <div class="grid-3" style="margin-top: 15px;">
+          <div class="explain-item">
+            <h4 style="color: var(--accent-color);">🟢 النسيج البارنشيمي (حي):</h4>
+            <p style="font-size: 12px; line-height: 1.6;">جدره رقيقة تحتوي سليلوز فقط دون ترسيب إضافي. يعتمد كلياً وبشكل مؤقت على وجود الماء واكتساب الدعامة الفسيولوجية.</p>
+          </div>
+          <div class="explain-item">
+            <h4 style="color: var(--accent-secondary);">🔵 النسيج الكولانشيمي (حي):</h4>
+            <p style="font-size: 12px; line-height: 1.6;">نسيج مغلظ بكثافة إضافية من السليلوز عند أركان الخلايا. يجمع بين الدعامة الفسيولوجية والدعامة التركيبية ليمنح عود النبات المرونة والقوة.</p>
+          </div>
+          <div class="explain-item">
+            <h4 style="color: var(--error-color);">🔴 النسيج الاسكلارنشيمي (ميت):</h4>
+            <p style="font-size: 12px; line-height: 1.6;">نسيج ميت مغلظ تغلظاً شديداً بالسليلوز واللجنين معاً. يمنح الصلابة والقوة القصوى (مثل ألياف وبذور الكمثرى وقشور اللوز).</p>
+          </div>
+        </div>
+
+        <div class="media-container" style="margin-top: 20px;">
+          <div class="media-wrapper">
+            <img class="media-element zoomable-image" src="assets/images/1786372939275.png" alt="Parenchyma, Collenchyma, Sclerenchyma Comparison">
+            <div class="media-caption">رسم توضيحي 03: قطاع عرضي تشريحي يوضح الأنسجة الثلاثة (البارنشيمي، الكولانشيمي، الاسكلارنشيمي)</div>
+          </div>
+          <div class="media-wrapper">
+            <img class="media-element zoomable-image" src="assets/images/1786372952017.png" alt="Epidermis and Cork tissues">
+            <div class="media-caption">رسم توضيحي 04: خلايا البشرة المطلية بالكيوتين الشمعي، وخلايا النسيج الفليني التي تحتوي السيوبرين</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 15. شريط كاسبري والاندوديرمس -->
+      <section id="casparian-section" class="lesson-card accented">
+        <div class="card-title-wrap">
+          <div class="card-icon">🚪</div>
+          <h3>15. شريط كاسبري (Casparian Strip) والاندوديرمس</h3>
+        </div>
+        <p>شريط كاسبري هو الحارس الذكي في جذر النبات، والمسؤول عن فلترة وتنظيم المياه والذائبات المتجهة لأوعية النقل.</p>
+
+        <div class="explanation-block">
+          <div class="explain-item scientific">
+            <h4>🔬 شريط كاسبري:</h4>
+            <p>شريط أو حزام مصنوع بالكامل من مادة <strong>السيوبرين</strong> غير المنفذة للماء، يوجد مغروساً في منتصف الجدر الأفقية والجانبية لخلايا الاندوديرمس (البشرة الداخلية) بجذور النبات. يعمل هذا الشريط على غلق المسار الجداري (الأبوبلاستي)، مما يجبر جزيئات الماء على المرور اضطرارياً عبر الغشاء البلازمي والبروتوبلازم الحي لخلايا الاندوديرمس لتتم فلتَرتها وتنظيم عبورها لأوعية الخشب.</p>
+          </div>
+        </div>
+
+        <!-- Educational Video Area for Casparian Strip -->
+        <div class="media-container">
+          <div class="media-wrapper" style="grid-column: span 2;">
+            <video class="media-element" controls preload="metadata" style="max-height: 320px;">
+              <source src="assets/videos/casparian-strip.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="media-caption">فيديو 02: حركة الماء عبر الاندوديرمس ودور شريط كاسبري (3D Animation)</div>
+          </div>
+        </div>
+
+        <div class="media-container" style="margin-top: 15px; grid-template-columns: 1fr;">
+          <div class="media-wrapper">
+            <img class="media-element zoomable-image" src="assets/images/1786372955003.png" alt="Casparian Strip diagram">
+            <div class="media-caption">رسم توضيحي 05: تخطيط مجهري يوضح المسار الأبوبلاستي وتأثير السيوبرين في خلايا الاندوديرمس</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 16. العلاقات والتكامل بين الدعامتين -->
+      <section id="relations-section" class="lesson-card success-accent">
+        <div class="card-title-wrap">
+          <div class="card-icon">🔄</div>
+          <h3>16. العلاقات التكاملية بين الدعامة الفسيولوجية والتركيبية</h3>
+        </div>
+        <p>قد تبدو الدعامتان منفصلتين في المفهوم، ولكنهما تعملان معاً في تناسق حيوي مدهش للحفاظ على استمرار حياة ونمو النبات.</p>
+
+        <div class="explanation-block">
+          <div class="explain-item simple">
+            <h4>💡 كيف تدعم الدعامة التركيبية استمرار الدعامة الفسيولوجية؟</h4>
+            <p>الكيوتين الشمعي (دعامة تركيبية دائمية) يترسب على جدار خلايا البشرة ليكون بمثابة معطف أو ساتر عازل. هذا المعطف يقلل تماماً من معدلات تبخر المياه من خلايا النبات أثناء الحر والنتح الزائد. وبذلك، فإنه يحافظ على كميات مياه كافية داخل الفجوات العصارية لتظل خلايا النبات ممتلئة وتحتفظ بـ الدعامة الفسيولوجية الموقتة لأطول فترة ممكنة.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 18. المقارنات (جدول المقارنة الشامل) -->
+      <section id="comparisons-section" class="lesson-card success-accent">
+        <div class="card-title-wrap">
+          <div class="card-icon">⚖️</div>
+          <h3>18. جدول المقارنة الشامل للأنسجة والمواد</h3>
+        </div>
+        <p>أبرز مخرجات التعلم لأسئلة الامتحان في جدول واحد تفصيلي ومقارن:</p>
+
+        <div class="table-container">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>المفهوم / النسيج</th>
+                <th>نوع الدعامة</th>
+                <th>مادة الترسيب</th>
+                <th>النفاذية للماء</th>
+                <th>حيوية الخلايا</th>
+                <th>الوظيفة الأساسية للنبات</th>
+                <th>مثال تطبيقي</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>النسيج البارنشيمي</strong></td>
+                <td><span class="badge warning">فسيولوجية فقط</span></td>
+                <td>سليلوز (أولي رقيق)</td>
+                <td>منفذ للماء 💧</td>
+                <td><span class="badge success">حي</span></td>
+                <td>التهوية، التخزين، والامتلاء التناضحي بالماء.</td>
+                <td>لب ثمار البطاطس، أوراق الخس الداخلية</td>
+              </tr>
+              <tr>
+                <td><strong>النسيج الكولانشيمي</strong></td>
+                <td><span class="badge success">فسيولوجية + تركيبية</span></td>
+                <td>سليلوز مغلظ للأركان</td>
+                <td>منفذ للماء 💧</td>
+                <td><span class="badge success">حي</span></td>
+                <td>إعطاء ساق النبات المرونة والقوة ومقاومة الرياح دون انكسار.</td>
+                <td>أعواد الملوخية والنعناع والخس</td>
+              </tr>
+              <tr>
+                <td><strong>النسيج الاسكلارنشيمي</strong></td>
+                <td><span class="badge error">تركيبية فقط</span></td>
+                <td>سليلوز + لجنين بكثافة</td>
+                <td>غير منفذ 🧱</td>
+                <td><span class="badge error">غير حي (ميت)</span></td>
+                <td>الصلابة والقوة الهيكلية الميكانيكية القصوى.</td>
+                <td>الخلايا الحجرية بالكمثرى، قشور اللوز والمكسرات</td>
+              </tr>
+              <tr>
+                <td><strong>بشرة النبات</strong></td>
+                <td><span class="badge success">تركيبية وتحمي الفسيولوجية</span></td>
+                <td>الكيوتين (على السطح)</td>
+                <td>غير منفذ 🧱</td>
+                <td><span class="badge success">حي</span></td>
+                <td>حماية الخلايا الداخلية، وتقليل فقد الماء بالنتح والتبخر.</td>
+                <td>بشرة أوراق التفاح والبرقوق</td>
+              </tr>
+              <tr>
+                <td><strong>النسيج الفليني</strong></td>
+                <td><span class="badge error">تركيبية فقط</span></td>
+                <td>سيوبرين (في الجدار)</td>
+                <td>غير منفذ 🧱</td>
+                <td><span class="badge error">غير حي (ميت)</span></td>
+                <td>عزل وحماية السيقان الخشبية، ومنع نفاذ الميكروبات والماء.</td>
+                <td>اللحاء الخارجي للسيقان الخشبية للأشجار</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 17. ماذا يحدث إذا؟ (Accordions) -->
+      <section id="what-if-section" class="lesson-card accented">
+        <div class="card-title-wrap">
+          <div class="card-icon">❓</div>
+          <h3>17. ماذا يحدث إذا؟ (سيناريوهات تفاعلية)</h3>
+        </div>
+        <p>انقر على السؤال لتكتشف الإجابة العلمية المعتمدة للامتحان:</p>
+
+        <div class="accordion-wrapper">
+          <details class="accordion-item">
+            <summary>ماذا يحدث عند وضع بذور جافة أو ثمار ضامرة (كالترمس أو الزبيب) في ماء مقطر؟</summary>
+            <div class="accordion-content">
+              يدخل الماء إلى الفجوات العصارية للخلايا بالخاصية الأسموزية (لوجود فرق تركيز عالي للذائبات داخل الفجوة مقارنة بالماء المقطر)، فيزداد حجم العصير الخلوي ويزداد ضغط الامتلاء الضاغط على البروتوبلازم والجدار، فتتمدد الخلايا وتتوتر وتنتفخ البذور وتكتسب الدعامة الفسيولوجية.
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary>ماذا يحدث عند غمر خلية نباتية في محلول مرتفع التركيز جداً للذائبات (مثلاً 10%)؟</summary>
+            <div class="accordion-content">
+              يخرج الماء من الفجوة العصارية للخلية إلى المحلول الخارجي بالخاصية الأسموزية (لأن الماء يتحرك نحو الوسط الأعلى تركيزاً للذائبات)، فيتقلص حجم العصير الخلوي وينخفض ضغط الامتلاء وينكمش البروتوبلازم مبتعداً عن الجدار (ظاهرة البلزمة)، ويقل توتر الجدار وتفقد الخلية دعامتها الفسيولوجية وتذبل.
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary>ماذا يحدث عند تقشير ثمرة تفاح أو برقوق طازجة وتركها في هواء جاف؟</summary>
+            <div class="accordion-content">
+              بتقشير الثمرة تفقد خلاياها طبقة الكيوتين الشمعية المترسبة على البشرة الخارجية والتي تمنع فقد الماء، مما يسهل تبخر الماء سريعاً من الخلايا الداخلية الحية بالنتح والتبخر، فيقل ضغط الامتلاء وتتجعد الثمرة وتنكمش وتفقد صلابتها تماماً.
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary>ماذا يحدث عند ترسيب اللجنين بكثافة داخل جدر خلايا نسيج كولانشيمي؟</summary>
+            <div class="accordion-content">
+              مادة اللجنين غير منفذة للماء وتتسبب عند تغلظها الكامل في قطع إمدادات الماء والغذاء عن خلايا النسيج الكولانشيمي الحي، مما يؤدي إلى موت البروتوبلازم وتلاشي حيوية الخلايا، ويتحول النسيج من نسيج كولانشيمي حي مرن يدعم النبات بالدعامتين إلى نسيج اسكلارنشيمي ميت صلب وقاسٍ يحتوي على دعامة تركيبية فقط.
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary>ماذا يحدث إذا غابت مادة السيوبرين (شريط كاسبري) من خلايا الاندوديرمس بجذور النبات؟</summary>
+            <div class="accordion-content">
+              لن يستطيع جذر النبات تنظيم حركة ومرور الماء والأملاح الذائبة المتجهة لأوعية الخشب؛ حيث سيمر الماء والذائبات بحرية وبدون فلترة أسموزية عبر الفراغات الخلوية (المسار الأبوبلاستي)، مما يفقد النبات السيطرة على جودة واتزان العناصر الكيميائية والمياه الممتصة.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 19. الخريطة الذهنية (Mindmap Section) -->
+      <section id="mindmap-section" class="lesson-card">
+        <div class="card-title-wrap">
+          <div class="card-icon">🧠</div>
+          <h3>19. الخريطة الذهنية البصرية للدرس</h3>
+        </div>
+        <p>استعن بهذا المخطط الشجري المترابط لتلخيص واسترجاع المفاهيم سريعاً في ذاكرتك البصرية:</p>
+
+        <div class="visual-mindmap">
+          <div class="mindmap-node root">الدعامة في النبات</div>
+
+          <div class="mindmap-branches">
+            <!-- Branch 1 -->
+            <div class="mindmap-branch-col">
+              <h4>💧 الدعامة الفسيولوجية</h4>
+              <ul>
+                <li><strong>طبيعتها:</strong> مؤقتة / تتناول الخلية ككل</li>
+                <li><strong>الآلية:</strong> الخاصية الأسموزية والتناضح</li>
+                <li><strong>التدفق:</strong> دخول الماء ← انتفاخ الفجوة ← ضغط الامتلاء ← توتر الجدار</li>
+                <li><strong>أمثلة:</strong> انتفاخ الترمس المنقوع / ارتخاء سوق النبات العشبي بالجفاف</li>
+              </ul>
+            </div>
+
+            <!-- Branch 2 -->
+            <div class="mindmap-branch-col">
+              <h4>🧱 الدعامة التركيبية</h4>
+              <ul>
+                <li><strong>طبيعتها:</strong> دائمة / تتناول جدر الخلايا</li>
+                <li><strong>المواد المترسبة:</strong> سليلوز، لجنين، كيوتين، سيوبرين</li>
+                <li><strong>الأهداف:</strong> الصلابة والقوة / منع فقد الماء / حماية الأنسجة الداخلية</li>
+                <li><strong>أمثلة:</strong> الخلايا الحجرية بالكمثرى / الكيوتين على بشرة التفاح</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 20. Flashcards Section (Active Recall Support) -->
+      <section id="flashcards-section" class="lesson-card success-accent">
+        <div class="card-title-wrap">
+          <div class="card-icon">🃏</div>
+          <h3>20. البطاقات التعليمية التفاعلية (Flashcards)</h3>
+        </div>
+        <p>أداة تفاعلية رائعة مبنية على تقنيات الذاكرة؛ انقر على البطاقة لقلبها واختبار معلوماتك:</p>
+
+        <div class="flashcards-section-wrapper">
+          <div class="flashcard-deck-controls">
+            <span id="flashcard-progress-summary" style="font-weight: 700; color: var(--accent-color);">تحميل البطاقات...</span>
+            <button class="btn-secondary" id="reset-flashcards-btn">🔄 تصفير التقدم</button>
+          </div>
+
+          <div id="flashcard-grid-container" class="flashcard-grid">
+            <!-- Dynamic Flashcards injected here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 21. Active Recall Section -->
+      <section id="active-recall-section" class="lesson-card accented">
+        <div class="card-title-wrap">
+          <div class="card-icon">📝</div>
+          <h3>21. الاستدعاء النشط (Active Recall) للامتحانات</h3>
+        </div>
+        <p>لا تكتفِ بالقراءة السلبية! اكتب إجابتك الخاصة في المستطيل، ثم قارنها بالإجابة النموذجية المعتمدة لتقيم نفسك وتكتشف التريكات الكامنة:</p>
+
+        <div class="recall-container">
+          <!-- Item 1 -->
+          <div class="recall-item" data-id="1">
+            <div class="recall-question">❓ سؤال 1: اشرح كيف تؤدي زيادة تركيز السكريات في الفجوة العصارية إلى توتر الجدار الخلوي.</div>
+            <textarea class="recall-textarea" placeholder="اكتب إجابتك هنا بأسلوبك..."></textarea>
+            <div class="recall-actions">
+              <button class="btn-primary btn-verify">عرض وتقييم الإجابة النموذجية</button>
+            </div>
+            <div class="recall-answer-box hidden">
+              <strong>💡 الإجابة النموذجية:</strong>
+              <p>زيادة تركيز السكريات تعني انخفاض تركيز الماء داخل الفجوة، مما ينشئ ضغطاً أسموزياً مرتفعاً يسحب الماء من الوسط الخارجي عبر الغشاء شبه المنفذ إلى الفجوة العصارية. مع دخول الماء يزداد حجم العصير الخلوي فينشأ «ضغط امتلاء» يضغط على البروتوبلازم ويدفعه للخارج، مما يؤدي لتمدد الجدار الخلوي وتوتره وتصلبه واكتساب الدعامة.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="recall-item" data-id="2">
+            <div class="recall-question">❓ سؤال 2: اذكر الفرق الرئيسي بين موقع وترسيب كل من الكيوتين والسيوبرين.</div>
+            <textarea class="recall-textarea" placeholder="اكتب إجابتك هنا بأسلوبك..."></textarea>
+            <div class="recall-actions">
+              <button class="btn-primary btn-verify">عرض وتقييم الإجابة النموذجية</button>
+            </div>
+            <div class="recall-answer-box hidden">
+              <strong>💡 الإجابة النموذجية:</strong>
+              <p>الكيوتين يترسب خارجياً على جدر خلايا البشرة الخارجية لأوراق وسيقان النباتات العشبية لمنع تبخر الماء. أما السيوبرين فيترسب داخلياً في جدر خلايا النسيج الفليني للأشجار الخشبية لمنع تسرب الماء، وفي خلايا الاندوديرمس (شريط كاسبري) في الجذور لتنظيم عبور الماء المتجه للخشب.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="recall-item" data-id="3">
+            <div class="recall-question">❓ سؤال 3: لماذا يعتبر النسيج الاسكلارنشيمي نسيجاً غير حي، وما تأثير ذلك على دعامته الفسيولوجية؟</div>
+            <textarea class="recall-textarea" placeholder="اكتب إجابتك هنا بأسلوبك..."></textarea>
+            <div class="recall-actions">
+              <button class="btn-primary btn-verify">عرض وتقييم الإجابة النموذجية</button>
+            </div>
+            <div class="recall-answer-box hidden">
+              <strong>💡 الإجابة النموذجية:</strong>
+              <p>يعتبر نسيجاً غير حي لأن خلاياه تفقد البروتوبلازم (النواة والفجوات العصارية) أثناء النضج نتيجة للترسيب السميك لمادة اللجنين الصلبة وغير المنفذة للماء على جدرها. وبسبب خلو الخلايا من الفجوات العصارية والبروتوبلازم، فإنها لا تمتلك القدرة على التناضح واستيراد الماء، وبالتالي تفقد تماماً أي قدرة على اكتساب الدعامة الفسيولوجية وتعتمد كلياً على الدعامة التركيبية.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 22. الاختبار التفاعلي (Interactive MCQ Quiz) -->
+      <section id="quiz-section" class="lesson-card success-accent">
+        <div class="card-title-wrap">
+          <div class="card-icon">🏆</div>
+          <h3>22. الاختبار النهائي المعتمد (MCQs)</h3>
+        </div>
+        <p>اختبار تفاعلي يحاكي تماماً طبيعة أسئلة الثانوية العامة وأفكار كتاب الامتحان. اجب عن الأسئلة بتركيز واحصل على النتيجة الفورية والتفسير التفصيلي:</p>
+
+        <div class="quiz-wrapper">
+          <div id="quiz-questions-container">
+            <!-- Interactive questions will be loaded and dynamically rendered here -->
+          </div>
+
+          <div id="quiz-results-summary" class="text-center" style="margin-top: 15px;">
+            <!-- Instant Corrections summary -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 23. Spaced Repetition Section -->
+      <section id="spaced-repetition-section" class="lesson-card">
+        <div class="card-title-wrap">
+          <div class="card-icon">📅</div>
+          <h3>23. خطة المراجعة والتكرار المتباعد (Spaced Repetition)</h3>
+        </div>
+        <p>استراتيجية علمية تضمن انتقال الدرس من الذاكرة قصيرة المدى إلى الذاكرة طويلة المدى، لتضمن تذكره بدقة ليلة الامتحان:</p>
+
+        <div class="spaced-timeline">
+          <!-- Step 1 -->
+          <div class="timeline-step">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-day">📅 اليوم 1</div>
+              <div class="timeline-title">🧠 الفهم الأولي والتأسيس</div>
+              <div class="timeline-desc">قراءة الدرس بالكامل، استيعاب المصطلحات والتعاريف والمسارات الفيزيائية، ومشاهدة فيديوهات الشرح لتخيل الأسموزية وشريط كاسبري.</div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-day">📅 اليوم 2 (بعد 24 ساعة)</div>
+              <div class="timeline-title">🔑 التثبيت والمراجعة السريعة</div>
+              <div class="timeline-desc">حفظ جدول الأنسجة ومواد الترسيب، مراجعة البطاقات التعليمية (Flashcards) للتأكد من حفظ التريكات مثل mnemonic «سَلَك».</div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-day">📅 اليوم 5 (بعد 3 أيام)</div>
+              <div class="timeline-title">✍️ الاستدعاء النشط والربط</div>
+              <div class="timeline-desc">حل أسئلة الـ Active Recall دون النظر للنموذج، ومطابقة العلاقات والمنحنيات البيانية المستخرجة من أفكار كتاب الامتحان.</div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-step">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-day">📅 اليوم 12 (بعد 7 أيام)</div>
+              <div class="timeline-title">🏆 الاختبار الشامل والتقييم</div>
+              <div class="timeline-desc">خوض الاختبار التفاعلي MCQ، وتحليل الأخطاء التي وقعت فيها بالكامل عبر قراءة التفسيرات المرفقة بعناية فائقة.</div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="timeline-step">
+            <div class="timeline-marker"></div>
+            <div class="timeline-body">
+              <div class="timeline-day">📅 اليوم 26 (بعد 14 يوماً)</div>
+              <div class="timeline-title">🛡️ التثبيت النهائي والدمج</div>
+              <div class="timeline-desc">مراجعة سريعة للخريطة الذهنية البصرية وإعادة خوض الاختبار للحصول على الدرجة الكاملة، لضمان استقرار الدرس في الذاكرة طويلة المدى.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Educational Image Zoom Modal Overlay -->
+      <div id="zoom-modal" class="modal-overlay">
+        <button id="modal-close" class="modal-close">&times;</button>
+        <img id="modal-img" class="modal-content" src="" alt="Zoomed Biology Illustration">
+      </div>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <p>تم تصميم وهيكلة هذه الصفحة التفاعلية بعناية فائقة لطلاب الثانوية العامة في مصر 🇪🇬</p>
+        <p>© جميع الحقوق محفوظة لمستودع أحياء التعليمي التفاعلي.</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- JavaScript Controllers -->
+  <script src="js/flashcards.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
