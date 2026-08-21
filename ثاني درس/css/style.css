@@ -1,0 +1,521 @@
+/* ==========================================================================
+   CINEMATIC ANATOMICAL ATLAS — Lesson 02 Stylesheet
+   Design Direction: X-Ray Laboratory + Anatomical Blueprint + Documentary
+   ========================================================================== */
+
+:root {
+  /* Color Tokens */
+  --bg-obsidian: #080A0F;
+  --bg-card: #0F131D;
+  --bg-card-hover: #161C2B;
+  --bone-primary: #E9E4D8;
+  --xray-cyan: #70E8FF;
+  --deep-cyan: #145D70;
+  --anatomical-crimson: #D8495B;
+  --bone-shadow: #596273;
+  --medical-gold: #D6B66A;
+  --text-muted: #9AA4B5;
+  --text-primary: #F7F8FA;
+  --border-cyan: rgba(112, 232, 255, 0.2);
+  --border-gold: rgba(214, 182, 106, 0.25);
+  --glow-cyan: 0 0 15px rgba(112, 232, 255, 0.3);
+  --glow-crimson: 0 0 15px rgba(216, 73, 91, 0.4);
+
+  /* Typography & Layout */
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+  --sidebar-width: 280px;
+  --mobile-nav-height: 64px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] {
+  --bg-obsidian: #F0F4F8;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #E4EBF3;
+  --bone-primary: #2C3E50;
+  --xray-cyan: #008CA8;
+  --deep-cyan: #0A4352;
+  --anatomical-crimson: #C0392B;
+  --bone-shadow: #7F8C8D;
+  --medical-gold: #B8860B;
+  --text-muted: #5A6B7C;
+  --text-primary: #0F172A;
+  --border-cyan: rgba(0, 140, 168, 0.25);
+  --border-gold: rgba(184, 134, 11, 0.3);
+}
+
+/* Reset & Global Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  direction: rtl;
+  background-color: var(--bg-obsidian);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(112, 232, 255, 0.05) 0%, transparent 70%),
+    linear-gradient(to bottom, var(--bg-obsidian), var(--bg-obsidian));
+}
+
+/* Typography Rules */
+h1, h2, h3, h4, h5 {
+  color: var(--bone-primary);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+a {
+  color: var(--xray-cyan);
+  text-decoration: none;
+}
+
+/* Progress Track Bar */
+.progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--xray-cyan), var(--medical-gold));
+  box-shadow: var(--glow-cyan);
+  transition: width 0.1s ease-out;
+}
+
+/* Dashboard App Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Navigation (Desktop) */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--bg-card);
+  border-left: 1px solid var(--border-cyan);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 900;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+}
+
+.sidebar .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--border-cyan);
+  margin-bottom: 1.5rem;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: rgba(112, 232, 255, 0.1);
+  border: 1px solid var(--xray-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.brand-info h2 {
+  font-size: 1.1rem;
+  color: var(--bone-primary);
+}
+
+.brand-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.nav-item a:hover, .nav-item.active a {
+  background-color: rgba(112, 232, 255, 0.1);
+  color: var(--xray-cyan);
+  border-right: 3px solid var(--xray-cyan);
+}
+
+.nav-item .chapter-num {
+  font-family: var(--font-mono);
+  font-weight: bold;
+  color: var(--medical-gold);
+}
+
+/* Main Content Wrapper */
+.main-content {
+  margin-right: var(--sidebar-width);
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+}
+
+/* Mobile Header & Bottom Navigation */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 56px;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-cyan);
+  z-index: 950;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--mobile-nav-height);
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-cyan);
+  z-index: 950;
+  justify-content: space-around;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.mobile-bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.mobile-bottom-nav a.active {
+  color: var(--xray-cyan);
+}
+
+/* Section Common Container */
+.section-chapter {
+  margin-bottom: 5rem;
+  padding-top: 1.5rem;
+}
+
+.chapter-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-cyan);
+  padding-bottom: 0.75rem;
+}
+
+.chapter-badge {
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--xray-cyan);
+  opacity: 0.9;
+}
+
+.chapter-titles h2 {
+  font-size: 1.8rem;
+  color: var(--bone-primary);
+}
+
+.chapter-titles p {
+  font-size: 0.9rem;
+  color: var(--medical-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Visual Cards & Grid System */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.atlas-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-cyan);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.atlas-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--xray-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.card-number-anchor {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--medical-gold);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+/* Hero Chapter Styles */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 3rem 1rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  color: var(--bone-primary);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(233, 228, 216, 0.2);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  color: var(--xray-cyan);
+  margin-bottom: 2rem;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--deep-cyan), var(--xray-cyan));
+  color: var(--bg-obsidian);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-normal);
+  box-shadow: var(--glow-cyan);
+}
+
+.btn-cta:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, var(--xray-cyan), #A2F3FF);
+}
+
+/* SVG Anatomical Visual Containers */
+.svg-interactive-stage {
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  background: rgba(8, 10, 15, 0.6);
+  border: 1px solid var(--border-cyan);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-interactive-stage svg {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+}
+
+/* Breathing Simulation Section */
+.simulation-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.sim-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.sim-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-cyan);
+  background: var(--bg-obsidian);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.sim-btn.active, .sim-btn:hover {
+  background: var(--deep-cyan);
+  color: var(--xray-cyan);
+  border-color: var(--xray-cyan);
+}
+
+/* Flashcards Component */
+.flashcards-container {
+  perspective: 1000px;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.flashcard {
+  width: 100%;
+  min-height: 220px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-cyan);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+  backface-visibility: hidden;
+  width: 100%;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  position: absolute;
+}
+
+/* Quiz Section Styles */
+.quiz-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-cyan);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+}
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  background: var(--bg-obsidian);
+  border: 1px solid var(--border-cyan);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  text-align: right;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.quiz-option:hover {
+  border-color: var(--xray-cyan);
+  background: rgba(112, 232, 255, 0.05);
+}
+
+.quiz-option.correct {
+  background: rgba(112, 232, 255, 0.2) !important;
+  border-color: var(--xray-cyan) !important;
+  color: var(--xray-cyan);
+}
+
+.quiz-option.wrong {
+  background: rgba(216, 73, 91, 0.2) !important;
+  border-color: var(--anatomical-crimson) !important;
+  color: var(--anatomical-crimson);
+}
+
+/* Accessibility & Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-right: 0;
+    padding: 1rem;
+    padding-top: 4.5rem;
+    padding-bottom: calc(var(--mobile-nav-height) + 1.5rem);
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+}

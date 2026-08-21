@@ -1,0 +1,74 @@
+[
+  {
+    "id": "fc1",
+    "chapter": 1,
+    "term": "الجهاز الهيكلي (Skeletal System)",
+    "definition": "منظومة حيوية تتكون من 5 مكونات: العظام، الغضاريف، المفاصل، الأربطة، والأوتار.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY",
+    "tag": "منظومة الدعامة"
+  },
+  {
+    "id": "fc2",
+    "chapter": 2,
+    "term": "الهيكل المحوري (Axial Skeleton)",
+    "definition": "المحور الرئيسي للجسم ويتكون من 80 عظمة تشمل: الجمجمة، العمود الفقري، والقفص الصدري.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY",
+    "tag": "الهيكل المحوري"
+  },
+  {
+    "id": "fc3",
+    "chapter": 3,
+    "term": "القناة العصبية (Neural Canal)",
+    "definition": "تجويف داخل الفقرات يمر من خلاله الحبل الشوكي لحمايته وتوفير ممر مأمون للأعصاب الشوكية.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "MEDIUM",
+    "tag": "العمود الفقري"
+  },
+  {
+    "id": "fc4",
+    "chapter": 3,
+    "term": "عدد عظام العمود الفقري في البالغين",
+    "definition": "26 عظمة (24 فقرة متمفصلة + 1 عظمة عجزية + 1 عظمة عصعصية).",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "MEDIUM",
+    "tag": "أرقام تشريحية"
+  },
+  {
+    "id": "fc5",
+    "chapter": 4,
+    "term": "الثقب الأعظم (Foramen Magnum)",
+    "definition": "ثقب يقع في قاع الجزء المخي للجمجمة يربط المخ بالحبل الشوكي.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "MEDIUM",
+    "tag": "الجمجمة"
+  },
+  {
+    "id": "fc6",
+    "chapter": 5,
+    "term": "حركة الضلوع أثناء الشهيق والزفير",
+    "definition": "في الشهيق: تتحرك الضلوع للخارج والأمام لزيادة حجم التجويف الصدري. في الزفير: تعود للخلف والداخل.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY",
+    "tag": "القفص الصدري"
+  },
+  {
+    "id": "fc7",
+    "chapter": 6,
+    "term": "الاتصال المباشر وغير المباشر بالعمود الفقري",
+    "definition": "الجمجمة والقفص الصدري يتصلان مباشرة بالعمود الفقري، بينما الأطراف تتصل بشكل غير مباشر عبر الأحزمة.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "HARD",
+    "tag": "الاتصالات"
+  },
+  {
+    "id": "fc8",
+    "chapter": 7,
+    "term": "الأربطة vs الأوتار",
+    "definition": "الأربطة: نسيج ضام يربط عظمة بعظمة. الأوتار: نسيج ضام يربط عضلة بعظمة.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY",
+    "tag": "مختبر الأخطاء"
+  }
+]
