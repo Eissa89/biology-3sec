@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="docTitle">أحياء — الصف الثالث الثانوي | المنصة التعليمية</title>
+    <meta name="description" content="مختبر تفاعلي لفهم الأحياء وليس مجرد حفظها — الصف الثالث الثانوي">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link" data-i18n="skipLink">الانتقال إلى المحتوى الرئيسي</a>
+
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="brand-logo" aria-label="أحياء Biology">
+                <span class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/>
+                        <path d="M12 6V18"/>
+                        <path d="M6 12H18"/>
+                        <circle cx="12" cy="12" r="4"/>
+                    </svg>
+                </span>
+                <span class="brand-text">
+                    <span class="brand-ar">أحياء</span>
+                    <span class="brand-divider">|</span>
+                    <span class="brand-en">Biology</span>
+                </span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+                <ul class="nav-links">
+                    <li><a href="#lessons" class="nav-link" data-i18n="navLessons">الدروس</a></li>
+                    <li><a href="#learning-path" class="nav-link" data-i18n="navReview">المراجعة</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="langToggleBtn" class="lang-toggle-btn" aria-label="تغيير اللغة Change Language">
+                    <span class="lang-text" id="langText">EN</span>
+                </button>
+                <button id="mobileMenuBtn" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobileNav" aria-label="قائمة التصفح Menu">
+                    <span class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileNav" class="mobile-nav" hidden>
+            <nav aria-label="تنقل الجوال">
+                <ul class="mobile-nav-links">
+                    <li><a href="#lessons" class="mobile-nav-link" data-i18n="navLessons">الدروس</a></li>
+                    <li><a href="#learning-path" class="mobile-nav-link" data-i18n="navReview">المراجعة</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        <span data-i18n="heroBadge">منصة الأحياء التفاعلية</span>
+                    </div>
+                    <h1 class="hero-title" data-i18n="heroTitle">
+                        أحياء — الصف الثالث الثانوي
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="heroSubtitle">
+                        مختبر تفاعلي لفهم الأحياء وليس مجرد حفظها.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#lessons" class="btn btn-primary" data-i18n="heroPrimaryCta">
+                            ابدأ المذاكرة
+                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" class="arrow-path"/>
+                            </svg>
+                        </a>
+                        <a href="#learning-path" class="btn btn-secondary" data-i18n="heroSecondaryCta">
+                            استكشف الدروس
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="lab-graphic">
+                        <div class="glow-backdrop"></div>
+                        <svg class="hero-svg-lab" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="200" cy="200" r="180" stroke="#10B981" stroke-width="1" stroke-dasharray="4 8" opacity="0.4"/>
+                            <circle cx="200" cy="200" r="130" stroke="#70E8FF" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.6"/>
+                            <circle cx="200" cy="200" r="80" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+                            <!-- DNA Helix Concept SVG -->
+                            <path d="M140 100 Q 200 150 260 200 T 140 300" stroke="#70E8FF" stroke-width="3" fill="none" opacity="0.85"/>
+                            <path d="M260 100 Q 200 150 140 200 T 260 300" stroke="#10B981" stroke-width="3" fill="none" opacity="0.85"/>
+                            <!-- Connecting Base Pairs -->
+                            <line x1="160" y1="117" x2="240" y2="117" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+                            <line x1="180" y1="140" x2="220" y2="140" stroke="#F2F0EA" stroke-width="2" opacity="0.7"/>
+                            <line x1="200" y1="200" x2="200" y2="200" stroke="#F2F0EA" stroke-width="4" stroke-linecap="round"/>
+                            <line x1="180" y1="260" x2="220" y2="260" stroke="#D4AF37" stroke-width="2" opacity="0.7"/>
+                            <line x1="160" y1="283" x2="240" y2="283" stroke="#70E8FF" stroke-width="2" opacity="0.7"/>
+                            <!-- Floating Nodes -->
+                            <circle cx="140" cy="100" r="6" fill="#70E8FF"/>
+                            <circle cx="260" cy="100" r="6" fill="#10B981"/>
+                            <circle cx="260" cy="200" r="6" fill="#70E8FF"/>
+                            <circle cx="140" cy="200" r="6" fill="#10B981"/>
+                            <circle cx="140" cy="300" r="6" fill="#70E8FF"/>
+                            <circle cx="260" cy="300" r="6" fill="#10B981"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Hub Section -->
+        <section id="lessons" class="lessons-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag" data-i18n="lessonsTag">وحدات المنهج</span>
+                    <h2 class="section-title" data-i18n="lessonsTitle">اختر الدرس للبدء</h2>
+                    <p class="section-desc" data-i18n="lessonsDesc">دروس تفاعلية مدعومة بالنماذج والمحاكاة العلمية الدقيقة</p>
+                </div>
+
+                <div class="lessons-grid">
+                    <!-- Lesson Card 01 -->
+                    <article class="lesson-card" data-lesson="1">
+                        <div class="card-header">
+                            <span class="lesson-number">01</span>
+                            <span class="lesson-badge" data-i18n="card1Badge">الدرس الأول</span>
+                        </div>
+                        <div class="card-visual" aria-hidden="true">
+                            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="20" width="140" height="80" rx="12" fill="#0E2A1F" stroke="#10B981" stroke-width="1.5"/>
+                                <!-- Plant Cell Structural Lattice -->
+                                <path d="M50 40 L80 20 L120 20 L150 40 L150 80 L120 100 L80 100 L50 80 Z" fill="#10B981" fill-opacity="0.1" stroke="#10B981" stroke-width="2"/>
+                                <circle cx="100" cy="60" r="22" fill="#10B981" fill-opacity="0.2" stroke="#70E8FF" stroke-width="1.5"/>
+                                <!-- Pressure vectors -->
+                                <path d="M100 38 V 26 M100 82 V 94 M78 60 H 66 M122 60 H 134" stroke="#70E8FF" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="100" cy="60" r="8" fill="#70E8FF"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="card1Title">الدعامة في النبات</h3>
+                            <p class="card-desc" data-i18n="card1Desc">دراسة آليات الدعامة الفسيولوجية والتركيبية وتأثير الضغط الأسموزي والتركيب الجداري في الخلايا النباتية.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="أول درس/index.html" class="card-btn" aria-label="دخول الدرس الأول: الدعامة في النبات">
+                                <span data-i18n="enterLessonBtn">دخول الدرس</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" class="arrow-path"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Lesson Card 02 -->
+                    <article class="lesson-card" data-lesson="2">
+                        <div class="card-header">
+                            <span class="lesson-number">02</span>
+                            <span class="lesson-badge" data-i18n="card2Badge">الدرس الثاني</span>
+                        </div>
+                        <div class="card-visual" aria-hidden="true">
+                            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="20" width="140" height="80" rx="12" fill="#0E2A1F" stroke="#70E8FF" stroke-width="1.5"/>
+                                <!-- Skeleton Vertebrae / Spine Line Visual -->
+                                <path d="M100 25 V95" stroke="#70E8FF" stroke-width="3" stroke-linecap="round"/>
+                                <!-- Vertebral Ribs Rings -->
+                                <ellipse cx="100" cy="40" rx="35" ry="10" stroke="#70E8FF" stroke-width="1.5" stroke-dasharray="4 2" fill="none"/>
+                                <ellipse cx="100" cy="58" rx="42" ry="12" stroke="#70E8FF" stroke-width="1.5" stroke-dasharray="4 2" fill="none"/>
+                                <ellipse cx="100" cy="76" rx="38" ry="10" stroke="#70E8FF" stroke-width="1.5" stroke-dasharray="4 2" fill="none"/>
+                                <circle cx="100" cy="40" r="4" fill="#D4AF37"/>
+                                <circle cx="100" cy="58" r="4" fill="#D4AF37"/>
+                                <circle cx="100" cy="76" r="4" fill="#D4AF37"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="card2Title">الهيكل المحوري في الإنسان</h3>
+                            <p class="card-desc" data-i18n="card2Desc">استكشاف أجزاء الهيكل العظمي المحوري: الجمجمة، العمود الفقري، والقفص الصدري بوصف تشريحي دقيق.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="ثاني درس/index.html" class="card-btn" aria-label="دخول الدرس الثاني: الهيكل المحوري في الإنسان">
+                                <span data-i18n="enterLessonBtn">دخول الدرس</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" class="arrow-path"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Lesson Card 03 -->
+                    <article class="lesson-card" data-lesson="3">
+                        <div class="card-header">
+                            <span class="lesson-number">03</span>
+                            <div class="badge-group">
+                                <span class="lesson-badge" data-i18n="card3Badge">الدرس الثالث</span>
+                                <span class="sub-badge">CINEMATIC BOTANICAL LAB</span>
+                            </div>
+                        </div>
+                        <div class="card-visual" aria-hidden="true">
+                            <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="30" y="20" width="140" height="80" rx="12" fill="#0E2A1F" stroke="#D4AF37" stroke-width="1.5"/>
+                                <!-- Tendril / Auxin Plant Movement Spiral -->
+                                <path d="M60 90 C 70 90, 80 50, 100 50 C 120 50, 110 80, 130 80 C 145 80, 150 60, 140 50" stroke="#10B981" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <path d="M140 50 C 135 40, 150 30, 155 40" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" fill="none"/>
+                                <!-- Light Direction Ray -->
+                                <line x1="160" y1="25" x2="135" y2="45" stroke="#70E8FF" stroke-width="2" stroke-dasharray="3 3"/>
+                                <circle cx="165" cy="22" r="5" fill="#70E8FF"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title" data-i18n="card3Title">الحركة في النبات</h3>
+                            <p class="card-desc" data-i18n="card3Desc">تحليل أنواع الحركة في النباتات كالشد بالمحاليق، الانتحاء الضوئي، وحركة اللمس والإظلام.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="ثالث درس/index.html" class="card-btn" aria-label="دخول الدرس الثالث: الحركة في النبات">
+                                <span data-i18n="enterLessonBtn">دخول الدرس</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 12h14M12 5l7 7-7 7" class="arrow-path"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Learning Path Section -->
+        <section id="learning-path" class="path-section">
+            <div class="container">
+                <div class="path-box">
+                    <div class="path-header">
+                        <span class="section-tag" data-i18n="pathTag">تسلسل الدراسة</span>
+                        <h2 class="path-title" data-i18n="pathTitle">اختر درسك وابدأ</h2>
+                        <p class="path-subtitle" data-i18n="pathSubtitle">مسار تعليمي تفاعلي يربط المفاهيم البيولوجية بأسلوب سلس</p>
+                    </div>
+
+                    <div class="path-steps">
+                        <div class="path-step">
+                            <div class="step-num">01</div>
+                            <div class="step-info">
+                                <h4 class="step-title" data-i18n="card1Title">الدعامة في النبات</h4>
+                                <span class="step-sub" data-i18n="step1Sub">التركيب والضغط الأسموزي</span>
+                            </div>
+                        </div>
+
+                        <div class="path-arrow" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M19 12l-7 7-7-7" class="arrow-directional"/>
+                            </svg>
+                        </div>
+
+                        <div class="path-step">
+                            <div class="step-num">02</div>
+                            <div class="step-info">
+                                <h4 class="step-title" data-i18n="card2Title">الهيكل المحوري في الإنسان</h4>
+                                <span class="step-sub" data-i18n="step2Sub">التشريح العظمي والوظائف</span>
+                            </div>
+                        </div>
+
+                        <div class="path-arrow" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M19 12l-7 7-7-7" class="arrow-directional"/>
+                            </svg>
+                        </div>
+
+                        <div class="path-step">
+                            <div class="step-num">03</div>
+                            <div class="step-info">
+                                <h4 class="step-title" data-i18n="card3Title">الحركة في النبات</h4>
+                                <span class="step-sub" data-i18n="step3Sub">الانتحاء والاستجابة الفسيولوجية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="footer-title" data-i18n="heroTitle">أحياء — الصف الثالث الثانوي</span>
+            </div>
+            <div class="footer-copy">
+                <span>&copy; 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
