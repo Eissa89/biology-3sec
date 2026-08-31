@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مختبر نباتي سينمائي لدرس الحركة في النبات - أحياء الصف الثالث الثانوي">
+  <title>الحركة في النبات | CINEMATIC BOTANICAL LAB</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="progress-track">
+    <div id="reading-progress" class="progress-fill"></div>
+  </div>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+      <span class="brand-icon" style="width: 32px; height: 32px; font-size: 1rem;">🌿</span>
+      <span style="font-weight: bold; color: var(--text-primary); font-size: 0.9rem;" data-i18n="nav.brandTitle">مختبر الأحياء 3ث</span>
+    </div>
+    <div class="lang-switcher" style="margin-bottom: 0;">
+      <button id="btn-mobile-lang-ar" class="lang-btn active">عربي</button>
+      <button id="btn-mobile-lang-en" class="lang-btn">EN</button>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+
+    <!-- Desktop Navigation Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🌱</div>
+        <div class="brand-info">
+          <h2 data-i18n="nav.brandTitle">مختبر الأحياء 3ث</h2>
+          <p data-i18n="nav.brandSubtitle">BOTANICAL LAB</p>
+        </div>
+      </div>
+
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button id="btn-lang-ar" class="lang-btn active">العربية</button>
+        <button id="btn-lang-en" class="lang-btn">English</button>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item active"><a href="#hero"><span class="chapter-num">00</span> <span data-i18n="nav.hero">الرئيسية</span></a></li>
+          <li class="nav-item"><a href="#sec01"><span class="chapter-num">01</span> <span data-i18n="nav.sec01">مفهوم الحركة</span></a></li>
+          <li class="nav-item"><a href="#sec02"><span class="chapter-num">02</span> <span data-i18n="nav.sec02">أنواع الحركة الثلاثة</span></a></li>
+          <li class="nav-item"><a href="#sec03"><span class="chapter-num">03</span> <span data-i18n="nav.sec03">حركات النبات</span></a></li>
+          <li class="nav-item"><a href="#sec04"><span class="chapter-num">04</span> <span data-i18n="nav.sec04">مختبر المستحية</span></a></li>
+          <li class="nav-item"><a href="#sec05"><span class="chapter-num">05</span> <span data-i18n="nav.sec05">مختبر الانتحاء</span></a></li>
+          <li class="nav-item"><a href="#sec06"><span class="chapter-num">06</span> <span data-i18n="nav.sec06">مُحرك الأوكسينات</span></a></li>
+          <li class="nav-item"><a href="#sec07"><span class="chapter-num">07</span> <span data-i18n="nav.sec07">تجربة بويسون جونسون</span></a></li>
+          <li class="nav-item"><a href="#sec08"><span class="chapter-num">08</span> <span data-i18n="nav.sec08">مختبر المحاليق</span></a></li>
+          <li class="nav-item"><a href="#sec09"><span class="chapter-num">09</span> <span data-i18n="nav.sec09">الجذور الشادة</span></a></li>
+          <li class="nav-item"><a href="#sec10"><span class="chapter-num">10</span> <span data-i18n="nav.sec10">وضع الاختبار</span></a></li>
+          <li class="nav-item"><a href="#sec11"><span class="chapter-num">11</span> <span data-i18n="nav.sec11">فخاخ الامتحانات</span></a></li>
+          <li class="nav-item"><a href="#sec12"><span class="chapter-num">12</span> <span data-i18n="nav.sec12">الملخص النهائي</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Stage -->
+    <main class="main-content">
+
+      <!-- SECTION 00: HERO -->
+      <section id="hero" class="lesson-section hero-section">
+        <span class="badge" data-i18n="hero.badge">الوحدة الأولى — الفصل الأول — الدرس الثالث</span>
+        <h1 class="hero-title" data-i18n="hero.title">الحركة في النبات</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">كيف يستجيب النبات للمؤثرات دون أن ينتقل بجسمه بالكامل؟</p>
+
+        <!-- Inline Vector SVG Fallback Visual -->
+        <div class="hero-visual">
+          <svg viewBox="0 0 400 240" class="svg-diagram" aria-label="Hero Botanical Visual">
+            <defs>
+              <linearGradient id="stemGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#0E2A1F" />
+                <stop offset="100%" stop-color="#10B981" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <!-- Soil line -->
+            <line x1="20" y1="200" x2="380" y2="200" stroke="#1B4D3E" stroke-width="3" stroke-dasharray="6,6" />
+            <!-- Root -->
+            <path d="M 200 200 Q 190 220 180 235" stroke="#D4AF37" stroke-width="4" fill="none" />
+            <path d="M 200 200 Q 215 220 225 238" stroke="#D4AF37" stroke-width="3" fill="none" />
+            <!-- Sprouting Stem with Auxin flux -->
+            <path d="M 200 200 Q 200 120 250 60" stroke="url(#stemGrad)" stroke-width="10" fill="none" stroke-linecap="round" />
+            <!-- Glowing Leaves -->
+            <path d="M 220 130 C 180 110 170 80 205 100 Z" fill="#10B981" />
+            <path d="M 235 90 C 270 70 280 40 245 65 Z" fill="#70E8FF" filter="url(#glow)" />
+            <!-- Auxin Particles -->
+            <circle cx="215" cy="110" r="4" fill="#70E8FF" filter="url(#glow)" />
+            <circle cx="230" cy="80" r="3" fill="#70E8FF" filter="url(#glow)" />
+            <circle cx="245" cy="55" r="4" fill="#70E8FF" filter="url(#glow)" />
+          </svg>
+        </div>
+
+        <a href="#sec01" class="btn-cta"><span data-i18n="hero.cta">ابدأ التجربة 🌿</span></a>
+      </section>
+
+      <!-- SECTION 01: WHAT IS MOVEMENT -->
+      <section id="sec01" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">01 — <span data-i18n="sec01.title">ما هي الحركة؟</span></h2>
+          <p class="section-subtitle" data-i18n="sec01.subtitle">What is Movement?</p>
+        </div>
+        <p data-i18n="sec01.desc">الحركة ظاهرة حيوية تميز جميع الكائنات الحية وتنشأ ذاتيًا نتيجة الاستجابة لمؤثرات داخلية أو خارجية.</p>
+
+        <div class="grid-cards">
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec01.positiveTitle">استجابة إيجابية (+)</h3>
+            <p class="card-desc" data-i18n="sec01.positiveDesc">الحركة أو الانحناء باتجاه المؤثر.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec01.negativeTitle">استجابة سلبية (-)</h3>
+            <p class="card-desc" data-i18n="sec01.negativeDesc">الحركة أو الابتعاد عن مصدر المؤثر.</p>
+          </div>
+        </div>
+
+        <div class="quick-recall-box">
+          <div class="recall-question">💡 <span data-i18n="sec01.quickRecallQ">سؤال سريع: ماذا نسمي استجابة الكائن الحي بالابتعاد عن المؤثر؟</span></div>
+          <div class="recall-answer" data-i18n="sec01.quickRecallA">استجابة سلبية (Negative Response).</div>
+        </div>
+      </section>
+
+      <!-- SECTION 02: THREE FORMS OF MOVEMENT -->
+      <section id="sec02" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">02 — <span data-i18n="sec02.title">أنواع الحركة في الكائنات الحية</span></h2>
+          <p class="section-subtitle" data-i18n="sec02.subtitle">Three Forms of Movement</p>
+        </div>
+        <p data-i18n="sec02.desc">تُقسَّم الحركة بناءً على «الجزء المتحرك» من الكائن الحي إلى ثلاثة أنواع رئيسية:</p>
+
+        <div class="grid-cards">
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec02.types.continuous.title">01 — حركة دائبة (Continuous)</h3>
+            <p class="card-desc" data-i18n="sec02.types.continuous.desc">حركة مستمرة داخل كل خلية لتسيير أنشطتها الحيوية.</p>
+            <p class="card-example" data-i18n="sec02.types.continuous.example">مثال: الحركة الدورانية السيتوبلازمية.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec02.types.positional.title">02 — حركة موضعية (Positional)</h3>
+            <p class="card-desc" data-i18n="sec02.types.positional.desc">حركة عضو بالنسبة لباقي أجزاء الجسم الثابتة.</p>
+            <p class="card-example" data-i18n="sec02.types.positional.example">مثال: الحركة الدودية للأمعاء وتدلي وريقات المستحية.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec02.types.locomotion.title">03 — حركة كلية (Locomotion)</h3>
+            <p class="card-desc" data-i18n="sec02.types.locomotion.desc">انتقال الكائن الحي بالكامل من مكان إلى آخر.</p>
+            <p class="card-example" data-i18n="sec02.types.locomotion.example">مثال: حركة الأميبا والسلاحف البحرية.</p>
+          </div>
+        </div>
+
+        <div class="lab-display" style="margin-top: 2rem;">
+          <h3 style="color: var(--cyan-scientific); margin-bottom: 0.5rem;" data-i18n="sec02.ameobaTitle">نموذج الأميبا الشامل (Amoeba System)</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="sec02.ameobaNote">تجمع الأميبا الأنواع الثلاثة: حركة السيتوبلازم (دائبة)، حركة الأقدام الكاذبة (موضعية)، والتحرك نحو البكتيريا (كلية).</p>
+        </div>
+      </section>
+
+      <!-- SECTION 03: PLANT MOVEMENT OVERVIEW -->
+      <section id="sec03" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">03 — <span data-i18n="sec03.title">أنظمة الحركة في النبات</span></h2>
+          <p class="section-subtitle" data-i18n="sec03.subtitle">Four Primary Plant Movements</p>
+        </div>
+        <div class="grid-cards">
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec03.items.0.title">حركة اللمس</h3>
+            <p class="card-desc" data-i18n="sec03.items.0.desc">استجابة فورية للمس المباشر كما في نبات المستحية.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec03.items.1.title">النوم واليقظة</h3>
+            <p class="card-desc" data-i18n="sec03.items.1.desc">تغيرات اسموزية يومية بين الليل والنهار في البقوليات.</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec03.items.2.title">الانتحاءات</h3>
+            <p class="card-desc" data-i18n="sec03.items.2.desc">استجابة نموية اتجاهية لمؤثرات جانبية (ضوء، جاذبية، ماء).</p>
+          </div>
+          <div class="card">
+            <h3 class="card-title" data-i18n="sec03.items.3.title">حركات الشد</h3>
+            <p class="card-desc" data-i18n="sec03.items.3.desc">شد السيقان بالمحاليق أو شد الأبصال بالجذور الشادة.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 04: MIMOSA LAB -->
+      <section id="sec04" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">04 — <span data-i18n="sec04.title">مختبر المستحية (Mimosa Lab)</span></h2>
+          <p class="section-subtitle" data-i18n="sec04.subtitle">Touch & Turgor Pressure Mechanism</p>
+        </div>
+        <p data-i18n="sec04.instructions" style="margin-bottom: 1rem;">اضغط على الوريقة للمسها وملاحظة ظاهرة التدلي والتغير الاسموزي:</p>
+
+        <div class="lab-controls">
+          <button id="mimosa-touch-btn" class="btn-action"><span data-i18n="sec04.btnTouch">لمس النبات 🖐️</span></button>
+          <button id="mimosa-reset-btn" class="btn-action btn-gold"><span data-i18n="sec04.btnReset">إعادة ضبط (تجديد الامتلاء) 🔄</span></button>
+        </div>
+
+        <div class="lab-display">
+          <svg viewBox="0 0 400 200" class="svg-diagram">
+            <!-- Stem -->
+            <line x1="50" y1="180" x2="150" y2="100" stroke="#10B981" stroke-width="6" />
+            <!-- Pulvinus Joint -->
+            <circle cx="150" cy="100" r="14" fill="#1B4D3E" stroke="#70E8FF" stroke-width="2" />
+            <!-- Leaflets Group -->
+            <g id="mimosa-leaflets-svg" style="transform-origin: 150px 100px; transition: transform 0.4s ease;">
+              <path d="M 150 100 C 200 60 280 50 320 70 C 280 90 200 100 150 100 Z" fill="#10B981" />
+              <path d="M 150 100 C 190 40 260 20 300 40 C 260 70 190 85 150 100 Z" fill="#10B981" opacity="0.8" />
+            </g>
+            <!-- Osmotic Water Flow Arrow -->
+            <path id="mimosa-water-flow" d="M 150 100 Q 140 130 120 150" stroke="#70E8FF" stroke-width="4" stroke-dasharray="4,4" fill="none" opacity="0" />
+          </svg>
+          <div id="mimosa-status" style="margin-top: 1rem; font-weight: bold; color: var(--text-primary);" data-i18n="sec04.statusNormal">
+            الحالة: الوريقات منبسطة وممتلئة بالماء (دعامة فسيولوجية قائمة).
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;" data-i18n="sec04.explanation">الآلية العلمية: تعمل الانتفاخات كمفاصل اسموزية. عند اللمس يخرج الماء اسموزيًا من خلايا النصف السفلي للانتفاخ إلى النصف العلوي فتفقد خلايا النصف السفلي امتلاءها وتتدلى الوريقات.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 05: TROPISM LAB -->
+      <section id="sec05" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">05 — <span data-i18n="sec05.title">مختبر الانتحاء (Tropism Lab)</span></h2>
+          <p class="section-subtitle" data-i18n="sec05.subtitle">Directional Growth Responses</p>
+        </div>
+        <p data-i18n="sec05.instructions" style="margin-bottom: 1rem;">اختر المؤثر الجانبي لرؤية استجابة الساق والجذر:</p>
+
+        <div class="lab-controls">
+          <button id="trop-btn-photo" class="btn-action active"><span data-i18n="sec05.btnPhoto">الضوء (Light) ☀️</span></button>
+          <button id="trop-btn-geo" class="btn-action"><span data-i18n="sec05.btnGeo">الجاذبية (Gravity) 🌍</span></button>
+          <button id="trop-btn-hydro" class="btn-action"><span data-i18n="sec05.btnHydro">الماء/الرطوبة (Water) 💧</span></button>
+        </div>
+
+        <div class="lab-display">
+          <h3 id="trop-display-title" style="color: var(--cyan-scientific); margin-bottom: 1rem;">الانتحاء الضوئي (Phototropism)</h3>
+          <svg viewBox="0 0 200 300" class="svg-diagram" style="max-width: 250px;">
+            <!-- Soil line -->
+            <line x1="10" y1="150" x2="190" y2="150" stroke="#1B4D3E" stroke-width="2" />
+            <!-- Stem Path -->
+            <path id="trop-stem-svg" d="M 100 150 Q 100 80 130 30" stroke="#10B981" stroke-width="8" fill="none" stroke-linecap="round" />
+            <!-- Root Path -->
+            <path id="trop-root-svg" d="M 100 150 Q 100 220 70 270" stroke="#D4AF37" stroke-width="6" fill="none" stroke-linecap="round" />
+          </svg>
+          <div style="margin-top: 1rem; text-align: start; background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm);">
+            <p id="trop-stem-text" style="color: var(--chlorophyll-vibrant); font-weight: bold; margin-bottom: 0.5rem;"></p>
+            <p id="trop-root-text" style="color: var(--gold-highlight); font-weight: bold;"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 06: AUXIN ENGINE -->
+      <section id="sec06" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">06 — <span data-i18n="sec06.title">مُحرك الأوكسينات (Auxin Engine)</span></h2>
+          <p class="section-subtitle" data-i18n="sec06.subtitle">Visualizing Auxin Migration & Growth Rate</p>
+        </div>
+        <p data-i18n="sec06.instructions">حرك المؤشر لتغيير توزيع الأوكسينات وملاحظة انحناء الساق:</p>
+
+        <div class="slider-container">
+          <div class="slider-label">
+            <span data-i18n="sec06.sliderLabel">توزيع الأوكسينات (جانب مظلم vs جانب مضيء):</span>
+            <span id="auxin-gradient-val" style="color: var(--cyan-scientific);">متساوي (متماثل)</span>
+          </div>
+          <input type="range" id="auxin-slider" class="custom-slider" min="0" max="100" value="0">
+        </div>
+
+        <div class="lab-display">
+          <svg viewBox="0 0 200 200" class="svg-diagram" style="max-width: 260px;">
+            <path id="auxin-stem-path" d="M 100 180 Q 100 90 100 20" stroke="#10B981" stroke-width="12" fill="none" stroke-linecap="round" />
+            <!-- Auxin Particles -->
+            <circle cx="92" cy="80" r="3" fill="#70E8FF" />
+            <circle cx="92" cy="110" r="3" fill="#70E8FF" />
+            <circle cx="92" cy="140" r="3" fill="#70E8FF" />
+          </svg>
+          <div style="margin-top: 1rem; font-size: 0.88rem; color: var(--gold-highlight); background: rgba(212, 175, 55, 0.1); padding: 0.75rem; border-radius: var(--radius-sm);">
+            <strong data-i18n="sec06.ruleTitle">القاعدة الذهبية للأوكسينات:</strong> <span data-i18n="sec06.ruleText">الأوكسين في الساق → تركيز أعلى = استطالة أسرع. الأوكسين في الجذر → تركيز أعلى = تثبيط النمو.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 07: BOYSEN-JENSEN LAB -->
+      <section id="sec07" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">07 — <span data-i18n="sec07.title">تجربة بويسون جونسون (Boysen-Jensen Lab)</span></h2>
+          <p class="section-subtitle" data-i18n="sec07.subtitle">Proving the Chemical Nature of Phototropism</p>
+        </div>
+        <p data-i18n="sec07.instructions" style="margin-bottom: 1rem;">اختر حالة التجربة لملاحظة انتقال الأوكسينات من القمة النامية:</p>
+
+        <div class="lab-controls">
+          <button id="bj-btn-cut" class="btn-action"><span data-i18n="sec07.btnCut">01 — قطع القمة (Cut Tip)</span></button>
+          <button id="bj-btn-gelatin" class="btn-action active"><span data-i18n="sec07.btnGelatin">02 — قمة + جيلاتين (Gelatin)</span></button>
+          <button id="bj-btn-mica" class="btn-action"><span data-i18n="sec07.btnMica">03 — قمة + مايكا (Mica)</span></button>
+        </div>
+
+        <div class="lab-display">
+          <svg viewBox="0 0 200 200" class="svg-diagram" style="max-width: 240px;">
+            <!-- Stem -->
+            <path id="bj-stem-svg" d="M 100 160 Q 100 100 130 50" stroke="#10B981" stroke-width="12" fill="none" stroke-linecap="round" />
+            <!-- Barrier Block (Gelatin/Mica) -->
+            <rect id="bj-barrier-svg" x="90" y="90" width="20" height="6" fill="#70E8FF" rx="2" />
+            <!-- Decapitated Tip -->
+            <path id="bj-tip-svg" d="M 100 50 L 94 65 L 106 65 Z" fill="#10B981" />
+          </svg>
+          <div id="bj-result-text" style="margin-top: 1rem; font-weight: bold; color: var(--cyan-scientific);" data-i18n="sec07.gelatinRes">
+            النتيجة: استعادة الاستجابة وانحناء الساق نحو الضوء لأن الجيلاتين مادة نافذة تنفذ الأوكسينات من خلالها.
+          </div>
+          <div style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--gold-highlight);" data-i18n="sec07.conclusion">
+            الاستنتاج الرئيسي: القمة النامية لبادرة الشوفان تفرز مواد كيميائية (الأوكسينات Auxins) تنتقل بالانتشار وتسبب الانتحاء.
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 08: TENDRIL LAB -->
+      <section id="sec08" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">08 — <span data-i18n="sec08.title">مختبر الشد بالمحاليق (Tendril Lab)</span></h2>
+          <p class="section-subtitle" data-i18n="sec08.subtitle">Climbing Mechanism in Weak Stems</p>
+        </div>
+
+        <div class="lab-controls">
+          <button class="btn-action tendril-step-btn active" data-step="1">01</button>
+          <button class="btn-action tendril-step-btn" data-step="2">02</button>
+          <button class="btn-action tendril-step-btn" data-step="3">03</button>
+          <button class="btn-action tendril-step-btn" data-step="4">04</button>
+          <button class="btn-action tendril-step-btn" data-step="5">05</button>
+        </div>
+
+        <div class="lab-display">
+          <h3 id="tendril-step-title" style="color: var(--gold-highlight); margin-bottom: 0.5rem;">01 — ساق ضعيفة</h3>
+          <p id="tendril-step-desc" style="color: var(--text-muted); margin-bottom: 1rem;">الساق غير قادرة على الاستقامة رأسيًا بمفردها.</p>
+
+          <svg viewBox="0 0 300 200" class="svg-diagram">
+            <!-- Support Stake -->
+            <rect x="180" y="20" width="12" height="160" fill="#334155" rx="3" />
+            <!-- Main Weak Stem -->
+            <path d="M 50 180 Q 50 150 50 150" stroke="#10B981" stroke-width="8" stroke-linecap="round" />
+            <!-- Tendril Path -->
+            <path id="tendril-svg-path" d="M 50 150 Q 80 140 100 130" stroke="#70E8FF" stroke-width="4" fill="none" stroke-linecap="round" />
+          </svg>
+
+          <p style="font-size: 0.85rem; color: var(--gold-highlight); margin-top: 1rem;" data-i18n="sec08.examples">أمثلة شائعة: العنب، البازلاء، اللبلاب، اللوف.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 09: CONTRACTILE ROOTS -->
+      <section id="sec09" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">09 — <span data-i18n="sec09.title">الجذور الشادة (Contractile Roots)</span></h2>
+          <p class="section-subtitle" data-i18n="sec09.subtitle">Underground Anchorage & Protection</p>
+        </div>
+        <p data-i18n="sec09.desc" style="margin-bottom: 1rem;">في كورمات وأبصال النرجس، تتقلص الجذور لأسفل لشد البصلة إلى عمق مناسب في التربة.</p>
+
+        <div class="slider-container">
+          <div class="slider-label">
+            <span data-i18n="sec09.depthLabel">عمق البصلة في التربة:</span>
+            <span id="contractile-depth-text" style="color: var(--gold-highlight);" data-i18n="sec09.shallow">سطحي (غير آمن)</span>
+          </div>
+          <input type="range" id="contractile-slider" class="custom-slider" min="0" max="100" value="0">
+        </div>
+
+        <div class="lab-display">
+          <svg viewBox="0 0 300 220" class="svg-diagram">
+            <!-- Soil Surface -->
+            <line x1="10" y1="40" x2="290" y2="40" stroke="#1B4D3E" stroke-width="3" stroke-dasharray="4,4" />
+            <!-- Bulb Group -->
+            <g id="contractile-bulb-svg" style="transition: transform 0.1s linear;">
+              <!-- Narcissus Bulb -->
+              <path d="M 150 50 C 130 70 120 100 150 110 C 180 100 170 70 150 50 Z" fill="#D4AF37" stroke="#E5C158" stroke-width="2" />
+              <!-- Contractile Roots -->
+              <path d="M 140 110 Q 130 140 125 170" stroke="#70E8FF" stroke-width="3" fill="none" stroke-dasharray="3,3" />
+              <path d="M 160 110 Q 170 140 175 170" stroke="#70E8FF" stroke-width="3" fill="none" stroke-dasharray="3,3" />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- SECTION 10: EXAM MODE -->
+      <section id="sec10" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">10 — <span data-i18n="sec10.title">وضع الاختبار (Exam Mode)</span></h2>
+          <p class="section-subtitle" data-i18n="sec10.subtitle">Interactive Recall & Comprehensive Testing</p>
+        </div>
+
+        <div id="exam-quiz-container" class="quiz-container">
+          <!-- Quiz rendered dynamically by js/quiz.js -->
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <h3 style="color: var(--gold-highlight); margin-bottom: 1rem;">بطاقات المراجعة السريعة (Flashcards)</h3>
+          <div id="flashcard-container">
+            <!-- Rendered by js/flashcards.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 11: EXAM TRAPS -->
+      <section id="sec11" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">11 — <span data-i18n="sec11.title">فخاخ الامتحانات (Exam Traps)</span></h2>
+          <p class="section-subtitle" data-i18n="sec11.subtitle">DON'T FALL FOR IT — 5 Critical Mistakes</p>
+        </div>
+
+        <div class="trap-card">
+          <div class="trap-title" data-i18n="sec11.traps.0.title">Trap 01: الساق vs الجذر في الانتحاء الضوئي</div>
+          <div class="trap-mistake" data-i18n="sec11.traps.0.mistake">الاعتقاد بأن الأوكسين يسبب دائمًا زيادة النمو بنفس الدرجة.</div>
+          <div class="trap-correct" data-i18n="sec11.traps.0.correct">الأوكسين يسبب استطالة خلايا الساق، بينما يثبط استطالة خلايا الجذر عند نفس التركيز العالي!</div>
+        </div>
+
+        <div class="trap-card">
+          <div class="trap-title" data-i18n="sec11.traps.1.title">Trap 02: الجيلاتين vs المايكا</div>
+          <div class="trap-mistake" data-i18n="sec11.traps.1.mistake">الخلط بين مادة المايكا والجيلاتين.</div>
+          <div class="trap-correct" data-i18n="sec11.traps.1.correct">الجيلاتين مادة مائية نافذة تسمح بعبور الأوكسينات، بينما المايكا صفيحة معدنية زجاجية عازلة تمنع عبور الأوكسينات.</div>
+        </div>
+
+        <div class="trap-card">
+          <div class="trap-title" data-i18n="sec11.traps.2.title">Trap 03: سرعة نمو جانبي الحالق</div>
+          <div class="trap-mistake" data-i18n="sec11.traps.2.mistake">الاعتقاد بأن الجانب الملامس للدعامة ينمو أسرع ليحيط بها.</div>
+          <div class="trap-correct" data-i18n="sec11.traps.2.correct">الجانب الملامس ينمو أبطأ (بسبب هجرة الأوكسينات منه)، بينما الجانب غير الملامس ينمو أسرع بكثير مما يسبب التفاف الحالق.</div>
+        </div>
+
+        <div class="trap-card">
+          <div class="trap-title" data-i18n="sec11.traps.3.title">Trap 04: الحركة vs الحركة الكلية</div>
+          <div class="trap-mistake" data-i18n="sec11.traps.3.mistake">اعتبار تدلي وريقات المستحية حركة كلية.</div>
+          <div class="trap-correct" data-i18n="sec11.traps.3.correct">تدلي المستحية حركة موضعية فقط؛ الكائن الحي ثابت في مكانه.</div>
+        </div>
+
+        <div class="trap-card">
+          <div class="trap-title" data-i18n="sec11.traps.4.title">Trap 05: ماذا يحدث إذا لم يجد الحالق دعامة؟</div>
+          <div class="trap-mistake" data-i18n="sec11.traps.4.mistake">الاعتقاد بأن الحالق يستمر في النمو للأبد.</div>
+          <div class="trap-correct" data-i18n="sec11.traps.4.correct">إذا لم يجد الحالق دعامة صلبة أثناء دورانه، يذبل ويموت ويسقط!</div>
+        </div>
+      </section>
+
+      <!-- SECTION 12: FINAL RECALL -->
+      <section id="sec12" class="lesson-section">
+        <div class="section-header">
+          <h2 class="section-title">12 — <span data-i18n="sec12.title">الملخص النهائي (Final Recall)</span></h2>
+          <p class="section-subtitle" data-i18n="sec12.subtitle">Master Architecture of Movement in Plants</p>
+        </div>
+
+        <h3 style="color: var(--cyan-scientific); margin-bottom: 0.75rem;" data-i18n="sec12.treeTitle">شجرة مفاهيم الحركة:</h3>
+        <div class="concept-tree">
+MOVEMENT (الحركة)
+│
+├── Touch (اللمس) → Mimosa pudica
+├── Sleep & Wakefulness (النوم واليقظة) → Legumes
+├── Tropism (الانتحاء)
+│   ├── Photo (ضوئي) → Stem (+), Root (-)
+│   ├── Geo (أرضي) → Stem (-), Root (+)
+│   └── Hydro (مائي) → Root (+)
+│
+└── Pulling (الشد)
+    ├── Tendrils (المحاليق) → Grapevine, Pea
+    └── Contractile Roots (الجذور الشادة) → Narcissus
+        </div>
+
+        <div style="margin-top: 1.5rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--chlorophyll-vibrant); padding: 1.25rem; border-radius: var(--radius-md);">
+          <h3 style="color: var(--chlorophyll-vibrant); margin-bottom: 0.5rem;" data-i18n="sec12.formulaTitle">المعادلة الذهبية للحركة:</h3>
+          <p style="font-weight: bold; color: var(--text-primary);" data-i18n="sec12.formulaText">STIMULUS (مؤثر) → MECHANISM (آلية اسموزية / أوكسينية) → RESPONSE (استجابة إيجابية / سلبية)</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Content & Prompts Data Modules -->
+  <script src="content/ar.js"></script>
+  <script src="content/en.js"></script>
+
+  <script src="prompts/hero.js"></script>
+  <script src="prompts/movement.js"></script>
+  <script src="prompts/mimosa.js"></script>
+  <script src="prompts/tropism.js"></script>
+  <script src="prompts/auxin.js"></script>
+  <script src="prompts/boysen-jensen.js"></script>
+  <script src="prompts/tendrils.js"></script>
+  <script src="prompts/contractile-roots.js"></script>
+  <script src="prompts/index.js"></script>
+
+  <!-- Application Controllers -->
+  <script src="js/app.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/flashcards.js"></script>
+</body>
+</html>
