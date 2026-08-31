@@ -14,6 +14,7 @@ window.LESSON_CONTENT_EN = {
     brandTitle: "Biology Lab 3rd Sec",
     brandSubtitle: "BOTANICAL LAB",
     hero: "Home",
+    visualize: "Concept Map",
     sec01: "Concept of Movement",
     sec02: "Three Forms of Movement",
     sec03: "Plant Movements",
@@ -33,6 +34,18 @@ window.LESSON_CONTENT_EN = {
     subtitle: "How do plants respond to stimuli without shifting their entire body?",
     cta: "Start Experiment 🌿",
     badge: "Unit 1 — Chapter 1 — Lesson 3"
+  },
+
+  visualizeLearning: {
+    title: "Interactive Concept Map",
+    subtitle: "Visualize Learning - Botanical Movement Concept Map",
+    desc: "Explore the comprehensive interactive mapping of all plant movement mechanisms and environmental stimulus connections:",
+    nodeTouch: "Touch Response",
+    nodeSleep: "Sleep & Wakefulness (Turgor)",
+    nodeTropism: "Tropisms (Auxin Engine)",
+    nodeTendril: "Tendril Pulling (Coiling)",
+    nodeRoots: "Contractile Roots",
+    conceptSummary: "All plant movement mechanisms integrate physiological osmotic and hormonal responses to secure support, protection, and environmental adaptation."
   },
 
   sec01: {

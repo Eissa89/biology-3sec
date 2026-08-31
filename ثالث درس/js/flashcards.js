@@ -11,7 +11,7 @@ const FLASHCARDS_DATA = [
   },
   {
     q_ar: "ما الآلية العلمية لحركة اللمس في نبات المستحية؟",
-    a_ar: "خروج الماء اسموزيًا من خلايا الن نصف السفلي للانتفاخات (المفاصل الاسموزية) إلى النصف العلوي، فتفقد خلايا النصف السفلي تماسكها وتتدلى الوريقات.",
+    a_ar: "خروج الماء اسموزيًا من خلايا النصف السفلي للانتفاخات (المفاصل الاسموزية) إلى النصف العلوي، فتفقد خلايا النصف السفلي تماسكها وتتدلى الوريقات.",
     q_en: "What is the mechanism of touch movement in Mimosa?",
     a_en: "Osmotic water movement out of lower thin-walled cells of pulvini into upper cells, causing turgor pressure loss and leaflet drooping."
   },
@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFlashcard();
 });
 
+// Re-render when language changes
+window.renderFlashcard = renderFlashcard;
+
 function renderFlashcard() {
   const container = document.getElementById('flashcard-container');
   if (!container) return;
@@ -49,6 +52,11 @@ function renderFlashcard() {
   const lang = window.CURRENT_LANG || 'ar';
   const question = (lang === 'en') ? card.q_en : card.q_ar;
   const answer = (lang === 'en') ? card.a_en : card.a_ar;
+  const cardLabel = (lang === 'en')
+    ? `Flashcard ${currentCardIndex + 1} of ${FLASHCARDS_DATA.length} (Click to reveal)`
+    : `بطاقة ${currentCardIndex + 1} من ${FLASHCARDS_DATA.length} (اضغط للكشف)`;
+  const prevBtnText = (lang === 'en') ? "◄ Prev" : "السابق ◀";
+  const nextBtnText = (lang === 'en') ? "Next ►" : "التالي ▶";
 
   container.innerHTML = `
     <div class="flashcard-box" id="active-flashcard" style="
@@ -65,7 +73,7 @@ function renderFlashcard() {
       position: relative;
     ">
       <div style="font-size: 0.8rem; color: var(--gold-subtle); margin-bottom: 0.5rem;">
-        بطاقة ${currentCardIndex + 1} من ${FLASHCARDS_DATA.length} (اضغط للكشف)
+        ${cardLabel}
       </div>
       <div id="card-q" style="font-size: 1.1rem; font-weight: bold; color: var(--text-primary);">
         ${question}
@@ -76,8 +84,8 @@ function renderFlashcard() {
     </div>
 
     <div style="display: flex; justify-content: space-between; margin-top: 1rem;">
-      <button onclick="prevFlashcard()" class="btn-action">السابق ◀</button>
-      <button onclick="nextFlashcard()" class="btn-action">التالي ▶</button>
+      <button onclick="prevFlashcard()" class="btn-action">${prevBtnText}</button>
+      <button onclick="nextFlashcard()" class="btn-action">${nextBtnText}</button>
     </div>
   `;
 

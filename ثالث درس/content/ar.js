@@ -14,6 +14,7 @@ window.LESSON_CONTENT_AR = {
     brandTitle: "مختبر الأحياء 3ث",
     brandSubtitle: "BOTANICAL LAB",
     hero: "الرئيسية",
+    visualize: "خريطة المفاهيم",
     sec01: "مفهوم الحركة",
     sec02: "أنواع الحركة الثلاثة",
     sec03: "حركات النبات",
@@ -33,6 +34,18 @@ window.LESSON_CONTENT_AR = {
     subtitle: "كيف يستجيب النبات للمؤثرات دون أن ينتقل بجسمه بالكامل؟",
     cta: "ابدأ التجربة 🌿",
     badge: "الوحدة الأولى — الفصل الأول — الدرس الثالث"
+  },
+
+  visualizeLearning: {
+    title: "خريطة المفاهيم التفاعلية",
+    subtitle: "Visualize Learning - Botanical Movement Concept Map",
+    desc: "استكشف الخريطة الشاملة لجميع آليات الحركة التفاعلية في النبات وكيف تتصل بمؤثرات البيئة:",
+    nodeTouch: "استجابة اللمس (Touch)",
+    nodeSleep: "النوم واليقظة (Turgor)",
+    nodeTropism: "مُحرك الانتحاءات (Auxin)",
+    nodeTendril: "الشد بالمحاليق (Coiling)",
+    nodeRoots: "الجذور الشادة (Contractile)",
+    conceptSummary: "ترتبط كافة آليات حركة النبات بالتغيرات الفسيولوجية الاسموزية والهرمونية لتوفير الحماية والدعامة والاستجابة للبيئة."
   },
 
   sec01: {

@@ -289,15 +289,20 @@ function renderQuiz() {
 
   if (currentQuestionIndex >= questions.length) {
     // Final Quiz Summary
+    const summaryMsg = (lang === 'en')
+      ? (userScore >= 8 ? "Excellent! You have mastered all plant movement concepts." : "Good effort! Review the exam traps and interactive labs, then try again.")
+      : (userScore >= 8 ? "ممتاز! لقد أتقنت جميع مفاهيم درس الحركة في النبات بنجاح." : "أداء جيد! يمكنك مراجعة فخاخ الامتحانات والتجارب التفاعلية ثم إعادة الاختبار.");
+    const resetBtnTxt = (lang === 'en') ? "Retake Quiz 🔄" : "إعادة الاختبار 🔄";
+
     container.innerHTML = `
       <div style="text-align: center; padding: 2rem;">
         <h3 style="font-size: 1.8rem; color: var(--gold-highlight); margin-bottom: 1rem;">
           🎉 ${dict.sec10.title} — ${dict.sec10.scoreText} ${userScore} / ${questions.length}
         </h3>
         <p style="color: var(--text-muted); margin-bottom: 2rem;">
-          ${userScore >= 8 ? "ممتاز! لقد أتقنت جميع مفاهيم درس الحركة في النبات بنجاح." : "أداء جيد! يمكنك مراجعة فخاخ الامتحانات والتجارب التفاعلية ثم إعادة الاختبار."}
+          ${summaryMsg}
         </p>
-        <button onclick="resetQuiz()" class="btn-action btn-gold">إعادة الاختبار 🔄</button>
+        <button onclick="resetQuiz()" class="btn-action btn-gold">${resetBtnTxt}</button>
       </div>
     `;
     return;

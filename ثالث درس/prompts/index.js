@@ -4,6 +4,7 @@
 
 window.LESSON_PROMPTS = [
   window.PROMPTS_HERO,
+  window.PROMPTS_VISUALIZE_LEARNING,
   window.PROMPTS_MOVEMENT.movement,
   window.PROMPTS_MOVEMENT.amoeba,
   window.PROMPTS_MIMOSA.mimosaOpen,

@@ -37,9 +37,12 @@ function setLanguage(lang) {
   localStorage.setItem('lesson3_lang', lang);
   applyLanguageStrings(lang);
 
-  // Re-render active labs to update string references
+  // Re-render active labs and widgets to update string references
   if (typeof window.renderActiveQuiz === 'function') {
     window.renderActiveQuiz();
+  }
+  if (typeof window.renderFlashcard === 'function') {
+    window.renderFlashcard();
   }
 }
 
