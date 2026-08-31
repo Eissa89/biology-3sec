@@ -1,0 +1,661 @@
+/* ==========================================================================
+   CINEMATIC BOTANICAL LAB — DESIGN SYSTEM
+   Lesson 03: Movement in Plants (الحركة في النبات)
+   ========================================================================== */
+
+:root {
+  /* Color Tokens */
+  --bg-obsidian: #080a0f;
+  --bg-card: #0f1715;
+  --bg-card-hover: #142320;
+  --bg-sidebar: #0b1210;
+  --bg-input: #121f1c;
+
+  --emerald-deep: #0e2a1f;
+  --emerald-botanical: #1b4d3e;
+  --chlorophyll-vibrant: #10b981;
+  --chlorophyll-glow: rgba(16, 185, 129, 0.25);
+
+  --cyan-scientific: #70e8ff;
+  --cyan-glow: rgba(112, 232, 255, 0.2);
+
+  --gold-subtle: #d4af37;
+  --gold-highlight: #e5c158;
+  --gold-glow: rgba(212, 175, 55, 0.2);
+
+  --text-primary: #e9f5f1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --border-subtle: rgba(16, 185, 129, 0.15);
+  --border-active: rgba(112, 232, 255, 0.4);
+  --border-gold: rgba(212, 175, 55, 0.4);
+
+  /* Layout & Fonts */
+  --font-arabic: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Cairo', 'Tajawal', sans-serif;
+  --sidebar-width: 280px;
+  --header-height: 60px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-arabic);
+  background-color: var(--bg-obsidian);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #0e2a1f 0%, #080a0f 70%);
+  overflow-x: hidden;
+}
+
+/* Accessibility Focus States */
+:focus-visible {
+  outline: 2px solid var(--cyan-scientific);
+  outline-offset: 3px;
+}
+
+/* Reading Progress Bar */
+.progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--chlorophyll-vibrant), var(--cyan-scientific));
+  box-shadow: 0 0 10px var(--cyan-scientific);
+  transition: width 0.1s linear;
+}
+
+/* ==========================================================================
+   Layout Architecture
+   ========================================================================== */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Mobile Header */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: rgba(11, 18, 16, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 1.25rem;
+  z-index: 900;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Desktop Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--bg-sidebar);
+  border-inline-end: 1px solid var(--border-subtle);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  inset-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  z-index: 800;
+  overflow-y: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, var(--emerald-deep), var(--emerald-botanical));
+  border: 1px solid var(--chlorophyll-vibrant);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 0 12px var(--chlorophyll-glow);
+}
+
+.brand-info h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.brand-info p {
+  font-size: 0.7rem;
+  color: var(--cyan-scientific);
+  letter-spacing: 1px;
+}
+
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 2px;
+  margin-bottom: 1.25rem;
+}
+
+.lang-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: calc(var(--radius-sm) - 2px);
+  transition: var(--transition-fast);
+}
+
+.lang-btn.active {
+  background: var(--emerald-botanical);
+  color: var(--cyan-scientific);
+  border: 1px solid var(--chlorophyll-vibrant);
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.nav-item a:hover,
+.nav-item.active a {
+  background: var(--emerald-deep);
+  color: var(--text-primary);
+  border-inline-start: 3px solid var(--cyan-scientific);
+}
+
+.chapter-num {
+  font-size: 0.75rem;
+  color: var(--gold-subtle);
+  font-weight: bold;
+}
+
+/* Main Content Stage */
+.main-content {
+  margin-inline-start: var(--sidebar-width);
+  flex: 1;
+  padding: 2.5rem 3rem;
+  max-width: 1100px;
+}
+
+/* Sections General */
+.lesson-section {
+  margin-bottom: 4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: var(--transition-normal);
+}
+
+.lesson-section:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--cyan-scientific);
+  margin-top: 0.35rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-subtle);
+  color: var(--gold-highlight);
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  text-align: center;
+  padding: 3.5rem 2rem;
+  background: radial-gradient(circle at 50% 30%, #102a20 0%, #0a1210 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 30%, var(--chlorophyll-vibrant) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  margin: 0 auto 2rem;
+}
+
+.hero-visual {
+  width: 100%;
+  max-width: 500px;
+  margin: 1.5rem auto 2.5rem;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(135deg, var(--emerald-botanical), var(--chlorophyll-vibrant));
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px;
+  box-shadow: 0 0 20px var(--chlorophyll-glow);
+  transition: var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+}
+
+/* ==========================================================================
+   Interactive Lab Cards & Components
+   ========================================================================== */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition-fast);
+}
+
+.card:hover {
+  border-color: var(--chlorophyll-vibrant);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.card-example {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--gold-highlight);
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.btn-action {
+  padding: 0.65rem 1.4rem;
+  background: var(--emerald-deep);
+  border: 1px solid var(--chlorophyll-vibrant);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-action:hover,
+.btn-action.active {
+  background: var(--emerald-botanical);
+  border-color: var(--cyan-scientific);
+  color: var(--cyan-scientific);
+  box-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.btn-gold {
+  border-color: var(--gold-subtle);
+  color: var(--gold-highlight);
+}
+
+.btn-gold:hover,
+.btn-gold.active {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-highlight);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+/* Lab Controls Container */
+.lab-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.lab-display {
+  background: #0a1210;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Interactive SVG Diagrams */
+.svg-diagram {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Slider Component */
+.slider-container {
+  margin: 1.5rem 0;
+  background: var(--bg-input);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.custom-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--emerald-deep);
+  outline: none;
+  accent-color: var(--chlorophyll-vibrant);
+  cursor: pointer;
+}
+
+/* Quick Recall Component */
+.quick-recall-box {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--gold-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.quick-recall-box:hover {
+  background: rgba(212, 175, 55, 0.15);
+}
+
+.recall-question {
+  font-weight: bold;
+  color: var(--gold-highlight);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recall-answer {
+  display: none;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--gold-subtle);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.quick-recall-box.revealed .recall-answer {
+  display: block;
+}
+
+/* Exam Traps Section */
+.trap-card {
+  background: rgba(216, 73, 91, 0.08);
+  border: 1px solid rgba(216, 73, 91, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.trap-title {
+  color: #f87171;
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.trap-mistake {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.trap-correct {
+  background: rgba(16, 185, 129, 0.15);
+  border-inline-start: 4px solid var(--chlorophyll-vibrant);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+}
+
+/* Exam Quiz Section */
+.quiz-container {
+  background: var(--bg-card-hover);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.quiz-question-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-option {
+  padding: 0.9rem 1.2rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: start;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.quiz-option:hover {
+  border-color: var(--cyan-scientific);
+  background: var(--emerald-deep);
+}
+
+.quiz-option.selected {
+  border-color: var(--cyan-scientific);
+  background: var(--emerald-botanical);
+}
+
+.quiz-option.correct {
+  border-color: var(--chlorophyll-vibrant);
+  background: rgba(16, 185, 129, 0.25);
+}
+
+.quiz-option.wrong {
+  border-color: #f87171;
+  background: rgba(248, 113, 113, 0.2);
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  display: none;
+}
+
+.quiz-feedback.show {
+  display: block;
+}
+
+/* Tree Diagram */
+.concept-tree {
+  font-family: monospace;
+  background: #06090c;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  color: var(--cyan-scientific);
+  white-space: pre-wrap;
+  line-height: 1.8;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+/* ==========================================================================
+   Responsive Rules
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+  .mobile-header {
+    display: flex;
+  }
+  .main-content {
+    margin-inline-start: 0;
+    padding: calc(var(--header-height) + 1.5rem) 1.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .lesson-section {
+    padding: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
