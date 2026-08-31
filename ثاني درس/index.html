@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="أطلس تشريحي سينمائي لدرس الهيكل المحوري في الإنسان - أحياء الصف الثالث الثانوي في مصر">
+  <title>الهيكل المحوري في الإنسان | CINEMATIC ANATOMICAL ATLAS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="progress-track">
+    <div id="reading-progress" class="progress-fill"></div>
+  </div>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+      <span class="brand-icon" style="width: 32px; height: 32px; font-size: 1rem;">💀</span>
+      <span style="font-weight: bold; color: var(--bone-primary);">أحياء 3ث — الهيكل المحوري</span>
+    </div>
+    <button id="theme-toggle" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">☀️</button>
+  </header>
+
+  <div class="dashboard-container">
+
+    <!-- Desktop Navigation Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🦴</div>
+        <div class="brand-info">
+          <h2>أطلس الأحياء 3ث</h2>
+          <p>CINEMATIC ATLAS</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item active"><a href="#hero"><span class="chapter-num">00</span> الرئيسية</a></li>
+          <li class="nav-item"><a href="#ch1"><span class="chapter-num">01</span> منظومة الجهاز</a></li>
+          <li class="nav-item"><a href="#ch2"><span class="chapter-num">02</span> محوري vs طرفي</a></li>
+          <li class="nav-item"><a href="#ch3"><span class="chapter-num">03</span> العمود الفقري</a></li>
+          <li class="nav-item"><a href="#ch4"><span class="chapter-num">04</span> الجمجمة</a></li>
+          <li class="nav-item"><a href="#ch5"><span class="chapter-num">05</span> القفص الصدري</a></li>
+          <li class="nav-item"><a href="#ch6"><span class="chapter-num">06</span> الشبكة التشريحية</a></li>
+          <li class="nav-item"><a href="#ch7"><span class="chapter-num">07</span> مختبر الأخطاء</a></li>
+          <li class="nav-item"><a href="#ch8"><span class="chapter-num">08</span> الاختبار النهائي</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Stage -->
+    <main class="main-content">
+
+      <!-- CHAPTER 00: HERO -->
+      <section id="hero" class="hero-section">
+        <h1 class="hero-title">الهيكل المحوري في الإنسان</h1>
+        <p class="hero-subtitle">Axial Skeleton — ثلاثة محاور تحمي وتدعم جسمك</p>
+        <a href="#ch1" class="btn-cta">ابدأ الرحلة التشريحية 🔬</a>
+
+        <!-- Axial Skeleton Overview Inline SVG -->
+        <div class="svg-interactive-stage" style="margin-top: 2.5rem;">
+          <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Skull Silhouette -->
+            <path d="M150 40 C120 40 110 70 110 90 C110 110 125 125 150 125 C175 125 190 110 190 90 C190 70 180 40 150 40 Z" stroke="#70E8FF" stroke-width="2" fill="rgba(112,232,255,0.08)"/>
+            <!-- Vertebral Column Spine Line -->
+            <path d="M150 125 L150 330" stroke="#E9E4D8" stroke-width="6" stroke-dasharray="8 4"/>
+            <!-- Thoracic Rib Cage Bounds -->
+            <path d="M110 150 C80 170 80 230 110 250 M190 150 C220 170 220 230 190 250" stroke="#70E8FF" stroke-width="2" stroke-dasharray="4 2"/>
+            <!-- Spine Joints -->
+            <circle cx="150" cy="140" r="4" fill="#D6B66A"/>
+            <circle cx="150" cy="180" r="4" fill="#D6B66A"/>
+            <circle cx="150" cy="220" r="4" fill="#D6B66A"/>
+            <circle cx="150" cy="260" r="4" fill="#D6B66A"/>
+            <circle cx="150" cy="300" r="4" fill="#D8495B"/>
+            <text x="150" y="370" fill="#9AA4B5" font-size="12" text-anchor="middle">شكل توضيحي للهيكل المحوري المركزي</text>
+          </svg>
+        </div>
+      </section>
+
+      <!-- CHAPTER 01: SYSTEM -->
+      <section id="ch1" class="section-chapter">
+        <div class="chapter-header">
+          <span class="chapter-badge">01</span>
+          <div class="chapter-titles">
+            <h2>منظومة الجهاز الهيكلي</h2>
+            <p>Skeleton vs Skeletal System</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="atlas-card">
+            <div class="card-number-anchor">206</div>
+            <h3 style="color: var(--xray-cyan); margin-bottom: 0.5rem;">الهيكل العظمي (Skeleton)</h3>
+            <p style="color: var(--text-muted);">عظام صلبة ترتبط معاً لتعطي الجسم شكلا ثابتا وتوفر الدعامة الميكانيكية الحامية للأعضاء.</p>
+          </div>
+
+          <div class="atlas-card">
+            <div class="card-number-anchor">5</div>
+            <h3 style="color: var(--medical-gold); margin-bottom: 0.5rem;">الجهاز الهيكلي (Skeletal System)</h3>
+            <p style="color: var(--text-muted);">منظومة متكاملة من 5 مكونات حيويّة:</p>
+            <ul style="margin-top: 0.5rem; margin-right: 1.2rem; color: var(--bone-primary);">
+              <li>1. العظام (Bones)</li>
+              <li>2. الغضاريف (Cartilages)</li>
+              <li>3. المفاصل (Joints)</li>
+              <li>4. الأربطة (Ligaments)</li>
+              <li>5. الأوتار (Tendons)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 02: AXIAL vs APPENDICULAR -->
+      <section id="ch2" class="section-chapter">
+        <div class="chapter-header">
+          <span class="chapter-badge">02</span>
+          <div class="chapter-titles">
+            <h2>الهيكل المحوري vs الطرفي</h2>
+            <p>Central Axis vs Paired Appendages</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="atlas-card" style="border-color: var(--xray-cyan);">
+            <div class="card-number-anchor" style="color: var(--xray-cyan);">80</div>
+            <h3>الهيكل المحوري (Axial Skeleton)</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">يشمل المحور الرئيسي المتمركز في منتصف الجسم:</p>
+            <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <span style="background: rgba(112,232,255,0.1); padding: 0.5rem; border-radius: 4px;">• الجمجمة (Skull) — 1 مركزية</span>
+              <span style="background: rgba(112,232,255,0.1); padding: 0.5rem; border-radius: 4px;">• العمود الفقري (Vertebral Column) — 1 محوري</span>
+              <span style="background: rgba(112,232,255,0.1); padding: 0.5rem; border-radius: 4px;">• القفص الصدري (Thoracic Cage) — 1 حامي</span>
+            </div>
+          </div>
+
+          <div class="atlas-card">
+            <div class="card-number-anchor" style="color: var(--text-muted);">126</div>
+            <h3>الهيكل الطرفي (Appendicular Skeleton)</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">يشمل الأحزمة والأطراف المزدوجة المتصلة بالمحور:</p>
+            <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <span style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px;">• الطرفان العلويان + الحزام الصدري — 2</span>
+              <span style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px;">• الطرفان السفليان + الحزام الحوضي — 2</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 03: VERTEBRAL COLUMN -->
+      <section id="ch3" class="section-chapter">
+        <div class="chapter-header">
+          <span class="chapter-badge">03</span>
+          <div class="chapter-titles">
+            <h2>العمود الفقري (Hero Anatomy)</h2>
+            <p>Vertebral Column & Neural Canal</p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">
+              يعتبر العمود الفقري دعامة الجسم الرئيسية. يتكون من <strong style="color: var(--medical-gold);">33 فقرة</strong> مقسمة إلى 5 مجموعات تتدرج في الشكل والحجم حسب وظيفتها.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <div class="atlas-card" style="padding: 0.75rem 1rem;">
+                <strong>1. فقرات عنقية (7)</strong> — متمفصلة متوسطة الحجم (فقرات 1 - 7)
+              </div>
+              <div class="atlas-card" style="padding: 0.75rem 1rem;">
+                <strong>2. فقرات ظهرية/صدرية (12)</strong> — متمفصلة أكبر حسماً تتصل بالضلوع (8 - 19)
+              </div>
+              <div class="atlas-card" style="padding: 0.75rem 1rem;">
+                <strong>3. فقرات قطنية (5)</strong> — متمفصلة وهي الأكبر حجماً تواجه بطنك (20 - 24)
+              </div>
+              <div class="atlas-card" style="padding: 0.75rem 1rem;">
+                <strong>4. فقرات عجزية (5)</strong> — ملتحمة تشكل عظمة واحدة عريضة ومفلطحة (25 - 29)
+              </div>
+              <div class="atlas-card" style="padding: 0.75rem 1rem;">
+                <strong>5. فقرات عصعصية (4)</strong> — ملتحمة تشكل عظمة واحدة ضامرة (30 - 33)
+              </div>
+            </div>
+
+            <div style="margin-top: 1rem; background: rgba(216,73,91,0.1); border: 1px solid var(--anatomical-crimson); padding: 1rem; border-radius: 8px;">
+              <h4 style="color: var(--anatomical-crimson);">عدد العظام المستقلة: 26 عظمة</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">(24 فقرة متمفصلة + 1 عظمة عجزية + 1 عظمة عصعصية)</p>
+            </div>
+          </div>
+
+          <!-- Vertebra Cross-Section SVG -->
+          <div class="svg-interactive-stage">
+            <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Vertebra Body -->
+              <circle cx="125" cy="150" r="50" fill="#161C2B" stroke="#E9E4D8" stroke-width="4"/>
+              <!-- Neural Ring -->
+              <path d="M85 130 C85 70 165 70 165 130" stroke="#E9E4D8" stroke-width="4" fill="none"/>
+              <!-- Spinous Process -->
+              <path d="M125 80 L125 20" stroke="#70E8FF" stroke-width="4"/>
+              <!-- Neural Canal Hole -->
+              <circle cx="125" cy="110" r="22" fill="#080A0F" stroke="#70E8FF" stroke-width="2"/>
+              <!-- Spinal Cord Crimson Core -->
+              <circle cx="125" cy="110" r="12" fill="#D8495B"/>
+              <text x="125" y="225" fill="#70E8FF" font-size="11" text-anchor="middle">قطاع عرضي للفقرة: الحبل الشوكي داخل القناة العصبية</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 04: SKULL -->
+      <section id="ch4" class="section-chapter">
+        <div class="chapter-header">
+          <span class="chapter-badge">04</span>
+          <div class="chapter-titles">
+            <h2>الجمجمة (Skull — Protective Box)</h2>
+            <p>Cranial Part & Facial Part</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="atlas-card">
+            <div class="card-number-anchor" style="color: var(--xray-cyan);">8</div>
+            <h3 style="color: var(--bone-primary);">الجزء الخلفي (المخي)</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">
+              يتكون من 8 عظام تتصل بأطراف مشرشرة اتصالات متينة تشكل علبة صلبة لحماية المخ.
+            </p>
+            <div style="margin-top: 1rem; border-top: 1px dashed var(--border-cyan); padding-top: 0.5rem;">
+              <strong style="color: var(--medical-gold);">الثقب الأعظم (Foramen Magnum):</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">ثقب أسفل قاع الجزء المخي يربط المخ بالحبل الشوكي.</p>
+            </div>
+          </div>
+
+          <div class="atlas-card">
+            <div class="card-number-anchor" style="color: var(--text-muted);">14</div>
+            <h3 style="color: var(--bone-primary);">الجزء الأمامي (الوجهي)</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">
+              يتكون من 14 عظمة تشمل عظام الوجه والجبهة والفكين ومواضع أعضاء الحس (العيون، الأذنان، والأنف).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 05: THORACIC CAGE & BREATHING SIMULATION -->
+      <section id="ch5" class="section-chapter">
+        <div class="chapter-header">
+          <span class="chapter-badge">05</span>
+          <div class="chapter-titles">
+            <h2>القفص الصدري ومحاكاة التنفس</h2>
+            <p>Thoracic Cage & Respiration Simulation</p>
+          </div>
+        </div>
+
+        <div class="simulation-box">
+          <h3 style="color: var(--medical-gold);">37 عظمة تتضافر لحماية القلب والرئتين</h3>
+          <p style="color: var(--text-muted); margin-top: 0.3rem;">
+            (12 فقرة صدرية + 24 ضلعاً [12 زوجاً] + 1 عظمة القس)
+          </p>
+
+          <!-- SVG Ribcage Interactive Diagram -->
+          <div style="max-width: 280px; margin: 1.5rem auto;">
+            <svg id="ribcage-svg-anim" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Sternum -->
+              <rect x="95" y="30" width="10" height="100" fill="#E9E4D8" rx="3"/>
+              <!-- Curved Ribs -->
+              <path d="M95 40 C 40 40 30 70 95 90" stroke="#70E8FF" stroke-width="3" fill="none"/>
+              <path d="M105 40 C 160 40 170 70 105 90" stroke="#70E8FF" stroke-width="3" fill="none"/>
+              <path d="M95 60 C 30 60 20 100 95 120" stroke="#70E8FF" stroke-width="3" fill="none"/>
+              <path d="M105 60 C 170 60 180 100 105 120" stroke="#70E8FF" stroke-width="3" fill="none"/>
+            </svg>
+          </div>
+
+          <p id="sim-explanation" style="color: var(--xray-cyan); font-weight: bold; min-height: 48px;">
+            اضغط على الأزرار أدناه لرؤية آلية حركة الضلوع أثناء الشهيق والزفير
+          </p>
+
+          <div class="sim-controls">
+            <button id="btn-inspiration" class="sim-btn">الشهيق (Inspiration) 🫁</button>
+            <button id="btn-expiration" class="sim-btn">الزفير (Expiration) 💨</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 06: CONNECTIONS -->
+      <section id="ch6" class="section-chapter">
+        <div class="chapter-header">
+          <span class="chapter-badge">06</span>
+          <div class="chapter-titles">
+            <h2>شبكة الاتصالات الهيكلية</h2>
+            <p>Direct vs Indirect Connections</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="atlas-card" style="border-color: var(--xray-cyan);">
+            <h3 style="color: var(--xray-cyan);">اتصال مباشر (DIRECT)</h3>
+            <ul style="margin-top: 0.8rem; line-height: 1.8; color: var(--bone-primary);">
+              <li>• <strong>الجمجمة:</strong> تستند مباشرة على الفقرة العنقية الأولى.</li>
+              <li>• <strong>القفص الصدري:</strong> تتصل الضلوع الـ12 مباشرة بأجسام الفقرات الصدرية.</li>
+            </ul>
+          </div>
+
+          <div class="atlas-card" style="border-color: var(--medical-gold);">
+            <h3 style="color: var(--medical-gold);">اتصال غير مباشر (INDIRECT)</h3>
+            <ul style="margin-top: 0.8rem; line-height: 1.8; color: var(--bone-primary);">
+              <li>• <strong>الطرفان العلويان:</strong> يتصلان بالعمود الفقري عبر الحزام الصدري.</li>
+              <li>• <strong>الطرفان السفليان:</strong> يتصلان عبر الحزام الحوضي المتصل بالعجز.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 07: EXAM TRAPS -->
+      <section id="ch7" class="section-chapter">
+        <div class="chapter-header">
+          <span class="chapter-badge">07</span>
+          <div class="chapter-titles">
+            <h2>مختبر أخطاء الامتحانات</h2>
+            <p>Red Flag High Alerts</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="atlas-card" style="border-left: 4px solid var(--anatomical-crimson);">
+            <h4 style="color: var(--anatomical-crimson);">⚠️ الحزام الحوضي</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+              يقع في منتصف الجسم، لكنه ينتمي للـ <strong style="color: var(--bone-primary);">APPENDICULAR (طرفي)</strong> ويتكون من عظمتين متماثلتين.
+            </p>
+          </div>
+
+          <div class="atlas-card" style="border-left: 4px solid var(--anatomical-crimson);">
+            <h4 style="color: var(--anatomical-crimson);">⚠️ الأربطة vs الأوتار</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+              الأربطة: <strong>عظم ← عظم</strong> (تحدد الاتجاه). الأوتار: <strong>عضلة ← عظم</strong> (تنقل الحركة).
+            </p>
+          </div>
+
+          <div class="atlas-card" style="border-left: 4px solid var(--anatomical-crimson);">
+            <h4 style="color: var(--anatomical-crimson);">⚠️ 206 vs 5</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+              206 = عدد عظام الهيكل العظمي. 5 = المكونات الشاملة للجهاز الهيكلي الكامل.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 08: FINAL TEST & INTERACTIVE SYSTEMS -->
+      <section id="ch8" class="section-chapter">
+        <div class="chapter-header">
+          <span class="chapter-badge">08</span>
+          <div class="chapter-titles">
+            <h2>قاعة الاختبارات والبطاقات التشريحية</h2>
+            <p>Anatomical Flashcards & Quiz Engine</p>
+          </div>
+        </div>
+
+        <!-- Flashcards Interactive System -->
+        <div style="margin-bottom: 3rem;">
+          <h3 style="color: var(--medical-gold); text-align: center; margin-bottom: 1rem;">بطاقات العينات التشريحية (Specimen Cards)</h3>
+
+          <div class="flashcards-container">
+            <div id="flashcard-element" class="flashcard">
+              <div class="flashcard-front">
+                <span id="fc-tag" style="font-size: 0.75rem; color: var(--xray-cyan); border: 1px solid var(--border-cyan); padding: 2px 8px; border-radius: 12px;">عينات</span>
+                <h3 id="fc-term" style="margin-top: 1rem; font-size: 1.4rem;">...</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">(اضغط لقلب البطاقة)</p>
+              </div>
+              <div class="flashcard-back">
+                <p id="fc-def" style="font-size: 1.1rem; color: var(--bone-primary);">...</p>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+              <button id="fc-prev" class="sim-btn">السابقة</button>
+              <span id="fc-counter" style="font-family: var(--font-mono); color: var(--medical-gold);">1 / 6</span>
+              <button id="fc-next" class="sim-btn">التالية</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Engine System -->
+        <div class="quiz-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h3 style="color: var(--xray-cyan);">الامتحان التقييمي للدرس الثاني</h3>
+            <span id="quiz-progress" style="font-family: var(--font-mono); color: var(--medical-gold);">سؤال 1</span>
+          </div>
+
+          <h4 id="quiz-question" style="font-size: 1.2rem; color: var(--bone-primary); margin-bottom: 1rem;">...</h4>
+          <div id="quiz-options"></div>
+
+          <div id="quiz-explanation" style="display: none; margin-top: 1rem; padding: 1rem; background: rgba(112,232,255,0.08); border-right: 3px solid var(--xray-cyan); color: var(--text-muted); font-size: 0.9rem;"></div>
+
+          <div style="margin-top: 1.5rem; text-align: left;">
+            <button id="quiz-next-btn" class="btn-cta" style="display: none; padding: 0.6rem 1.5rem; font-size: 0.95rem;">السؤال التالي ➔</button>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <a href="#hero" class="active"><span>🏠</span><span>الرئيسية</span></a>
+    <a href="#ch3"><span>🦴</span><span>الفقرات</span></a>
+    <a href="#ch5"><span>🫁</span><span>الصدري</span></a>
+    <a href="#ch8"><span>📝</span><span>الامتحان</span></a>
+  </nav>
+
+  <!-- Script Modules -->
+  <script src="js/app.js"></script>
+  <script src="js/flashcards.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

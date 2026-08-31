@@ -1,0 +1,232 @@
+{
+  "title": "الهيكل المحوري في الإنسان",
+  "subtitle": "الصف الثالث الثانوي — أطلس تشريحي سينمائي",
+  "metadata": {
+    "subject": "الأحياء",
+    "grade": "الصف الثالث الثانوي",
+    "lesson": "الدرس الثاني: الهيكل المحوري في الإنسان"
+  },
+  "visualTheme": {
+    "name": "Cinematic Anatomical Atlas",
+    "primaryColor": "#080A0F",
+    "accentCyan": "#70E8FF",
+    "accentCrimson": "#D8495B",
+    "accentGold": "#D6B66A",
+    "boneColor": "#E9E4D8"
+  },
+  "hero": {
+    "title": "الهيكل المحوري",
+    "subtitle": "Axial Skeleton — ثلاثة محاور تحمي وتدعم جسمك",
+    "cta": "ابدأ الرحلة التشريحية",
+    "tagline": "استكشف الهيكل المحوري طبقة بعد طبقة في أطلس تشريحي رقمي تفاعلي"
+  },
+  "chapters": [
+    {
+      "id": "ch1",
+      "number": "01",
+      "title": "منظومة الجهاز الهيكلي",
+      "subtitle": "System Overview",
+      "concept": {
+        "skeleton": {
+          "title": "الهيكل العظمي (Skeleton)",
+          "count": 206,
+          "description": "مجموعة العظام الصلبة في جسم الإنسان البالغ (206 عظمة) تشكل الدعامة الصلبة."
+        },
+        "skeletalSystem": {
+          "title": "الجهاز الهيكلي (Skeletal System)",
+          "count": 5,
+          "components": [
+            "العظام (Bones)",
+            "الغضاريف (Cartilages)",
+            "المفاصل (Joints)",
+            "الأربطة (Ligaments)",
+            "الأوتار (Tendons)"
+          ],
+          "description": "منظومة حيوية متكاملة تضمن حماية الأعضاء، حركة الجسم، وتثبيت المفاصل."
+        }
+      }
+    },
+    {
+      "id": "ch2",
+      "number": "02",
+      "title": "الهيكل المحوري vs الطرفي",
+      "subtitle": "Axial vs Appendicular",
+      "axial": {
+        "title": "الهيكل المحوري (Axial Skeleton)",
+        "count": 80,
+        "sourceStatus": "OFFICIAL_CURRICULUM",
+        "description": "يمثل المحور المركزي للجسم (الجمجمة + العمود الفقري + القفص الصدري).",
+        "breakdown": [
+          {"item": "الجمجمة وملحقاتها", "ratio": "1 (مركزية)"},
+          {"item": "العمود الفقري", "ratio": "1 (محوري)"},
+          {"item": "القفص الصدري", "ratio": "1 (محيط بالقلب والرئتين)"}
+        ]
+      },
+      "appendicular": {
+        "title": "الهيكل الطرفي (Appendicular Skeleton)",
+        "count": 126,
+        "sourceStatus": "OFFICIAL_CURRICULUM",
+        "description": "يمثل الأحزمة والأطراف المزدوجة التي تتصل بالمحور المركزي.",
+        "breakdown": [
+          {"item": "الطرفان العلويان والحزام الصدري", "ratio": "2 (مزدوج)"},
+          {"item": "الطرفان السفليان والحزام الحوضي", "ratio": "2 (مزدوج)"}
+        ]
+      }
+    },
+    {
+      "id": "ch3",
+      "number": "03",
+      "title": "العمود الفقري",
+      "subtitle": "Vertebral Column",
+      "summary": "الدعامة الرئيسية للجسم، يحمي الحبل الشوكي ويسمح بحركة الرأس والنصف العلوي.",
+      "totalVertebrae": 33,
+      "totalBones": 26,
+      "sourceStatus": "OFFICIAL_CURRICULUM",
+      "regions": [
+        {
+          "name": "الفقرات العنقية",
+          "count": 7,
+          "range": "1 - 7",
+          "size": "متوسطة الحجم",
+          "type": "متمفصلة"
+        },
+        {
+          "name": "الفقرات الظهرية (الصدرية)",
+          "count": 12,
+          "range": "8 - 19",
+          "size": "أكبر من العنقية",
+          "type": "متمفصلة تتصل بالضلوع"
+        },
+        {
+          "name": "الفقرات القطنية",
+          "count": 5,
+          "range": "20 - 24",
+          "size": "الأكبر حجماً ومواجهة للتجويف البطني",
+          "type": "متمفصلة"
+        },
+        {
+          "name": "الفقرات العجزية",
+          "count": 5,
+          "range": "25 - 29",
+          "size": "عريضة ومفلطحة وملتحمة",
+          "type": "عظمة واحدة بعد التحامها"
+        },
+        {
+          "name": "الفقرات العصعصية",
+          "count": 4,
+          "range": "30 - 33",
+          "size": "ضامرة وضئيلة الحجم وملتحمة",
+          "type": "عظمة واحدة بعد التحامها"
+        }
+      ],
+      "anatomyFeature": {
+        "title": "مقوَّر من الداخل (Neural Canal & Spinal Cord)",
+        "description": "تتميز الفقرات وجود القناة العصبية (Neural Canal) التي يمر داخلها الحبل الشوكي لحمايته، وتخرج منها الأعصاب الشوكية عبر الفجوات بين الفقرات."
+      }
+    },
+    {
+      "id": "ch4",
+      "number": "04",
+      "title": "الجمجمة",
+      "subtitle": "Skull — Protective Box",
+      "totalBones": 22,
+      "sourceStatus": "OFFICIAL_CURRICULUM",
+      "parts": [
+        {
+          "name": "الجزء الخلفي (المخي)",
+          "count": 8,
+          "description": "يتكون من 8 عظام تتصل ببعضها عند أطرافها المشرشرة اتصالات متينة تشكل تجويفاً يستقر فيه المخ لحمايته.",
+          "feature": "يوجد في قاعه الثقب الأعظم (Foramen Magnum) يتصل من خلاله المخ بالحبل الشوكي."
+        },
+        {
+          "name": "الجزء الأمامي (الوجهي)",
+          "count": 14,
+          "description": "يشمل عظام الوجه والجبهة والفكين ومواضع أعضاء الحس (العيين، الأذنين، الأنف)."
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "number": "05",
+      "title": "القفص الصدري",
+      "subtitle": "Thoracic Cage & Respiration",
+      "totalBones": 37,
+      "sourceStatus": "OFFICIAL_CURRICULUM",
+      "breakdown": "12 فقرة صدرية + 24 ضلعاً (12 زوجاً) + 1 عظمة القس = 37 عظمة",
+      "respirationMechanism": {
+        "inspiration": {
+          "title": "الشهيق (Inspiration)",
+          "ribMovement": "تتحرك الضلوع للخارج والأمام",
+          "cageEffect": "يتسع التجويف الصدري لينخفض الضغط ويدخل الهواء للرئتين"
+        },
+        "expiration": {
+          "title": "الزفير (Expiration)",
+          "ribMovement": "تتحرك الضلوع للخلف والداخل (العكس)",
+          "cageEffect": "يضيق التجويف الصدري ليزداد الضغط ويخرج الهواء من الرئتين"
+        }
+      }
+    },
+    {
+      "id": "ch6",
+      "number": "06",
+      "title": "شبكة الاتصالات الهيكلية",
+      "subtitle": "Direct vs Indirect Connections",
+      "connections": [
+        {
+          "source": "الجمجمة",
+          "target": "العمود الفقري",
+          "type": "مباشر (DIRECT)",
+          "description": "تستند الجمجمة مباشرة على الفقرة العنقية الأولى (الأطلس)."
+        },
+        {
+          "source": "القفص الصدري",
+          "target": "العمود الفقري",
+          "type": "مباشر (DIRECT)",
+          "description": "تتصل أزواج الضلوع الـ12 من الخلف بأجسام الفقرات الصدرية وأستحداثها الشوكية."
+        },
+        {
+          "source": "الطرفان العلويان",
+          "target": "العمود الفقري",
+          "type": "غير مباشر (INDIRECT)",
+          "description": "يرتبطان عبر الحزام الصدري (عظمتا الترقوة واللوح)."
+        },
+        {
+          "source": "الطرفان السفليان",
+          "target": "العمود الفقري",
+          "type": "غير مباشر (INDIRECT)",
+          "description": "يرتبطان عبر الحزام الحوضي المتصل بالفقرات العجزية."
+        }
+      ]
+    },
+    {
+      "id": "ch7",
+      "number": "07",
+      "title": "مختبر أخطاء الامتحانات",
+      "subtitle": "Exam Traps & Misconceptions",
+      "traps": [
+        {
+          "title": "⚠️ الحزام الحوضي (Pelvic Girdle)",
+          "status": "APPENDICULAR",
+          "explanation": "على الرغم من وجوده في منتصف الجسم واتصاله بالعجز، إلا أنه يعتبر جزءاً من الهيكل الطرفي ويتكون من عظمتين (نصفين ملتحمين)."
+        },
+        {
+          "title": "⚠️ الأربطة مقابل الأوتار",
+          "status": "FUNCTIONAL_DIFFERENCE",
+          "explanation": "الأربطة (Ligaments): تربط عظمة بعظمة وتحدد اتجاه حركة المفاصل. الأوتار (Tendons): تربط عضلة بعظمة لنقل الحركة (مثل وتر أخير)."
+        },
+        {
+          "title": "⚠️ الهيكل العظمي vs الجهاز الهيكلي",
+          "status": "NUMERICAL_DISTINCTION",
+          "explanation": "الهيكل العظمي يتكون من 206 عظمة فقط، بينما الجهاز الهيكلي يشمل 5 مكونات (عظام، غضاريف، مفاصل، أربطة، وأوتار)."
+        }
+      ]
+    },
+    {
+      "id": "ch8",
+      "number": "08",
+      "title": "قاعة الاختبارات التشريحية",
+      "subtitle": "Anatomical Examination Room",
+      "description": "اختبر حصيلتك العلمية عبر بطاقات الاسترجاع النشط والامتحان الشامل."
+    }
+  ]
+}
