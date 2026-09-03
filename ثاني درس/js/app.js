@@ -25,12 +25,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 function initReadingProgress() {
   const progressBar = document.getElementById('reading-progress');
   if (!progressBar) return;
+  let scrollTicking = false;
 
   window.addEventListener('scroll', () => {
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (window.scrollY / totalHeight) * 100;
-    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
-  });
+    if (!scrollTicking) {
+      requestAnimationFrame(() => {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / totalHeight) * 100;
+        progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  }, { passive: true });
 }
 
 function initThemeToggle() {

@@ -56,16 +56,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // 3. Dynamic Progress Bar (Reading Progress)
   const progressBar = document.getElementById('reading-progress');
+  let scrollTicking = false;
 
   window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    if (!scrollTicking) {
+      requestAnimationFrame(() => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
 
-    if (progressBar) {
-      progressBar.style.width = `${scrolled}%`;
+        if (progressBar) {
+          progressBar.style.width = `${scrolled}%`;
+        }
+        scrollTicking = false;
+      });
+      scrollTicking = true;
     }
-  });
+  }, { passive: true });
 
   // 4. Sidebar Link Highlighting on Scroll (Intersection Observer)
   const sections = document.querySelectorAll('section[id]');

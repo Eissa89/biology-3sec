@@ -1,5 +1,4 @@
-/* Google Fonts for Egyptian Arabic Legibility */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Noto+Sans+Arabic:wght@300;400;600;700;800&display=swap');
+/* Google Fonts now loaded via <link> in index.html <head> for performance (no @import waterfall) */
 
 /* CSS Variables for Dark and Light Themes */
 :root {

@@ -34,7 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
       pathSubtitle: 'مسار تعليمي تفاعلي يربط المفاهيم البيولوجية بأسلوب سلس',
       step1Sub: 'التركيب والضغط الأسموزي',
       step2Sub: 'التشريح العظمي والوظائف',
-      step3Sub: 'الانتحاء والاستجابة الفسيولوجية'
+      step3Sub: 'الانتحاء والاستجابة الفسيولوجية',
+      progressTag: 'تتبع الأداء',
+      progressTitle: 'تقدّمي في المنهج',
+      progressDesc: 'نتائج اختباراتك تُحفظ تلقائياً على هذا الجهاز بعد كل اختبار تكمله.',
+      progressNameLabel: 'اسم الطالب (للشهادة)',
+      progressNamePlaceholder: 'اكتب اسمك هنا',
+      progressPrintBtn: '🖨️ طباعة شهادة الإتمام',
+      progressResetBtn: 'مسح التقدم المحفوظ',
+      progressLockedHint: 'أكمل اختبارات الدروس الثلاثة لإصدار شهادة الإتمام.',
+      progressUnlockedHint: 'أحسنت! أكملت الدروس الثلاثة — يمكنك الآن طباعة شهادتك.',
+      progressNotStarted: 'لم يبدأ',
+      progressCompleted: 'مكتمل',
+      certificateBody: 'أتمّ بنجاح منهج الأحياء التفاعلي — الصف الثالث الثانوي، ويشمل الدروس الثلاثة التالية:'
     },
     en: {
       docTitle: 'Biology — Grade 12 | Educational Platform',
@@ -64,7 +76,19 @@ document.addEventListener('DOMContentLoaded', () => {
       pathSubtitle: 'An interactive learning pathway seamlessly connecting biological concepts',
       step1Sub: 'Structure & Osmotic Pressure',
       step2Sub: 'Skeletal Anatomy & Function',
-      step3Sub: 'Tropism & Physiological Response'
+      step3Sub: 'Tropism & Physiological Response',
+      progressTag: 'Performance Tracking',
+      progressTitle: 'My Progress',
+      progressDesc: 'Your quiz results are saved automatically on this device after each quiz you complete.',
+      progressNameLabel: 'Student Name (for certificate)',
+      progressNamePlaceholder: 'Type your name here',
+      progressPrintBtn: '🖨️ Print Certificate',
+      progressResetBtn: 'Clear Saved Progress',
+      progressLockedHint: 'Complete all three lesson quizzes to unlock your certificate.',
+      progressUnlockedHint: 'Well done! You completed all three lessons — you can print your certificate now.',
+      progressNotStarted: 'Not started',
+      progressCompleted: 'Completed',
+      certificateBody: 'Has successfully completed the Interactive Biology curriculum — Grade 12, covering the following three lessons:'
     }
   };
 
@@ -102,6 +126,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
+
+    // Update placeholder text for elements with data-i18n-placeholder
+    const placeholderEls = document.querySelectorAll('[data-i18n-placeholder]');
+    placeholderEls.forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (translations[lang] && translations[lang][key]) {
+        el.setAttribute('placeholder', translations[lang][key]);
+      }
+    });
+
+    // Let other modules (e.g. the progress panel) know the language changed
+    document.dispatchEvent(new CustomEvent('langchange', { detail: { lang, dict: translations[lang] } }));
   }
 
   // Language Toggle Listener
@@ -132,4 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial Language Setup
   applyLanguage(currentLang);
+
+  // PWA: register the service worker so a returning student can reopen a
+  // previously visited page while offline (e.g. no signal at school).
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(err => {
+        console.warn('Service worker registration failed:', err);
+      });
+    });
+  }
 });

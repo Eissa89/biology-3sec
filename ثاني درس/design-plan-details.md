@@ -18,8 +18,8 @@
 - **White (`#F7F8FA`)**: High-contrast Primary Body Text
 
 ## 03 — Typography System
-- **Hero Title**: Bold Arabic Header ("الهيكل المحوري")
-- **Subtitle**: "Axial Skeleton — الصف الثالث الثانوي"
+- **Hero Title**: Bold Arabic Header ("الهيكل العظمي الكامل")
+- **Subtitle**: "Axial & Appendicular Skeleton — الصف الثالث الثانوي"
 - **Data Callouts**: Giant visual numbers (`206`, `33`, `26`, `37`, `22`, `12`, `24`) as anchor visual elements.
 
 ## 04 — Layout & Responsive Strategy

@@ -5,10 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="docTitle">أحياء — الصف الثالث الثانوي | المنصة التعليمية</title>
     <meta name="description" content="مختبر تفاعلي لفهم الأحياء وليس مجرد حفظها — الصف الثالث الثانوي">
+
+    <!-- Favicon & app icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#14120F">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="أحياء — الصف الثالث الثانوي | المنصة التعليمية">
+    <meta property="og:description" content="مختبر تفاعلي لفهم الأحياء وليس مجرد حفظها — دروس، محاكاة علمية، اختبارات، وبطاقات مراجعة.">
+    <meta property="og:image" content="icon-512.png">
+    <meta property="og:locale" content="ar_AR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="أحياء — الصف الثالث الثانوي">
+    <meta name="twitter:description" content="مختبر تفاعلي لفهم الأحياء وليس مجرد حفظها.">
+    <meta name="twitter:image" content="icon-512.png">
+
+    <!-- Structured data: helps search engines understand this as a course -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "أحياء — الصف الثالث الثانوي",
+      "description": "منصة تفاعلية لمذاكرة الأحياء للصف الثالث الثانوي عبر دروس ومحاكاة علمية واختبارات وبطاقات مراجعة.",
+      "inLanguage": "ar",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online"
+      },
+      "hasPart": [
+        { "@type": "LearningResource", "name": "الدعامة في النبات", "educationalLevel": "الصف الثالث الثانوي" },
+        { "@type": "LearningResource", "name": "الهيكل المحوري في الإنسان", "educationalLevel": "الصف الثالث الثانوي" },
+        { "@type": "LearningResource", "name": "الحركة في النبات", "educationalLevel": "الصف الثالث الثانوي" }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@400;600;700;800;900&family=Noto+Sans+Arabic:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/manga-system.css">
+    <link rel="stylesheet" href="css/manga-skin.css">
+    <link rel="stylesheet" href="css/progress.css">
 </head>
 <body>
     <!-- Accessibility Skip Link -->
@@ -37,6 +80,7 @@
                 <ul class="nav-links">
                     <li><a href="#lessons" class="nav-link" data-i18n="navLessons">الدروس</a></li>
                     <li><a href="#learning-path" class="nav-link" data-i18n="navReview">المراجعة</a></li>
+                    <li><a href="#progress" class="nav-link" data-i18n="progressTag">تتبع الأداء</a></li>
                 </ul>
             </nav>
 
@@ -60,6 +104,7 @@
                 <ul class="mobile-nav-links">
                     <li><a href="#lessons" class="mobile-nav-link" data-i18n="navLessons">الدروس</a></li>
                     <li><a href="#learning-path" class="mobile-nav-link" data-i18n="navReview">المراجعة</a></li>
+                    <li><a href="#progress" class="mobile-nav-link" data-i18n="progressTag">تتبع الأداء</a></li>
                 </ul>
             </nav>
         </div>
@@ -284,6 +329,48 @@
                 </div>
             </div>
         </section>
+
+        <!-- My Progress: client-side tracker across all 3 lessons -->
+        <section id="progress" class="progress-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag" data-i18n="progressTag">تتبع الأداء</span>
+                    <h2 class="section-title" data-i18n="progressTitle">تقدّمي في المنهج</h2>
+                    <p class="section-desc" data-i18n="progressDesc">نتائج اختباراتك تُحفظ تلقائياً على هذا الجهاز بعد كل اختبار تكمله.</p>
+                </div>
+
+                <div class="ink-panel progress-panel">
+                    <div class="progress-name-row">
+                        <label for="studentNameInput" data-i18n="progressNameLabel">اسم الطالب (للشهادة)</label>
+                        <input type="text" id="studentNameInput" data-i18n-placeholder="progressNamePlaceholder" placeholder="اكتب اسمك هنا">
+                    </div>
+
+                    <ul id="progressList" class="progress-list" aria-live="polite"></ul>
+
+                    <div class="progress-actions">
+                        <button id="printCertificateBtn" class="card-btn" type="button" disabled>
+                            <span data-i18n="progressPrintBtn">🖨️ طباعة شهادة الإتمام</span>
+                        </button>
+                        <button id="resetProgressBtn" class="progress-reset-btn" type="button">
+                            <span data-i18n="progressResetBtn">مسح التقدم المحفوظ</span>
+                        </button>
+                    </div>
+                    <p id="progressHint" class="progress-hint" data-i18n="progressLockedHint">أكمل اختبارات الدروس الثلاثة لإصدار شهادة الإتمام.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificate: only rendered visibly by @media print, see css/progress.css -->
+        <div id="certificatePrintArea" class="certificate-print-area" aria-hidden="true">
+            <div class="certificate-inner">
+                <p class="certificate-eyebrow">Certificate of Completion — شهادة إتمام</p>
+                <h2 class="certificate-name" id="certificateName">—</h2>
+                <p class="certificate-body" data-i18n="certificateBody">أتمّ بنجاح منهج الأحياء التفاعلي — الصف الثالث الثانوي، ويشمل الدروس الثلاثة التالية:</p>
+                <ul class="certificate-scores" id="certificateScores"></ul>
+                <p class="certificate-date" id="certificateDate"></p>
+            </div>
+        </div>
+
     </main>
 
     <!-- Footer -->
@@ -298,6 +385,8 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/progress.js" defer></script>
+    <script src="js/progress-ui.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

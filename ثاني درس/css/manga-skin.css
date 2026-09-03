@@ -1,0 +1,109 @@
+/* ==========================================================================
+   MANGA SKIN — Lesson 2: الهيكل المحوري في الإنسان
+   ========================================================================== */
+
+:root {
+  --bg-obsidian: var(--m-paper);
+  --bg-card: var(--m-paper-2);
+  --bg-card-hover: #FBF7EC;
+  --bone-primary: var(--m-ink);
+  --xray-cyan: var(--m-red);
+  --deep-cyan: var(--m-ink);
+  --anatomical-crimson: var(--m-ink);
+  --bone-shadow: var(--m-muted);
+  --medical-gold: var(--m-ink);
+  --text-muted: var(--m-muted);
+  --text-primary: var(--m-ink);
+  --border-cyan: var(--m-border);
+  --border-gold: var(--m-border);
+  --glow-cyan: var(--m-shadow-hard-sm);
+  --glow-crimson: none;
+
+  --font-main: 'Cairo', 'Noto Sans Arabic', sans-serif;
+  --font-mono: var(--font-label);
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+}
+
+[data-theme="light"] {
+  --bg-obsidian: var(--m-n-bg);
+  --bg-card: var(--m-n-card);
+  --bg-card-hover: #201D19;
+  --bone-primary: var(--m-n-ink);
+  --xray-cyan: var(--m-n-red);
+  --deep-cyan: var(--m-n-ink);
+  --anatomical-crimson: var(--m-n-red);
+  --bone-shadow: var(--m-n-muted);
+  --medical-gold: var(--m-n-ink);
+  --text-muted: var(--m-n-muted);
+  --text-primary: var(--m-n-ink);
+  --border-cyan: var(--m-n-border);
+  --border-gold: var(--m-n-border);
+}
+
+html, body { background-color: var(--bg-obsidian); }
+body { background-image: radial-gradient(circle at 50% 0%, rgba(20,18,15,0.05) 0%, transparent 65%) !important; }
+
+.sidebar { border-left: 3px solid var(--m-ink); }
+.brand-icon { background: var(--m-ink); border: 2px solid var(--m-ink); color: var(--m-paper); border-radius: 2px; }
+.nav-item a:hover, .nav-item.active a {
+  background-color: var(--m-red-tint);
+  color: var(--m-red-dark);
+  border-right: 3px solid var(--m-red);
+}
+.nav-item .chapter-num { color: var(--m-red); }
+
+.mobile-header, .mobile-bottom-nav { border-color: var(--m-ink) !important; backdrop-filter: none; }
+.mobile-bottom-nav a.active { color: var(--m-red); }
+
+.chapter-header { border-bottom: 3px solid var(--m-ink); }
+.chapter-badge { font-family: var(--font-display); font-weight: 400; color: var(--m-red); }
+/* --m-red-dark: both are small/normal-weight text (0.9rem label, and the
+   hero subtitle can render as low as 1.1rem on narrow screens) — plain
+   --m-red only reaches 4.11:1 on paper, short of WCAG AA's 4.5:1. */
+.chapter-titles p { color: var(--m-red-dark); }
+
+.atlas-card { border: 3px solid var(--m-ink); box-shadow: var(--m-shadow-hard-sm); }
+.atlas-card:hover { border-color: var(--m-ink); box-shadow: 8px 8px 0 var(--m-ink); transform: translate(-3px, -3px); }
+.card-number-anchor { font-family: var(--font-display); font-weight: 400; color: var(--m-red); }
+
+.hero-title {
+  color: var(--m-ink);
+  text-shadow: 3px 3px 0 var(--m-red-tint);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+.hero-subtitle { color: var(--m-red-dark); }
+
+.btn-cta {
+  background: var(--m-red);
+  color: var(--m-paper);
+  border: 2px solid var(--m-ink);
+  border-radius: 2px;
+  box-shadow: var(--m-shadow-hard-sm);
+}
+.btn-cta:hover { background: var(--m-red-dark); transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--m-ink); }
+
+.svg-interactive-stage { background: var(--m-paper-3); border: 3px solid var(--m-ink); }
+.simulation-box { border: 3px solid var(--m-ink); box-shadow: var(--m-shadow-hard-sm); }
+.sim-btn { background: var(--m-paper-2); border: 2px solid var(--m-ink); }
+.sim-btn.active, .sim-btn:hover { background: var(--m-red); color: var(--m-paper); border-color: var(--m-ink); }
+
+.flashcard { border: 3px solid var(--m-ink); box-shadow: var(--m-shadow-hard-sm); }
+.flashcard-back { color: var(--m-red); }
+
+.quiz-box { border: 3px solid var(--m-ink); box-shadow: var(--m-shadow-hard-sm); }
+.quiz-option { border: 2px solid var(--m-border); background: var(--m-paper-2); }
+.quiz-option:hover { border-color: var(--m-red); background: var(--m-red-tint); }
+.quiz-option.correct {
+  background: var(--m-red-tint) !important;
+  border-color: var(--m-red) !important;
+  color: var(--m-red-dark) !important;
+}
+.quiz-option.wrong {
+  background-color: #E7E2D3 !important;
+  background-image: repeating-linear-gradient(-45deg, rgba(20,18,15,0.09) 0px, rgba(20,18,15,0.09) 2px, transparent 2px, transparent 9px) !important;
+  border-color: var(--m-ink) !important;
+  color: var(--m-ink) !important;
+}
