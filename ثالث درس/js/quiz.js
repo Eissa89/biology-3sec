@@ -294,6 +294,10 @@ function renderQuiz() {
       : (userScore >= 8 ? "ممتاز! لقد أتقنت جميع مفاهيم درس الحركة في النبات بنجاح." : "أداء جيد! يمكنك مراجعة فخاخ الامتحانات والتجارب التفاعلية ثم إعادة الاختبار.");
     const resetBtnTxt = (lang === 'en') ? "Retake Quiz 🔄" : "إعادة الاختبار 🔄";
 
+    if (window.BioProgress) {
+      window.BioProgress.save('lesson3', userScore, questions.length);
+    }
+
     container.innerHTML = `
       <div style="text-align: center; padding: 2rem;">
         <h3 style="font-size: 1.8rem; color: var(--gold-highlight); margin-bottom: 1rem;">

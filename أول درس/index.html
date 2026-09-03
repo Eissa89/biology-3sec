@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="نظام تعليمي تفاعلي لدرس الدعامة في النبات - أحياء الصف الثالث الثانوي في مصر">
   <title>الدعامة في النبات | لوحة التحكم التعليمية</title>
+  <!-- Favicon & app icons -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#14120F">
   <!-- Main Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@300;400;600;700;800;900&family=Noto+Sans+Arabic:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/manga-system.css">
+  <link rel="stylesheet" href="css/manga-skin.css">
 </head>
 <body>
 
@@ -139,18 +149,13 @@
         </div>
 
         <!-- Educational Video Area -->
-        <div class="media-container">
+        <div class="media-container" style="grid-template-columns: 1fr;">
           <div class="media-wrapper">
-            <video class="media-element" controls preload="metadata">
+            <video class="media-element" controls preload="metadata" poster="assets/videos/osmosis-turgor-poster.jpg" width="854" height="480">
               <source src="assets/videos/osmosis-turgor.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <div class="media-caption">فيديو 01: الأسموزية وآلية ضغط الامتلاء (3D Animation)</div>
-          </div>
-
-          <div class="media-wrapper">
-            <img class="media-element zoomable-image" src="assets/images/1786372286872.png" alt="Plant Cell Turgor Pressure Illustration">
-            <div class="media-caption">رسم توضيحي 01: مقارنة الخلية النباتية المنتفخة (Turgid) والمنكمشة (Plasmolyzed)</div>
           </div>
         </div>
       </section>
@@ -182,6 +187,23 @@
           <div class="flow-step"><span class="flow-step-num">3</span> نشوء ضغط الامتلاء</div>
           <span class="flow-arrow">←</span>
           <div class="flow-step"><span class="flow-step-num">4</span> الضغط على الجدار الخلوي للخارج</div>
+        </div>
+
+        <div class="media-container" style="margin-top: 20px;">
+          <div class="media-wrapper">
+            <picture>
+              <source srcset="assets/images/1786372289844.webp" type="image/webp">
+              <img class="media-element zoomable-image" src="assets/images/1786372289844.png" alt="Turgid vs Plasmolyzed Plant Cell Comparison" loading="lazy" decoding="async" width="1200" height="670">
+            </picture>
+            <div class="media-caption">رسم توضيحي 01: مقارنة الخلية النباتية المنتفخة (Turgid) والمنكمشة (Plasmolyzed)</div>
+          </div>
+          <div class="media-wrapper">
+            <picture>
+              <source srcset="assets/images/1786372939275.webp" type="image/webp">
+              <img class="media-element zoomable-image" src="assets/images/1786372939275.png" alt="Turgor Pressure and Plasmolysis Effect on Plant Cell Organelles" loading="lazy" decoding="async" width="1200" height="655">
+            </picture>
+            <div class="media-caption">رسم توضيحي 02: تأثير ضغط الامتلاء والبلزمة على عضيات الخلية (النواة والميتوكوندريا والبلاستيدات)</div>
+          </div>
         </div>
       </section>
 
@@ -272,8 +294,11 @@
 
         <div class="media-container" style="grid-template-columns: 1fr; margin-top: 20px;">
           <div class="media-wrapper">
-            <img class="media-element zoomable-image" src="assets/images/1786372289844.png" alt="Plant Tissues Wall Depositions Illustration">
-            <div class="media-caption">رسم توضيحي 02: مقارنة تفصيلية لسمك الجدار وترسيب السليلوز واللجنين في الأنسجة المختلفة</div>
+            <picture>
+              <source srcset="assets/images/1786372286872.webp" type="image/webp">
+              <img class="media-element zoomable-image" src="assets/images/1786372286872.png" alt="Plant Tissue Cross-Section: Wall Deposits Overview" loading="lazy" decoding="async" width="1200" height="655">
+            </picture>
+            <div class="media-caption">رسم توضيحي 03: مقارنة تفصيلية لسمك الجدار وترسيب السليلوز واللجنين والسيوبرين في الأنسجة المختلفة</div>
           </div>
         </div>
       </section>
@@ -301,6 +326,16 @@
             <p style="font-size: 13px; margin-bottom: 8px;"><strong>النفاذية:</strong> غير منفذ تماماً للماء.</p>
             <p style="font-size: 13px; margin-bottom: 8px;"><strong>الموقع:</strong> يترسب داخل جدر الخلايا الاسكلارنشيمية (الخلايا الحجرية والألياف) وجدر أوعية وقصيبات الخشب.</p>
             <p style="font-size: 13px;"><strong>الوظيفة:</strong> إكساب الخلايا الصلابة والقوة المطلقة لمقاومة الضغوط الميكانيكية الهائلة.</p>
+          </div>
+        </div>
+
+        <div class="media-container" style="grid-template-columns: 1fr; margin-top: 20px;">
+          <div class="media-wrapper">
+            <picture>
+              <source srcset="assets/images/1786372952017.webp" type="image/webp">
+              <img class="media-element zoomable-image" src="assets/images/1786372952017.png" alt="Parenchyma, Collenchyma, Sclerenchyma Wall Thickening Comparison" loading="lazy" decoding="async" width="1200" height="655">
+            </picture>
+            <div class="media-caption">رسم توضيحي 04: قطاع عرضي تشريحي يوضح تثخن جدر النسيج البارنشيمي والكولانشيمي بالسليلوز، وتثخن النسيج الاسكلارنشيمي باللجنين</div>
           </div>
         </div>
       </section>
@@ -340,6 +375,16 @@
           </ul>
           <p style="margin-top: 14px; font-weight: 700; color: var(--warning-color);">جميع مواد كلمة «سَلَك» هي مواد غَيْرُ مُنْفِذَةٍ لِلْمَاءِ إطلاقاً! الاستثناء الوحيد للجدار الخلوي هو «السليلوز» فهو ممر ومنفذ ممتاز للماء.</p>
         </div>
+
+        <div class="media-container" style="grid-template-columns: 1fr; margin-top: 20px;">
+          <div class="media-wrapper">
+            <picture>
+              <source srcset="assets/images/1786372955003.webp" type="image/webp">
+              <img class="media-element zoomable-image" src="assets/images/1786372955003.png" alt="Epidermis, Cuticle and Suberin Cross-Section Diagram" loading="lazy" decoding="async" width="1200" height="655">
+            </picture>
+            <div class="media-caption">رسم توضيحي 05: خلايا البشرة المطلية بالكيوتين الشمعي (طبقة الكيوتيكل)، وموقع السيوبرين ضمن مكونات الجدار الخلوي</div>
+          </div>
+        </div>
       </section>
 
       <!-- 13 & 14. الأنسجة والفلين والبشرة -->
@@ -365,16 +410,6 @@
           </div>
         </div>
 
-        <div class="media-container" style="margin-top: 20px;">
-          <div class="media-wrapper">
-            <img class="media-element zoomable-image" src="assets/images/1786372939275.png" alt="Parenchyma, Collenchyma, Sclerenchyma Comparison">
-            <div class="media-caption">رسم توضيحي 03: قطاع عرضي تشريحي يوضح الأنسجة الثلاثة (البارنشيمي، الكولانشيمي، الاسكلارنشيمي)</div>
-          </div>
-          <div class="media-wrapper">
-            <img class="media-element zoomable-image" src="assets/images/1786372952017.png" alt="Epidermis and Cork tissues">
-            <div class="media-caption">رسم توضيحي 04: خلايا البشرة المطلية بالكيوتين الشمعي، وخلايا النسيج الفليني التي تحتوي السيوبرين</div>
-          </div>
-        </div>
       </section>
 
       <!-- 15. شريط كاسبري والاندوديرمس -->
@@ -395,7 +430,7 @@
         <!-- Educational Video Area for Casparian Strip -->
         <div class="media-container">
           <div class="media-wrapper" style="grid-column: span 2;">
-            <video class="media-element" controls preload="metadata" style="max-height: 320px;">
+            <video class="media-element" controls preload="metadata" poster="assets/videos/casparian-strip-poster.jpg" style="max-height: 320px;" width="854" height="480">
               <source src="assets/videos/casparian-strip.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -403,12 +438,6 @@
           </div>
         </div>
 
-        <div class="media-container" style="margin-top: 15px; grid-template-columns: 1fr;">
-          <div class="media-wrapper">
-            <img class="media-element zoomable-image" src="assets/images/1786372955003.png" alt="Casparian Strip diagram">
-            <div class="media-caption">رسم توضيحي 05: تخطيط مجهري يوضح المسار الأبوبلاستي وتأثير السيوبرين في خلايا الاندوديرمس</div>
-          </div>
-        </div>
       </section>
 
       <!-- 16. العلاقات والتكامل بين الدعامتين -->
@@ -734,7 +763,7 @@
 
       <!-- Educational Image Zoom Modal Overlay -->
       <div id="zoom-modal" class="modal-overlay">
-        <button id="modal-close" class="modal-close">&times;</button>
+        <button id="modal-close" class="modal-close" aria-label="إغلاق الصورة المكبرة">&times;</button>
         <img id="modal-img" class="modal-content" src="" alt="Zoomed Biology Illustration">
       </div>
 
@@ -748,8 +777,17 @@
   </div>
 
   <!-- JavaScript Controllers -->
-  <script src="js/flashcards.js"></script>
-  <script src="js/quiz.js"></script>
-  <script src="js/app.js"></script>
+  <!-- Cross-lesson progress tracker (shared with the hub + lessons 2 & 3) -->
+  <script src="../js/progress.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('../sw.js', { scope: '../' }).catch(() => {});
+      });
+    }
+  </script>
+  <script src="js/flashcards.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

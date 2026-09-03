@@ -1,0 +1,188 @@
+/* ==========================================================================
+   PROGRESS PANEL — "My Progress" section on the hub page
+   Uses the shared manga-ink tokens from css/manga-system.css.
+   ========================================================================== */
+
+.progress-section {
+  padding: var(--sp-16, 64px) 0;
+}
+
+.progress-panel {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-8, 32px);
+}
+
+.progress-name-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3, 12px);
+  margin-bottom: var(--sp-6, 24px);
+}
+
+.progress-name-row label {
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  color: var(--m-muted);
+  white-space: nowrap;
+}
+
+.progress-name-row input {
+  flex: 1;
+  min-width: 180px;
+  padding: var(--sp-2, 8px) var(--sp-3, 12px);
+  border: 2px solid var(--m-ink);
+  border-radius: var(--m-radius-sm);
+  background: var(--m-paper-2);
+  color: var(--m-ink);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.progress-name-row input:focus-visible {
+  outline: 3px solid var(--m-red);
+  outline-offset: 2px;
+}
+
+.progress-list {
+  list-style: none;
+  margin: 0 0 var(--sp-6, 24px) 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2, 8px);
+}
+
+.progress-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-3, 12px);
+  padding: var(--sp-3, 12px) var(--sp-4, 16px);
+  border: 2px solid var(--m-border-strong);
+  border-radius: var(--m-radius-sm);
+  background: var(--m-paper);
+}
+
+.progress-item.is-complete {
+  border-color: var(--m-red);
+  background: var(--m-red-tint);
+}
+
+.progress-item-title {
+  font-weight: 700;
+}
+
+.progress-item-status {
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.progress-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3, 12px);
+  align-items: center;
+}
+
+.progress-actions .card-btn {
+  border: none;
+  cursor: pointer;
+}
+
+.progress-actions .card-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.progress-reset-btn {
+  background: transparent;
+  border: 2px solid var(--m-border-strong);
+  border-radius: var(--m-radius-sm);
+  padding: 0.6em 1.1em;
+  font-family: var(--font-label);
+  font-size: 0.85rem;
+  color: var(--m-muted);
+  cursor: pointer;
+}
+
+.progress-reset-btn:hover {
+  border-color: var(--m-red);
+  color: var(--m-red);
+}
+
+.progress-hint {
+  margin: var(--sp-4, 16px) 0 0 0;
+  font-size: 0.9rem;
+  color: var(--m-muted);
+}
+
+/* ==========================================================================
+   CERTIFICATE — hidden on screen, only shown when printing
+   ========================================================================== */
+
+.certificate-print-area {
+  display: none;
+}
+
+@media print {
+  body > *:not(.certificate-print-area) {
+    display: none !important;
+  }
+
+  .certificate-print-area {
+    display: block !important;
+    position: static;
+  }
+
+  .certificate-inner {
+    border: 6px double var(--m-ink, #14120F);
+    padding: 48px;
+    text-align: center;
+    max-width: 720px;
+    margin: 40px auto;
+    font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
+  }
+
+  .certificate-eyebrow {
+    font-family: var(--font-label, monospace);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: #6E6656;
+    margin-bottom: 24px;
+  }
+
+  .certificate-name {
+    font-size: 2rem;
+    margin: 0 0 24px 0;
+    border-bottom: 2px solid var(--m-ink, #14120F);
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+
+  .certificate-body {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .certificate-scores {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    text-align: start;
+    display: inline-block;
+  }
+
+  .certificate-scores li {
+    padding: 6px 0;
+    font-size: 0.95rem;
+  }
+
+  .certificate-date {
+    font-size: 0.85rem;
+    color: #6E6656;
+  }
+}

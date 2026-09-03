@@ -1,0 +1,150 @@
+/* ==========================================================================
+   MANGA SKIN — Lesson 1: الدعامة في النبات (dashboard-style lesson app)
+   ========================================================================== */
+
+:root {
+  --bg-primary: var(--m-paper);
+  --bg-secondary: var(--m-paper-3);
+  --card-bg: var(--m-paper-2);
+  --card-bg-hover: #FBF7EC;
+  --text-primary: var(--m-ink);
+  --text-secondary: var(--m-muted);
+  --accent-color: var(--m-red);
+  --accent-secondary: var(--m-ink);
+  --accent-gradient: var(--m-red);
+  --success-color: var(--m-red-dark);
+  --success-bg: var(--m-red-tint);
+  --error-color: var(--m-ink);
+  --error-bg: #E7E2D3;
+  --warning-color: var(--m-ink-soft);
+  --warning-bg: var(--m-paper-3);
+  --border-color: var(--m-border);
+  --border-focus: var(--m-red);
+  --sidebar-bg: var(--m-paper-2);
+  --shadow-sm: 2px 2px 0 var(--m-ink);
+  --shadow-md: var(--m-shadow-hard-sm);
+  --shadow-lg: var(--m-shadow-hard);
+  --font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-primary: var(--m-n-bg);
+  --bg-secondary: #121110;
+  --card-bg: var(--m-n-card);
+  --card-bg-hover: #201D19;
+  --text-primary: var(--m-n-ink);
+  --text-secondary: var(--m-n-muted);
+  --accent-color: var(--m-n-red);
+  --accent-secondary: var(--m-n-ink);
+  --accent-gradient: var(--m-n-red);
+  --success-color: var(--m-n-red);
+  --success-bg: #3A1613;
+  --error-color: var(--m-n-ink);
+  --error-bg: #262420;
+  --warning-color: var(--m-n-muted);
+  --warning-bg: #201D19;
+  --border-color: var(--m-n-border);
+  --border-focus: var(--m-n-red);
+  --sidebar-bg: var(--m-n-card);
+  --shadow-sm: 2px 2px 0 #000;
+  --shadow-md: 4px 4px 0 #000;
+  --shadow-lg: 6px 6px 0 #000;
+}
+
+/* Flatten rounded corners into ink-panel geometry across the dashboard */
+.lesson-hero, .learning-progress-card, .lesson-card, .flashcard-face,
+.quiz-question-card, .quiz-option-label, .quiz-explanation, .quiz-score-badge,
+.mnemonic-callout, .mnemonic-word, .mnemonic-item, .recall-item, .recall-textarea,
+.recall-answer-box, .badge, .accordion-item, .modal-content, .card-icon,
+.media-element, .media-placeholder, .search-box input, .flashcard-face.front::after,
+.timeline-marker, .stat-chip {
+  border-radius: var(--m-radius) !important;
+}
+
+.dashboard-container { background: var(--bg-primary); }
+
+.sidebar { border-left: 3px solid var(--m-ink); background: var(--sidebar-bg); }
+.brand-icon { background: var(--m-ink); color: var(--m-paper); border-radius: 2px; }
+.sidebar-nav a { color: var(--text-secondary); }
+.sidebar-nav a:hover, .sidebar-nav li.active a {
+  background-color: var(--m-red-tint);
+  color: var(--m-red-dark);
+  border-right: 3px solid var(--m-red);
+}
+
+.top-header { border-bottom: 3px solid var(--m-ink); background: var(--bg-primary); }
+.search-box input { border: 2px solid var(--m-ink); background: var(--card-bg); }
+.theme-toggle-btn { border: 2px solid var(--m-ink); border-radius: 2px; }
+.theme-toggle-btn:hover { background: var(--m-ink); color: var(--m-paper); }
+
+.lesson-hero {
+  background: var(--card-bg);
+  border: 3px solid var(--m-ink);
+  box-shadow: var(--m-shadow-hard);
+}
+.lesson-hero::before { background: var(--m-red); filter: none; opacity: 0.12; }
+.lesson-hero-tag { background-color: transparent; border: 2px solid var(--m-red); color: var(--m-red); }
+.lesson-hero h2 {
+  background: none; -webkit-background-clip: unset; -webkit-text-fill-color: unset;
+  color: var(--m-ink); font-family: var(--font-display); font-weight: 400;
+}
+.stat-chip { border: 2px solid var(--m-ink); background-color: var(--bg-secondary); }
+.stat-chip i { color: var(--m-red); }
+
+.progress-track { background-color: var(--m-paper-3); border: 1px solid var(--m-ink); }
+.progress-fill { background: var(--m-red); }
+
+.lesson-card { border: 3px solid var(--m-ink); box-shadow: var(--m-shadow-hard-sm); }
+.lesson-card::after { border-radius: 0 !important; }
+.card-icon { background-color: transparent; border: 2px solid var(--m-ink); color: var(--m-ink); }
+
+.styled-table th { background-color: var(--m-ink); color: var(--m-paper); }
+.styled-table { border: 2px solid var(--m-ink); }
+.styled-table td { border-color: var(--m-border); }
+.table-container { border: 3px solid var(--m-ink); border-radius: var(--m-radius); }
+
+.badge.success { border: 1.5px solid var(--m-red); }
+.badge.error { background-color: var(--error-bg); color: var(--m-ink); border: 1.5px solid var(--m-ink); }
+.badge.warning { border: 1.5px solid var(--m-ink-soft); }
+
+.mnemonic-callout { background: var(--m-paper-3); border: 2px solid var(--m-ink); }
+/* --m-red-dark: mnemonic-header (18px/800) sits right at the WCAG large-text
+   boundary and plain --m-red only clears 4.11:1 on paper — using the darker
+   brand red here keeps both header and word safely AA-compliant. */
+.mnemonic-header, .mnemonic-word { color: var(--m-red-dark); border-color: var(--m-red); }
+.mnemonic-word { background-color: var(--card-bg); font-family: var(--font-display); font-weight: 400; }
+
+.accordion-item { border: 2px solid var(--m-border); }
+.accordion-item[open] { border-color: var(--m-ink); }
+
+.mindmap-node.root { background: var(--m-ink); color: var(--m-paper); border-radius: 2px; }
+.mindmap-node { border: 2px solid var(--m-ink); }
+
+.flashcard-face { border: 2px solid var(--m-ink); }
+.flashcard-face.front::after { color: var(--m-red); }
+.flashcard-face.back { background: var(--m-red); color: var(--m-paper); }
+.flashcard-face.back::after { color: rgba(242, 236, 220, 0.85); }
+
+.quiz-option-label { border: 2px solid var(--m-border); }
+.quiz-option-label:hover { border-color: var(--m-red); }
+.quiz-option-label.correct {
+  background-color: var(--m-red-tint) !important;
+  border-color: var(--m-red) !important;
+}
+.quiz-option-label.incorrect {
+  background-image: repeating-linear-gradient(-45deg, rgba(20,18,15,0.08) 0px, rgba(20,18,15,0.08) 2px, transparent 2px, transparent 9px);
+  background-color: var(--error-bg) !important;
+  border-color: var(--m-ink) !important;
+}
+.quiz-explanation { border-right: 4px solid var(--m-red); }
+.quiz-score-badge { background: var(--m-red); border-radius: 2px !important; }
+
+.spaced-timeline::before { background: var(--m-ink); }
+.timeline-marker { background: var(--m-red); border: 2px solid var(--m-ink); }
+
+.btn-primary { background-color: var(--m-red) !important; color: var(--m-paper) !important; border: 2px solid var(--m-ink); box-shadow: var(--m-shadow-hard-sm); border-radius: 2px !important; }
+.btn-primary:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--m-ink); }
+.btn-secondary { border: 2px solid var(--m-ink) !important; border-radius: 2px !important; }
+
+.highlight { background: var(--m-red-tint); color: var(--m-ink); }
+.modal-content { border: 3px solid var(--m-ink); box-shadow: var(--m-shadow-hard); }

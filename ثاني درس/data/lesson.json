@@ -1,10 +1,10 @@
 {
-  "title": "الهيكل المحوري في الإنسان",
+  "title": "الهيكل العظمي الكامل في الإنسان",
   "subtitle": "الصف الثالث الثانوي — أطلس تشريحي سينمائي",
   "metadata": {
     "subject": "الأحياء",
     "grade": "الصف الثالث الثانوي",
-    "lesson": "الدرس الثاني: الهيكل المحوري في الإنسان"
+    "lesson": "الدرس الثاني: الهيكل العظمي الكامل في الإنسان (المحوري والطرفي)"
   },
   "visualTheme": {
     "name": "Cinematic Anatomical Atlas",
@@ -15,10 +15,10 @@
     "boneColor": "#E9E4D8"
   },
   "hero": {
-    "title": "الهيكل المحوري",
-    "subtitle": "Axial Skeleton — ثلاثة محاور تحمي وتدعم جسمك",
+    "title": "الهيكل العظمي الكامل",
+    "subtitle": "Axial & Appendicular Skeleton — 206 عظمة تحمي وتحرك جسمك",
     "cta": "ابدأ الرحلة التشريحية",
-    "tagline": "استكشف الهيكل المحوري طبقة بعد طبقة في أطلس تشريحي رقمي تفاعلي"
+    "tagline": "استكشف الهيكل العظمي المحوري والطرفي طبقة بعد طبقة في أطلس تشريحي رقمي تفاعلي"
   },
   "chapters": [
     {
@@ -169,6 +169,61 @@
     {
       "id": "ch6",
       "number": "06",
+      "title": "الحزام الصدري والطرف العلوي",
+      "subtitle": "Pectoral Girdle & Upper Limb",
+      "pectoralGirdle": {
+        "title": "الحزام الصدري (Pectoral Girdle)",
+        "count": 4,
+        "sourceStatus": "OFFICIAL_CURRICULUM",
+        "bones": [
+          {"name": "الترقوة (Clavicle)", "count": 2, "note": "الرابط العظمي الوحيد المباشر بين الطرف العلوي والمحور، عبر المفصل القصي الترقوي."},
+          {"name": "لوح الكتف (Scapula)", "count": 2, "note": "يستند على الضلوع الخلفية بالعضلات فقط، ويحمل تجويف الحُق الحقاني (Glenoid) لمفصل الكتف."}
+        ]
+      },
+      "upperLimb": {
+        "title": "عظام الطرف العلوي الحر",
+        "countPerLimb": 30,
+        "countTotal": 60,
+        "sourceStatus": "OFFICIAL_CURRICULUM",
+        "bones": [
+          {"name": "العضد (Humerus)", "count": 1},
+          {"name": "الزند والكعبرة (Ulna & Radius)", "count": 2},
+          {"name": "عظام الرسغ (Carpals)", "count": 8},
+          {"name": "عظام راحة اليد (Metacarpals)", "count": 5},
+          {"name": "سلاميات الأصابع (Phalanges)", "count": 14}
+        ]
+      }
+    },
+    {
+      "id": "ch7",
+      "number": "07",
+      "title": "الحزام الحوضي والطرف السفلي",
+      "subtitle": "Pelvic Girdle & Lower Limb",
+      "pelvicGirdle": {
+        "title": "الحزام الحوضي (Pelvic Girdle)",
+        "count": 2,
+        "sourceStatus": "OFFICIAL_CURRICULUM",
+        "description": "عظمتا حوض فقط، كل منها ناتجة عن التحام 3 عظام جنينية (الحرقفة + الوركي + العانة). ترتبط بمتانة بالعجز عبر المفصل العجزي الحرقفي، وتحمل تجويف الحُق (Acetabulum) الذي يستقبل رأس عظمة الفخذ."
+      },
+      "lowerLimb": {
+        "title": "عظام الطرف السفلي الحر",
+        "countPerLimb": 30,
+        "countTotal": 60,
+        "sourceStatus": "OFFICIAL_CURRICULUM",
+        "bones": [
+          {"name": "عظمة الفخذ (Femur)", "count": 1},
+          {"name": "الرضفة (Patella)", "count": 1},
+          {"name": "القصبة والشظية (Tibia & Fibula)", "count": 2},
+          {"name": "عظام رسغ القدم (Tarsals)", "count": 7},
+          {"name": "عظام مشط القدم (Metatarsals)", "count": 5},
+          {"name": "سلاميات أصابع القدم (Phalanges)", "count": 14}
+        ]
+      },
+      "appendicularTotalCheck": "4 + 60 + 2 + 60 = 126 عظمة طرفية، و126 + 80 (محوري) = 206 عظمة إجمالاً."
+    },
+    {
+      "id": "ch8",
+      "number": "08",
       "title": "شبكة الاتصالات الهيكلية",
       "subtitle": "Direct vs Indirect Connections",
       "connections": [
@@ -199,8 +254,8 @@
       ]
     },
     {
-      "id": "ch7",
-      "number": "07",
+      "id": "ch9",
+      "number": "09",
       "title": "مختبر أخطاء الامتحانات",
       "subtitle": "Exam Traps & Misconceptions",
       "traps": [
@@ -218,12 +273,22 @@
           "title": "⚠️ الهيكل العظمي vs الجهاز الهيكلي",
           "status": "NUMERICAL_DISTINCTION",
           "explanation": "الهيكل العظمي يتكون من 206 عظمة فقط، بينما الجهاز الهيكلي يشمل 5 مكونات (عظام، غضاريف، مفاصل، أربطة، وأوتار)."
+        },
+        {
+          "title": "⚠️ الحوض vs الحزام الحوضي",
+          "status": "TERMINOLOGY_DISTINCTION",
+          "explanation": "«الحوض» الكامل يشمل عظمتي الحوض (طرفي) بالإضافة إلى العجز والعصعص (محوري). أما «الحزام الحوضي» فيقصد به عظمتا الحوض فقط، وهو طرفي بالكامل."
+        },
+        {
+          "title": "⚠️ الرضفة المنسية",
+          "status": "COMMONLY_FORGOTTEN",
+          "explanation": "الرضفة (Patella) عظمة سمسمية (Sesamoid) مستقلة تُحسب ضمن الـ 206 عظمة، ويسهل نسيانها عند حصر عظام الطرف السفلي."
         }
       ]
     },
     {
-      "id": "ch8",
-      "number": "08",
+      "id": "ch10",
+      "number": "10",
       "title": "قاعة الاختبارات التشريحية",
       "subtitle": "Anatomical Examination Room",
       "description": "اختبر حصيلتك العلمية عبر بطاقات الاسترجاع النشط والامتحان الشامل."

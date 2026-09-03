@@ -1,0 +1,207 @@
+/* ==========================================================================
+   MANGA INK SYSTEM — shared design tokens & textures
+   Loaded on every page, after the page's own stylesheet + skin override.
+   Single accent discipline: paper / ink / one red. No gradients-as-decor.
+   ========================================================================== */
+
+/* Fonts are loaded via <link rel="preload/stylesheet"> tags in each page's
+   <head> (see index.html) rather than @import here — @import creates a
+   request waterfall (HTML -> CSS -> @import CSS -> font files) that delays
+   text rendering; a direct <link> is discovered immediately by the browser's
+   preload scanner while HTML is still parsing. */
+
+:root {
+  /* -- Master manga palette (day / paper mode) -- */
+  --m-paper: #F2ECDC;
+  --m-paper-2: #FFFFFF;
+  --m-paper-3: #E7DFC8;
+  --m-ink: #14120F;
+  --m-ink-soft: #34302A;
+  --m-muted: #6E6656;
+  --m-red: #DD2318;
+  --m-red-dark: #A3150C;
+  --m-red-tint: #F7DAD5;
+  --m-line: #14120F;
+  --m-border: rgba(20, 18, 15, 0.22);
+  --m-border-strong: rgba(20, 18, 15, 0.55);
+
+  /* -- Night ink mode (used behind [data-theme="light"] toggles) -- */
+  --m-n-bg: #0A0A0A;
+  --m-n-card: #181613;
+  --m-n-ink: #F2ECDC;
+  --m-n-muted: #A39C89;
+  --m-n-red: #FF4C3B;
+  --m-n-border: rgba(242, 236, 220, 0.22);
+
+  --font-display: 'Anton', 'Cairo', sans-serif;
+  --font-label: 'JetBrains Mono', monospace;
+
+  --m-radius: 3px;
+  --m-radius-sm: 2px;
+  --m-radius-md: 3px;
+  --m-radius-lg: 4px;
+  --m-shadow-hard: 5px 5px 0 var(--m-ink);
+  --m-shadow-hard-sm: 3px 3px 0 var(--m-ink);
+  --m-shadow-red: 5px 5px 0 var(--m-red);
+
+  /* Spacing scale (4px base unit) — new work should use these instead of
+     ad-hoc px values; existing per-page layout spacing was left as-authored
+     to avoid destabilizing 4 already-tuned responsive layouts. */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+}
+
+/* Screentone: dot halftone texture, works on light or dark backgrounds */
+.tone-dots {
+  background-image: radial-gradient(currentColor 1px, transparent 1.3px);
+  background-size: 7px 7px;
+  color: var(--m-ink);
+  opacity: 0.14;
+}
+
+/* Speed-line burst: radiating ink lines from a focal point */
+.tone-speedlines {
+  background-image: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    var(--m-ink) 0deg 0.6deg,
+    transparent 0.6deg 5deg
+  );
+  opacity: 0.08;
+}
+
+.tone-speedlines-red {
+  background-image: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    var(--m-red) 0deg 0.5deg,
+    transparent 0.5deg 6deg
+  );
+  opacity: 0.16;
+}
+
+/* Diagonal hazard hatch — used for "incorrect/error" states instead of a second color */
+.tone-hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--m-ink) 0px,
+    var(--m-ink) 2px,
+    transparent 2px,
+    transparent 9px
+  );
+  opacity: 0.5;
+}
+
+/* Ink panel: thick border + hard offset shadow, no blur, no soft radius */
+.ink-panel {
+  border: 3px solid var(--m-ink);
+  border-radius: var(--m-radius);
+  box-shadow: var(--m-shadow-hard);
+  background: var(--m-paper-2);
+}
+
+/* Stamp badge — hanko-style circular red mark */
+.ink-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--m-red);
+  color: var(--m-red);
+  font-family: var(--font-label);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: 3px;
+  transform: rotate(-3deg);
+  padding: 0.15em 0.6em;
+}
+
+::selection {
+  background: var(--m-red);
+  color: var(--m-paper);
+}
+
+/* Scrollbars (webkit) tuned to ink look */
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: var(--m-paper-3); }
+::-webkit-scrollbar-thumb { background: var(--m-ink); border-radius: 0; }
+
+/* Universal focus ring: red, square, unmistakable */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--m-red) !important;
+  outline-offset: 2px;
+}
+
+/* Decorative inline illustration SVGs: force them into the ink+red system.
+   Scoped to known decorative-diagram containers only — never UI icons. */
+.hero-svg-lab,
+.card-visual svg,
+.svg-diagram,
+.svg-interactive-stage,
+.lab-graphic svg {
+  color: var(--m-ink);
+}
+.hero-svg-lab *, .card-visual svg *, .svg-diagram *, .svg-interactive-stage *, .lab-graphic svg * {
+  stroke: var(--m-ink);
+}
+.hero-svg-lab [fill]:not([fill="none"]),
+.card-visual svg [fill]:not([fill="none"]),
+.svg-diagram [fill]:not([fill="none"]),
+.svg-interactive-stage [fill]:not([fill="none"]),
+.lab-graphic svg [fill]:not([fill="none"]) {
+  fill: var(--m-red);
+}
+.hero-svg-lab rect, .card-visual svg rect, .svg-diagram rect, .svg-interactive-stage rect {
+  fill: var(--m-paper-3) !important;
+  stroke: var(--m-ink) !important;
+}
+
+/* Real photographic/video content stays full-colour but gets framed like a clipped panel insert */
+.media-element, .zoomable-image {
+  border: 3px solid var(--m-ink) !important;
+  border-radius: var(--m-radius) !important;
+  box-shadow: var(--m-shadow-hard-sm) !important;
+}
+
+/* Catch-all: any inline SVG anywhere using the old sci-fi palette as a literal
+   attribute value, regardless of which container class wraps it (id-only svgs etc). */
+svg [stroke="#70E8FF"], svg [stroke="#70e8ff"], svg [stroke="#10B981"], svg [stroke="#10b981"],
+svg [stroke="#D4AF37"], svg [stroke="#d4af37"], svg [stroke="#D8495B"], svg [stroke="#E9E4D8"],
+svg [stroke="#D6B66A"], svg [stroke="#145D70"] {
+  stroke: var(--m-ink) !important;
+}
+svg [fill="#70E8FF"], svg [fill="#70e8ff"], svg [fill="#10B981"], svg [fill="#10b981"],
+svg [fill="#D4AF37"], svg [fill="#d4af37"], svg [fill="#D8495B"] {
+  fill: var(--m-red) !important;
+}
+svg [fill="#161C2B"], svg [fill="#0E2A1F"], svg [fill="#080A0F"], svg [fill="#0F131D"],
+svg [fill="#0e2a1f"], svg [fill="#0f1715"] {
+  fill: var(--m-paper-3) !important;
+}
+svg [fill^="rgba(112,232,255"], svg [fill^="rgba(112, 232, 255"] { fill: var(--m-red-tint) !important; }
+
+/* Catch stray inline rgba() colors left in markup (only external stylesheets get
+   variable-remapped automatically — inline `style=""` needs !important to override) */
+[style*="112,232,255"], [style*="112, 232, 255"],
+[style*="16,185,129"], [style*="16, 185, 129"],
+[style*="10,185,129"] {
+  background: var(--m-red-tint) !important;
+}
+[style*="216,73,91"], [style*="216, 73, 91"] {
+  background: #E7E2D3 !important;
+  border-color: var(--m-ink) !important;
+}
+[style*="212,175,55"], [style*="212, 175, 55"],
+[style*="255,255,255,0.05"] {
+  background: var(--m-paper-3) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

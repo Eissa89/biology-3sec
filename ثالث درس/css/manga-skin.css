@@ -1,0 +1,108 @@
+/* ==========================================================================
+   MANGA SKIN — Lesson 3: الحركة في النبات
+   ========================================================================== */
+
+:root {
+  --bg-obsidian: var(--m-paper);
+  --bg-card: var(--m-paper-2);
+  --bg-card-hover: var(--m-paper-2);
+  --bg-sidebar: var(--m-paper-2);
+  --bg-input: var(--m-paper-3);
+
+  --emerald-deep: var(--m-red-tint);
+  --emerald-botanical: var(--m-red-tint);
+  --chlorophyll-vibrant: var(--m-red);
+  --chlorophyll-glow: rgba(221, 35, 24, 0.25);
+
+  --cyan-scientific: var(--m-red);
+  --cyan-glow: rgba(221, 35, 24, 0.2);
+
+  --gold-subtle: var(--m-ink);
+  --gold-highlight: var(--m-ink);
+  --gold-glow: rgba(20, 18, 15, 0.15);
+
+  --text-primary: var(--m-ink);
+  --text-muted: var(--m-muted);
+  --text-dim: var(--m-muted);
+
+  --border-subtle: var(--m-border);
+  --border-active: var(--m-red);
+  --border-gold: var(--m-border);
+
+  --font-arabic: 'Cairo', 'Noto Sans Arabic', sans-serif;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+}
+
+html, body { background-color: var(--m-paper) !important; }
+body { background: var(--m-paper) !important; }
+
+.sidebar { border-left: 3px solid var(--m-ink); }
+.brand-icon { background: var(--m-ink); border-color: var(--m-ink); color: var(--m-paper); border-radius: 2px; }
+.mobile-header { border-color: var(--m-ink) !important; }
+.lang-btn.active { background: var(--m-ink); color: var(--m-paper); }
+.nav-item a:hover, .nav-item.active a {
+  background-color: var(--m-red-tint);
+  color: var(--m-red-dark);
+  border-right: 3px solid var(--m-red);
+}
+.chapter-num { color: var(--m-red); }
+
+.lesson-section { border: 3px solid transparent; }
+.lesson-section:hover { border-color: var(--m-border); }
+.section-title { color: var(--m-ink); }
+
+.badge { background: transparent; border: 2px solid var(--m-red); color: var(--m-red); border-radius: 2px; }
+
+.hero-section { background: var(--m-paper-3); }
+.hero-title {
+  background: none; -webkit-background-clip: unset; -webkit-text-fill-color: unset;
+  color: var(--m-ink); font-family: var(--font-display); font-weight: 400;
+  text-shadow: 3px 3px 0 var(--m-red-tint);
+}
+.hero-subtitle { color: var(--m-ink-soft); }
+
+.btn-cta {
+  background: var(--m-red);
+  color: var(--m-paper);
+  border: 2px solid var(--m-ink);
+  border-radius: 2px;
+  box-shadow: var(--m-shadow-hard-sm);
+}
+.btn-cta:hover { box-shadow: 1px 1px 0 var(--m-ink); transform: translate(2px, 2px); }
+
+.card { background: var(--m-paper-2); border: 3px solid var(--m-ink); border-radius: 2px; }
+.card:hover { border-color: var(--m-red); }
+/* --m-red-dark: both are normal-sized body text (0.82rem / inherited ~1rem
+   bold) — plain --m-red only clears 4.11:1 on paper, short of AA's 4.5:1. */
+.card-example { color: var(--m-red-dark); }
+
+.btn-action { background: var(--m-paper-2); border: 2px solid var(--m-ink); border-radius: 2px; }
+.btn-action:hover, .btn-action.active { background: var(--m-red); border-color: var(--m-ink); color: var(--m-paper); box-shadow: none; }
+.btn-gold { border-color: var(--m-ink); color: var(--m-ink); }
+.btn-gold:hover, .btn-gold.active { background: var(--m-paper-3); border-color: var(--m-ink); box-shadow: none; }
+
+.lab-display { background: var(--m-paper-2); border: 3px solid var(--m-ink) !important; }
+.slider-container { background: var(--m-paper-3); }
+
+.quick-recall-box { background: var(--m-paper-3); border: 2px dashed var(--m-ink); border-radius: 2px; }
+.quick-recall-box:hover { background: var(--m-red-tint); }
+.recall-question { color: var(--m-red-dark); }
+
+.trap-card { background: var(--m-paper-3); border: 2px solid var(--m-ink); border-left: 6px solid var(--m-ink); border-radius: 2px; }
+.trap-title { color: var(--m-ink); }
+.trap-correct { background: var(--m-red-tint); border-inline-start: 4px solid var(--m-red); }
+
+.quiz-container { border: 3px solid var(--m-ink); box-shadow: var(--m-shadow-hard); border-radius: 3px; }
+.quiz-option { background: var(--m-paper-2); border: 2px solid var(--m-border); border-radius: 2px; }
+.quiz-option:hover { border-color: var(--m-red); background: var(--m-red-tint); }
+.quiz-option.selected { border-color: var(--m-ink); background: var(--m-paper-3); }
+.quiz-option.correct { border-color: var(--m-red) !important; background: var(--m-red-tint) !important; }
+.quiz-option.wrong {
+  border-color: var(--m-ink) !important;
+  background-color: #E7E2D3 !important;
+  background-image: repeating-linear-gradient(-45deg, rgba(20,18,15,0.09) 0px, rgba(20,18,15,0.09) 2px, transparent 2px, transparent 9px) !important;
+}
+
+.concept-tree { background: var(--m-ink); color: var(--m-paper); border: 2px solid var(--m-ink); }

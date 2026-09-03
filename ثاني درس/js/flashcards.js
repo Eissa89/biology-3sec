@@ -56,6 +56,69 @@ window.FLASHCARDS_DATA_FALLBACK = [
     "sourceStatus": "OFFICIAL_CURRICULUM",
     "difficulty": "EASY",
     "tag": "القفص الصدري"
+  },
+  {
+    "id": "fc7",
+    "chapter": 8,
+    "term": "الاتصال المباشر وغير المباشر بالعمود الفقري",
+    "definition": "الجمجمة والقفص الصدري يتصلان مباشرة بالعمود الفقري، بينما الأطراف تتصل بشكل غير مباشر عبر الأحزمة.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "HARD",
+    "tag": "الاتصالات"
+  },
+  {
+    "id": "fc8",
+    "chapter": 9,
+    "term": "الأربطة vs الأوتار",
+    "definition": "الأربطة: نسيج ضام يربط عظمة بعظمة. الأوتار: نسيج ضام يربط عضلة بعظمة.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY",
+    "tag": "مختبر الأخطاء"
+  },
+  {
+    "id": "fc9",
+    "chapter": 6,
+    "term": "الحزام الصدري (Pectoral Girdle)",
+    "definition": "يتكون من 4 عظام (عظمتا ترقوة + عظمتا لوح كتف)، ويصل الطرف العلوي بالجذع عبر مفصل قصي ترقوي وحيد.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY",
+    "tag": "الحزام الصدري"
+  },
+  {
+    "id": "fc10",
+    "chapter": 6,
+    "term": "عظام الطرف العلوي الحر",
+    "definition": "30 عظمة في كل طرف: عضد (1) + زند وكعبرة (2) + رسغ (8) + راحة يد (5) + سلاميات (14).",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "MEDIUM",
+    "tag": "الطرف العلوي"
+  },
+  {
+    "id": "fc11",
+    "chapter": 7,
+    "term": "الحزام الحوضي (Pelvic Girdle)",
+    "definition": "عظمتا حوض فقط (كل منها ناتج عن التحام الحرقفة والوركي والعانة)، يرتبط بقوة بالعجز عبر المفصل العجزي الحرقفي.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY",
+    "tag": "الحزام الحوضي"
+  },
+  {
+    "id": "fc12",
+    "chapter": 7,
+    "term": "عظام الطرف السفلي الحر",
+    "definition": "30 عظمة في كل طرف: فخذ (1) + رضفة (1) + قصبة وشظية (2) + عظام رسغ القدم (7) + مشط القدم (5) + سلاميات (14).",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "MEDIUM",
+    "tag": "الطرف السفلي"
+  },
+  {
+    "id": "fc13",
+    "chapter": 9,
+    "term": "الحوض vs الحزام الحوضي",
+    "definition": "الحوض الكامل = عظمتا الحوض + العجز والعصعص (يشمل أجزاء محورية). الحزام الحوضي = عظمتا الحوض فقط (طرفي بالكامل).",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "HARD",
+    "tag": "مختبر الأخطاء"
   }
 ];
 

@@ -225,6 +225,11 @@ class QuizController {
     else if (percentage >= 80) appreciation = 'رائع جداً! فهمك للدرس قوي ومتين 🌟';
     else if (percentage >= 50) appreciation = 'جيد، لكن يُنصح بمراجعة المواد والأنسجة مجدداً 👍';
 
+    // Record progress once every question has an answer (cross-lesson tracker)
+    if (answeredCount === total && window.BioProgress) {
+      window.BioProgress.save('lesson1', this.score, total);
+    }
+
     this.resultsContainer.innerHTML = `
       <div class="quiz-score-badge fade-in">
         النتيجة: ${this.score} / ${total} (${percentage}%) — ${appreciation}

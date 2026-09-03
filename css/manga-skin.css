@@ -1,0 +1,178 @@
+/* ==========================================================================
+   MANGA SKIN — Hub / Landing Page
+   Remaps the existing token names to the manga ink system, then patches
+   the handful of hardcoded (non-variable) rules from the original file.
+   ========================================================================== */
+
+:root {
+  --bg-obsidian: var(--m-paper);
+  --bg-card: var(--m-paper-2);
+  --bg-card-hover: #FBF7EC;
+  --deep-green: var(--m-ink);
+  --chlorophyll: var(--m-red);
+  --chlorophyll-glow: rgba(221, 35, 24, 0.28);
+  --scientific-cyan: var(--m-red);
+  --cyan-glow: rgba(221, 35, 24, 0.2);
+  --accent-gold: var(--m-ink);
+  --gold-glow: rgba(20, 18, 15, 0.15);
+  --text-main: var(--m-ink);
+  --text-muted: var(--m-muted);
+  --text-sub: var(--m-ink-soft);
+  --border-subtle: var(--m-border);
+  --border-active: var(--m-red);
+
+  --font-sans: 'Cairo', 'Noto Sans Arabic', sans-serif;
+  --font-mono: var(--font-label);
+
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+}
+
+html { background-color: var(--m-paper); }
+
+body {
+  background: var(--m-paper);
+  background-image: radial-gradient(circle at 50% 0%, rgba(20,18,15,0.05) 0%, transparent 60%);
+}
+
+/* Skip link */
+.skip-link { background: var(--m-red); color: var(--m-paper); border-radius: var(--m-radius); }
+
+/* Header */
+.site-header {
+  background-color: rgba(242, 236, 220, 0.92);
+  border-bottom: 3px solid var(--m-ink);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.logo-icon {
+  background: var(--m-ink);
+  border: 2px solid var(--m-ink);
+  color: var(--m-paper);
+  box-shadow: none;
+  border-radius: 2px;
+}
+.brand-en { font-family: var(--font-display); letter-spacing: 0.02em; }
+.mobile-nav { background: var(--m-paper-2); border-bottom: 3px solid var(--m-ink); }
+
+/* Buttons */
+.btn { border-radius: 2px; font-weight: 800; }
+.btn-primary {
+  background-color: var(--m-red);
+  color: var(--m-paper);
+  box-shadow: var(--m-shadow-hard);
+  border: 2px solid var(--m-ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.btn-primary:hover {
+  background-color: var(--m-red-dark);
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--m-ink);
+}
+.btn-secondary {
+  background-color: var(--m-paper-2);
+  color: var(--m-ink);
+  border: 2px solid var(--m-ink);
+}
+.btn-secondary:hover {
+  background-color: var(--m-ink);
+  border-color: var(--m-ink);
+  color: var(--m-paper);
+  transform: translate(2px, 2px);
+}
+
+/* Hero */
+.hero-section { position: relative; overflow: hidden; }
+.hero-badge {
+  background: var(--m-red-tint);
+  border: 2px solid var(--m-red);
+  color: var(--m-red-dark);
+  border-radius: 2px;
+}
+.pulse-dot { background-color: var(--m-red); box-shadow: 0 0 0 var(--m-red); }
+.hero-title {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  color: var(--m-ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-shadow: 3px 3px 0 var(--m-red-tint);
+}
+.hero-subtitle { color: var(--m-ink-soft); }
+.glow-backdrop { background: var(--m-paper-3); filter: none; opacity: 1; border-radius: 50%; }
+
+/* Section headers */
+/* --m-red-dark used instead of --m-red here: this is small (0.85rem) label
+   text, and plain --m-red only reaches a 4.11:1 contrast ratio on the paper
+   background (fails WCAG AA's 4.5:1 for normal text; the design system's own
+   --m-red-dark clears it at 6.67:1) without changing how it looks in the
+   larger-text contexts where --m-red is used elsewhere and already passes. */
+.section-tag { font-family: var(--font-label); color: var(--m-red-dark); }
+.section-title { color: var(--m-ink); }
+.section-desc { color: var(--m-muted); }
+
+/* Lesson cards */
+.lesson-card {
+  background: var(--m-paper-2);
+  border: 3px solid var(--m-ink);
+  border-radius: 2px;
+  box-shadow: var(--m-shadow-hard-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.lesson-card::before { background: var(--m-red); opacity: 1; height: 4px; }
+.lesson-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--m-ink);
+  border-color: var(--m-ink);
+  background: var(--m-paper-2);
+}
+.lesson-number { font-family: var(--font-display); color: var(--m-red); opacity: 1; font-size: 1.9rem; }
+.lesson-badge { background: var(--m-paper-3); border: 1px solid var(--m-ink); color: var(--m-ink); border-radius: 2px; }
+.sub-badge { font-family: var(--font-label); color: var(--m-muted); }
+.card-title { color: var(--m-ink); }
+.card-desc { color: var(--m-ink-soft); }
+.card-btn {
+  background: var(--m-paper);
+  border: 2px solid var(--m-ink);
+  color: var(--m-ink);
+  border-radius: 2px;
+}
+.card-btn:hover, .card-btn:focus {
+  background: var(--m-red);
+  color: var(--m-paper);
+  border-color: var(--m-ink);
+  box-shadow: none;
+}
+
+/* Learning path */
+.path-box {
+  background: var(--m-paper-2);
+  border: 3px solid var(--m-ink);
+  border-radius: 3px;
+  box-shadow: var(--m-shadow-hard);
+}
+.path-title { color: var(--m-ink); }
+.path-subtitle { color: var(--m-muted); }
+.path-step {
+  background: var(--m-paper);
+  border: 2px solid var(--m-border-strong);
+  border-radius: 2px;
+}
+.path-step:hover { border-color: var(--m-red); }
+.step-num {
+  font-family: var(--font-display);
+  color: var(--m-paper);
+  background: var(--m-ink);
+  border-radius: 2px;
+  width: 42px; height: 42px;
+}
+.step-title { color: var(--m-ink); }
+.step-sub { color: var(--m-muted); }
+.path-arrow { color: var(--m-red); opacity: 1; }
+
+/* Footer */
+.site-footer { border-top: 3px solid var(--m-ink); background: var(--m-paper); }
+.footer-title, .footer-copy { color: var(--m-muted); font-family: var(--font-label); }

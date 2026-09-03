@@ -62,6 +62,76 @@ window.QUESTIONS_DATA_FALLBACK = [
     "explanation": "تتحرك الضلوع أثناء الشهيق للخارج والأمام لزيادة سعة التجويف الصدري.",
     "sourceStatus": "OFFICIAL_CURRICULUM",
     "difficulty": "EASY"
+  },
+  {
+    "id": "q7",
+    "chapter": 8,
+    "question": "كيف يتصل الطرف العلوي بالعمود الفقري؟",
+    "options": ["مباشرة عبر الفقرات الصدرية", "غير مباشر عبر الحزام الصدري", "غير مباشر عبر الحزام الحوضي", "مباشرة عبر الثقب الأعظم"],
+    "correctIndex": 1,
+    "explanation": "الطرفان العلويان يرتبطان بالهيكل المحوري بطريقة غير مباشرة عبر الحزام الصدري.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": "q8",
+    "chapter": 9,
+    "question": "رغم وجود الحزام الحوضي في منتصف الجسم، لماذا يصنف ضمن الهيكل الطرفي؟",
+    "options": ["لأنه يتكون من عظمين ناتجين عن التحام عظام الحزام ويصل الأطراف السفلى بالمحور", "لأنه يحتوي على 33 فقرة", "لأنه غير متصل بالعجز", "لأنه يحتوي على القناة العصبية"],
+    "correctIndex": 0,
+    "explanation": "الحزام الحوضي يمثل حزام ربط الأطراف التابعة للهيكل الطرفي ويتكون من عظمتين متماثلتين.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "HARD"
+  },
+  {
+    "id": "q9",
+    "chapter": 6,
+    "question": "كم عدد عظام الحزام الصدري (الكتفي) في جسم الإنسان؟",
+    "options": ["2 عظمتان", "4 عظام", "6 عظام", "8 عظام"],
+    "correctIndex": 1,
+    "explanation": "الحزام الصدري يتكون من 4 عظام: عظمتا ترقوة + عظمتا لوح كتف (واحدة من كل نوع في كل جانب).",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY"
+  },
+  {
+    "id": "q10",
+    "chapter": 6,
+    "question": "أي عظمتين تشكلان الساعد وتسمحان بحركتي الكب والبسط؟",
+    "options": ["العضد والزند", "الزند والكعبرة", "الكعبرة والرسغ", "العضد والكعبرة"],
+    "correctIndex": 1,
+    "explanation": "الزند (من جهة الخنصر) والكعبرة (من جهة الإبهام) هما عظمتا الساعد، وتدور الكعبرة حول الزند لتحريك كف اليد.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": "q11",
+    "chapter": 7,
+    "question": "كم عدد العظام التي يتكون منها الحزام الحوضي؟",
+    "options": ["عظمة واحدة", "عظمتان", "4 عظام", "3 عظام"],
+    "correctIndex": 1,
+    "explanation": "الحزام الحوضي يتكون من عظمتي حوض فقط، وكل عظمة حوض ناتجة عن التحام 3 عظام جنينية (حرقفة، وركي، عانة).",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "EASY"
+  },
+  {
+    "id": "q12",
+    "chapter": 7,
+    "question": "ما هي العظمة السمسمية التي تحمي مفصل الركبة من الأمام؟",
+    "options": ["القصبة", "الشظية", "الرضفة", "عظمة الفخذ"],
+    "correctIndex": 2,
+    "explanation": "الرضفة (Patella) عظمة سمسمية منغرسة داخل وتر العضلة الرباعية، تحمي مقدمة مفصل الركبة.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "MEDIUM"
+  },
+  {
+    "id": "q13",
+    "chapter": 9,
+    "question": "أي وصف صحيح لـ«الحوض» في مقابل «الحزام الحوضي»؟",
+    "options": ["مصطلحان متطابقان تماماً", "الحوض الكامل يشمل العجز والعصعص (محوريان) بالإضافة لعظمتي الحوض، أما الحزام الحوضي فهو عظمتا الحوض فقط", "الحزام الحوضي جزء من العمود الفقري", "الحوض لا يحتوي على أي عظام طرفية"],
+    "correctIndex": 1,
+    "explanation": "الحوض التشريحي الكامل يضم عظمتي الحوض (طرفي) بالإضافة إلى العجز والعصعص (محوري ضمن العمود الفقري)، بينما الحزام الحوضي يقصد به عظمتا الحوض فقط.",
+    "sourceStatus": "OFFICIAL_CURRICULUM",
+    "difficulty": "HARD"
   }
 ];
 
@@ -165,6 +235,11 @@ function initQuizEngine(questions) {
     if (!quizBox) return;
 
     const percentage = Math.round((score / questions.length) * 100);
+
+    if (window.BioProgress) {
+      window.BioProgress.save('lesson2', score, questions.length);
+    }
+
     quizBox.innerHTML = `
       <div style="text-align: center; padding: 2rem;">
         <h3 style="font-size: 2rem; color: var(--xray-cyan); margin-bottom: 1rem;">اكتمل الامتحان التشريحي</h3>

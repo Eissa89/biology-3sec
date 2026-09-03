@@ -1,0 +1,20 @@
+{
+  "name": "أحياء — الصف الثالث الثانوي",
+  "short_name": "أحياء 3ث",
+  "description": "منصة تفاعلية لمذاكرة الأحياء للصف الثالث الثانوي: دروس، محاكاة علمية، اختبارات، وبطاقات مراجعة.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F2ECDC",
+  "theme_color": "#14120F",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
