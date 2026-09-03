@@ -7,7 +7,7 @@
  * is cached the first time it's actually used, then served from cache first.
  */
 
-const CACHE_NAME = 'bio3sec-cache-v2';
+const CACHE_NAME = 'biology-3sec-cache-v3';
 
 self.addEventListener('install', () => {
   self.skipWaiting();
