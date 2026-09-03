@@ -135,24 +135,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   const searchInput = document.getElementById('search-input');
 
   if (searchInput) {
+    let searchTimeout;
+    const contentCards = document.querySelectorAll('.lesson-card, .grid-2 > .lesson-card');
+
     searchInput.addEventListener('input', (e) => {
+      clearTimeout(searchTimeout);
       const query = e.target.value.trim().toLowerCase();
-      const contentCards = document.querySelectorAll('.lesson-card, .grid-2 > .lesson-card');
 
-      contentCards.forEach(card => {
-        const cardText = card.textContent.toLowerCase();
+      searchTimeout = setTimeout(() => {
+        contentCards.forEach(card => {
+          const cardText = card.textContent.toLowerCase();
 
-        if (query === '') {
-          // Reset highlights and display status
-          card.classList.remove('hidden');
-          removeHighlights(card);
-        } else if (cardText.includes(query)) {
-          card.classList.remove('hidden');
-          highlightText(card, query);
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+          if (query === '') {
+            card.classList.remove('hidden');
+            removeHighlights(card);
+          } else if (cardText.includes(query)) {
+            card.classList.remove('hidden');
+            highlightText(card, query);
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }, 150);
     });
   }
 
